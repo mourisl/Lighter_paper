@@ -1,0 +1,999 @@
+%% BioMed_Central_Bib_Style_v1.01
+
+\begin{thebibliography}{31}
+% BibTex style file: bmc-mathphys.bst (version 2.0), 2013-07-15
+\ifx \bisbn   \undefined \def \bisbn  #1{ISBN #1}\fi
+\ifx \binits  \undefined \def \binits#1{#1}\fi
+\ifx \bauthor  \undefined \def \bauthor#1{#1}\fi
+\ifx \batitle  \undefined \def \batitle#1{#1}\fi
+\ifx \bjtitle  \undefined \def \bjtitle#1{#1}\fi
+\ifx \bvolume  \undefined \def \bvolume#1{\textbf{#1}}\fi
+\ifx \byear  \undefined \def \byear#1{#1}\fi
+\ifx \bissue  \undefined \def \bissue#1{#1}\fi
+\ifx \bfpage  \undefined \def \bfpage#1{#1}\fi
+\ifx \blpage  \undefined \def \blpage #1{#1}\fi
+\ifx \burl  \undefined \def \burl#1{\textsf{#1}}\fi
+\ifx \doiurl  \undefined \def \doiurl#1{\textsf{#1}}\fi
+\ifx \betal  \undefined \def \betal{\textit{et al.}}\fi
+\ifx \binstitute  \undefined \def \binstitute#1{#1}\fi
+\ifx \binstitutionaled  \undefined \def \binstitutionaled#1{#1}\fi
+\ifx \bctitle  \undefined \def \bctitle#1{#1}\fi
+\ifx \beditor  \undefined \def \beditor#1{#1}\fi
+\ifx \bpublisher  \undefined \def \bpublisher#1{#1}\fi
+\ifx \bbtitle  \undefined \def \bbtitle#1{#1}\fi
+\ifx \bedition  \undefined \def \bedition#1{#1}\fi
+\ifx \bseriesno  \undefined \def \bseriesno#1{#1}\fi
+\ifx \blocation  \undefined \def \blocation#1{#1}\fi
+\ifx \bsertitle  \undefined \def \bsertitle#1{#1}\fi
+\ifx \bsnm \undefined \def \bsnm#1{#1}\fi
+\ifx \bsuffix \undefined \def \bsuffix#1{#1}\fi
+\ifx \bparticle \undefined \def \bparticle#1{#1}\fi
+\ifx \barticle \undefined \def \barticle#1{#1}\fi
+\ifx \bconfdate \undefined \def \bconfdate #1{#1}\fi
+\ifx \botherref \undefined \def \botherref #1{#1}\fi
+\ifx \url \undefined \def \url#1{\textsf{#1}}\fi
+\ifx \bchapter \undefined \def \bchapter#1{#1}\fi
+\ifx \bbook \undefined \def \bbook#1{#1}\fi
+\ifx \bcomment \undefined \def \bcomment#1{#1}\fi
+\ifx \oauthor \undefined \def \oauthor#1{#1}\fi
+\ifx \citeauthoryear \undefined \def \citeauthoryear#1{#1}\fi
+\ifx \endbibitem  \undefined \def \endbibitem {}\fi
+\ifx \bconflocation  \undefined \def \bconflocation#1{#1}\fi
+\ifx \arxivurl  \undefined \def \arxivurl#1{\textsf{#1}}\fi
+\csname PreBibitemsHook\endcsname
+
+%%% 1
+\bibitem{glenn2011field}
+\begin{barticle}
+\bauthor{\bsnm{Glenn}, \binits{T.C.}}:
+\batitle{Field guide to next-generation dna sequencers}.
+\bjtitle{Molecular Ecology Resources}
+\bvolume{11}(\bissue{5}),
+\bfpage{759}--\blpage{769}
+(\byear{2011})
+\end{barticle}
+\endbibitem
+
+%%% 2
+\bibitem{1kgenomeforreal}
+\begin{botherref}
+\oauthor{\bsnm{Hayden}, \binits{E.C.}}:
+Is the \$1,000 genome for real?
+Nature News
+(2014)
+\end{botherref}
+\endbibitem
+
+%%% 3
+\bibitem{kelley2010quake}
+\begin{barticle}
+\bauthor{\bsnm{Kelley}, \binits{D.R.}},
+\bauthor{\bsnm{Schatz}, \binits{M.C.}},
+\bauthor{\bsnm{Salzberg}, \binits{S.L.}}, \betal:
+\batitle{Quake: quality-aware detection and correction of sequencing errors}.
+\bjtitle{Genome Biol}
+\bvolume{11}(\bissue{11}),
+\bfpage{116}
+(\byear{2010})
+\end{barticle}
+\endbibitem
+
+%%% 4
+\bibitem{pevzner2001eulerian}
+\begin{barticle}
+\bauthor{\bsnm{Pevzner}, \binits{P.A.}},
+\bauthor{\bsnm{Tang}, \binits{H.}},
+\bauthor{\bsnm{Waterman}, \binits{M.S.}}:
+\batitle{An eulerian path approach to dna fragment assembly}.
+\bjtitle{Proceedings of the National Academy of Sciences}
+\bvolume{98}(\bissue{17}),
+\bfpage{9748}--\blpage{9753}
+(\byear{2001})
+\end{barticle}
+\endbibitem
+
+%%% 5
+\bibitem{chaisson2004fragment}
+\begin{barticle}
+\bauthor{\bsnm{Chaisson}, \binits{M.}},
+\bauthor{\bsnm{Pevzner}, \binits{P.}},
+\bauthor{\bsnm{Tang}, \binits{H.}}:
+\batitle{Fragment assembly with short reads}.
+\bjtitle{Bioinformatics}
+\bvolume{20}(\bissue{13}),
+\bfpage{2067}--\blpage{2074}
+(\byear{2004})
+\end{barticle}
+\endbibitem
+
+%%% 6
+\bibitem{schroder2009shrec}
+\begin{barticle}
+\bauthor{\bsnm{Schr{\"o}der}, \binits{J.}},
+\bauthor{\bsnm{Schr{\"o}der}, \binits{H.}},
+\bauthor{\bsnm{Puglisi}, \binits{S.J.}},
+\bauthor{\bsnm{Sinha}, \binits{R.}},
+\bauthor{\bsnm{Schmidt}, \binits{B.}}:
+\batitle{Shrec: a short-read error correction method}.
+\bjtitle{Bioinformatics}
+\bvolume{25}(\bissue{17}),
+\bfpage{2157}--\blpage{2163}
+(\byear{2009})
+\end{barticle}
+\endbibitem
+
+%%% 7
+\bibitem{ilie2011hitec}
+\begin{barticle}
+\bauthor{\bsnm{Ilie}, \binits{L.}},
+\bauthor{\bsnm{Fazayeli}, \binits{F.}},
+\bauthor{\bsnm{Ilie}, \binits{S.}}:
+\batitle{Hitec: accurate error correction in high-throughput sequencing data}.
+\bjtitle{Bioinformatics}
+\bvolume{27}(\bissue{3}),
+\bfpage{295}--\blpage{302}
+(\byear{2011})
+\end{barticle}
+\endbibitem
+
+%%% 8
+\bibitem{salmela2011correcting}
+\begin{barticle}
+\bauthor{\bsnm{Salmela}, \binits{L.}},
+\bauthor{\bsnm{Schr{\"o}der}, \binits{J.}}:
+\batitle{Correcting errors in short reads by multiple alignments}.
+\bjtitle{Bioinformatics}
+\bvolume{27}(\bissue{11}),
+\bfpage{1455}--\blpage{1461}
+(\byear{2011})
+\end{barticle}
+\endbibitem
+
+%%% 9
+\bibitem{kao2011echo}
+\begin{barticle}
+\bauthor{\bsnm{Kao}, \binits{W.-C.}},
+\bauthor{\bsnm{Chan}, \binits{A.H.}},
+\bauthor{\bsnm{Song}, \binits{Y.S.}}:
+\batitle{Echo: a reference-free short-read error correction algorithm}.
+\bjtitle{Genome research}
+\bvolume{21}(\bissue{7}),
+\bfpage{1181}--\blpage{1192}
+(\byear{2011})
+\end{barticle}
+\endbibitem
+
+%%% 10
+\bibitem{yang2010reptile}
+\begin{barticle}
+\bauthor{\bsnm{Yang}, \binits{X.}},
+\bauthor{\bsnm{Dorman}, \binits{K.S.}},
+\bauthor{\bsnm{Aluru}, \binits{S.}}:
+\batitle{Reptile: representative tiling for short read error correction}.
+\bjtitle{Bioinformatics}
+\bvolume{26}(\bissue{20}),
+\bfpage{2526}--\blpage{2533}
+(\byear{2010})
+\end{barticle}
+\endbibitem
+
+%%% 11
+\bibitem{medvedev2011error}
+\begin{barticle}
+\bauthor{\bsnm{Medvedev}, \binits{P.}},
+\bauthor{\bsnm{Scott}, \binits{E.}},
+\bauthor{\bsnm{Kakaradov}, \binits{B.}},
+\bauthor{\bsnm{Pevzner}, \binits{P.}}:
+\batitle{Error correction of high-throughput sequencing datasets with
+  non-uniform coverage}.
+\bjtitle{Bioinformatics}
+\bvolume{27}(\bissue{13}),
+\bfpage{137}--\blpage{141}
+(\byear{2011})
+\end{barticle}
+\endbibitem
+
+%%% 12
+\bibitem{marccais2011fast}
+\begin{barticle}
+\bauthor{\bsnm{Mar{\c{c}}ais}, \binits{G.}},
+\bauthor{\bsnm{Kingsford}, \binits{C.}}:
+\batitle{A fast, lock-free approach for efficient parallel counting of
+  occurrences of k-mers}.
+\bjtitle{Bioinformatics}
+\bvolume{27}(\bissue{6}),
+\bfpage{764}--\blpage{770}
+(\byear{2011})
+\end{barticle}
+\endbibitem
+
+%%% 13
+\bibitem{shi2010parallel}
+\begin{barticle}
+\bauthor{\bsnm{Shi}, \binits{H.}},
+\bauthor{\bsnm{Schmidt}, \binits{B.}},
+\bauthor{\bsnm{Liu}, \binits{W.}},
+\bauthor{\bsnm{M{\"u}ller-Wittig}, \binits{W.}}:
+\batitle{A parallel algorithm for error correction in high-throughput
+  short-read data on cuda-enabled graphics hardware}.
+\bjtitle{Journal of Computational Biology}
+\bvolume{17}(\bissue{4}),
+\bfpage{603}--\blpage{615}
+(\byear{2010})
+\end{barticle}
+\endbibitem
+
+%%% 14
+\bibitem{liu2013musket}
+\begin{barticle}
+\bauthor{\bsnm{Liu}, \binits{Y.}},
+\bauthor{\bsnm{Schr{\"o}der}, \binits{J.}},
+\bauthor{\bsnm{Schmidt}, \binits{B.}}:
+\batitle{Musket: a multistage k-mer spectrum-based error corrector for illumina
+  sequence data}.
+\bjtitle{Bioinformatics}
+\bvolume{29}(\bissue{3}),
+\bfpage{308}--\blpage{315}
+(\byear{2013})
+\end{barticle}
+\endbibitem
+
+%%% 15
+\bibitem{heo2014bless}
+\begin{botherref}
+\oauthor{\bsnm{Heo}, \binits{Y.}},
+\oauthor{\bsnm{Wu}, \binits{X.-L.}},
+\oauthor{\bsnm{Chen}, \binits{D.}},
+\oauthor{\bsnm{Ma}, \binits{J.}},
+\oauthor{\bsnm{Hwu}, \binits{W.-M.}}:
+Bless: Bloom-filter-based error correction solution for high-throughput
+  sequencing reads.
+Bioinformatics,
+030
+(2014)
+\end{botherref}
+\endbibitem
+
+%%% 16
+\bibitem{bloom1970space}
+\begin{barticle}
+\bauthor{\bsnm{Bloom}, \binits{B.H.}}:
+\batitle{Space/time trade-offs in hash coding with allowable errors}.
+\bjtitle{Communications of the ACM}
+\bvolume{13}(\bissue{7}),
+\bfpage{422}--\blpage{426}
+(\byear{1970})
+\end{barticle}
+\endbibitem
+
+%%% 17
+\bibitem{tarkoma2012theory}
+\begin{barticle}
+\bauthor{\bsnm{Tarkoma}, \binits{S.}},
+\bauthor{\bsnm{Rothenberg}, \binits{C.E.}},
+\bauthor{\bsnm{Lagerspetz}, \binits{E.}}:
+\batitle{Theory and practice of bloom filters for distributed systems}.
+\bjtitle{Communications Surveys \& Tutorials, IEEE}
+\bvolume{14}(\bissue{1}),
+\bfpage{131}--\blpage{155}
+(\byear{2012})
+\end{barticle}
+\endbibitem
+
+%%% 18
+\bibitem{pell2012scaling}
+\begin{barticle}
+\bauthor{\bsnm{Pell}, \binits{J.}},
+\bauthor{\bsnm{Hintze}, \binits{A.}},
+\bauthor{\bsnm{Canino-Koning}, \binits{R.}},
+\bauthor{\bsnm{Howe}, \binits{A.}},
+\bauthor{\bsnm{Tiedje}, \binits{J.M.}},
+\bauthor{\bsnm{Brown}, \binits{C.T.}}:
+\batitle{Scaling metagenome sequence assembly with probabilistic de bruijn
+  graphs}.
+\bjtitle{Proceedings of the National Academy of Sciences}
+\bvolume{109}(\bissue{33}),
+\bfpage{13272}--\blpage{13277}
+(\byear{2012})
+\end{barticle}
+\endbibitem
+
+%%% 19
+\bibitem{jones2012compression}
+\begin{barticle}
+\bauthor{\bsnm{Jones}, \binits{D.C.}},
+\bauthor{\bsnm{Ruzzo}, \binits{W.L.}},
+\bauthor{\bsnm{Peng}, \binits{X.}},
+\bauthor{\bsnm{Katze}, \binits{M.G.}}:
+\batitle{Compression of next-generation sequencing reads aided by highly
+  efficient de novo assembly}.
+\bjtitle{Nucleic acids research}
+\bvolume{40}(\bissue{22}),
+\bfpage{171}--\blpage{171}
+(\byear{2012})
+\end{barticle}
+\endbibitem
+
+%%% 20
+\bibitem{melsted2011efficient}
+\begin{barticle}
+\bauthor{\bsnm{Melsted}, \binits{P.}},
+\bauthor{\bsnm{Pritchard}, \binits{J.K.}}:
+\batitle{Efficient counting of k-mers in dna sequences using a bloom filter}.
+\bjtitle{BMC bioinformatics}
+\bvolume{12}(\bissue{1}),
+\bfpage{333}
+(\byear{2011})
+\end{barticle}
+\endbibitem
+
+%%% 21
+\bibitem{melsted2014kmerstream}
+\begin{botherref}
+\oauthor{\bsnm{Melsted}, \binits{P.}},
+\oauthor{\bsnm{Halld{\'o}rsson}, \binits{B.V.}}:
+Kmerstream: Streaming algorithms for k-mer abundance estimation.
+bioRxiv
+(2014)
+\end{botherref}
+\endbibitem
+
+%%% 22
+\bibitem{holtgrewe2010mason}
+\begin{botherref}
+\oauthor{\bsnm{Holtgrewe}, \binits{M.}}:
+Mason--a read simulator for second generation sequencing data.
+Technical Report FU Berlin
+(2010)
+\end{botherref}
+\endbibitem
+
+%%% 23
+\bibitem{langmead2012fast}
+\begin{barticle}
+\bauthor{\bsnm{Langmead}, \binits{B.}},
+\bauthor{\bsnm{Salzberg}, \binits{S.L.}}:
+\batitle{Fast gapped-read alignment with bowtie 2}.
+\bjtitle{Nature methods}
+\bvolume{9}(\bissue{4}),
+\bfpage{357}--\blpage{359}
+(\byear{2012})
+\end{barticle}
+\endbibitem
+
+%%% 24
+\bibitem{gurevich2013quast}
+\begin{barticle}
+\bauthor{\bsnm{Gurevich}, \binits{A.}},
+\bauthor{\bsnm{Saveliev}, \binits{V.}},
+\bauthor{\bsnm{Vyahhi}, \binits{N.}},
+\bauthor{\bsnm{Tesler}, \binits{G.}}:
+\batitle{Quast: quality assessment tool for genome assemblies}.
+\bjtitle{Bioinformatics}
+\bvolume{29}(\bissue{8}),
+\bfpage{1072}--\blpage{1075}
+(\byear{2013})
+\end{barticle}
+\endbibitem
+
+%%% 25
+\bibitem{zerbino2008velvet}
+\begin{barticle}
+\bauthor{\bsnm{Zerbino}, \binits{D.R.}},
+\bauthor{\bsnm{Birney}, \binits{E.}}:
+\batitle{Velvet: algorithms for de novo short read assembly using de bruijn
+  graphs}.
+\bjtitle{Genome research}
+\bvolume{18}(\bissue{5}),
+\bfpage{821}--\blpage{829}
+(\byear{2008})
+\end{barticle}
+\endbibitem
+
+%%% 26
+\bibitem{salzberg2012gage}
+\begin{barticle}
+\bauthor{\bsnm{Salzberg}, \binits{S.L.}},
+\bauthor{\bsnm{Phillippy}, \binits{A.M.}},
+\bauthor{\bsnm{Zimin}, \binits{A.}},
+\bauthor{\bsnm{Puiu}, \binits{D.}},
+\bauthor{\bsnm{Magoc}, \binits{T.}},
+\bauthor{\bsnm{Koren}, \binits{S.}},
+\bauthor{\bsnm{Treangen}, \binits{T.J.}},
+\bauthor{\bsnm{Schatz}, \binits{M.C.}},
+\bauthor{\bsnm{Delcher}, \binits{A.L.}},
+\bauthor{\bsnm{Roberts}, \binits{M.}}, \betal:
+\batitle{Gage: A critical evaluation of genome assemblies and assembly
+  algorithms}.
+\bjtitle{Genome research}
+\bvolume{22}(\bissue{3}),
+\bfpage{557}--\blpage{567}
+(\byear{2012})
+\end{barticle}
+\endbibitem
+
+%%% 27
+\bibitem{fan2000summary}
+\begin{barticle}
+\bauthor{\bsnm{Fan}, \binits{L.}},
+\bauthor{\bsnm{Cao}, \binits{P.}},
+\bauthor{\bsnm{Almeida}, \binits{J.}},
+\bauthor{\bsnm{Broder}, \binits{A.Z.}}:
+\batitle{Summary cache: a scalable wide-area web cache sharing protocol}.
+\bjtitle{IEEE/ACM Transactions on Networking (TON)}
+\bvolume{8}(\bissue{3}),
+\bfpage{281}--\blpage{293}
+(\byear{2000})
+\end{barticle}
+\endbibitem
+
+%%% 28
+\bibitem{bonomi2006improved}
+\begin{bchapter}
+\bauthor{\bsnm{Bonomi}, \binits{F.}},
+\bauthor{\bsnm{Mitzenmacher}, \binits{M.}},
+\bauthor{\bsnm{Panigrahy}, \binits{R.}},
+\bauthor{\bsnm{Singh}, \binits{S.}},
+\bauthor{\bsnm{Varghese}, \binits{G.}}:
+\bctitle{An improved construction for counting bloom filters}.
+In: \bbtitle{Algorithms--ESA 2006},
+pp. \bfpage{684}--\blpage{695}.
+\bpublisher{Springer}, \blocation{???}
+(\byear{2006})
+\end{bchapter}
+\endbibitem
+
+%%% 29
+\bibitem{cormode2005improved}
+\begin{barticle}
+\bauthor{\bsnm{Cormode}, \binits{G.}},
+\bauthor{\bsnm{Muthukrishnan}, \binits{S.}}:
+\batitle{An improved data stream summary: the count-min sketch and its
+  applications}.
+\bjtitle{Journal of Algorithms}
+\bvolume{55}(\bissue{1}),
+\bfpage{58}--\blpage{75}
+(\byear{2005})
+\end{barticle}
+\endbibitem
+
+%%% 30
+\bibitem{zhang2013these}
+\begin{botherref}
+\oauthor{\bsnm{Zhang}, \binits{Q.}},
+\oauthor{\bsnm{Pell}, \binits{J.}},
+\oauthor{\bsnm{Canino-Koning}, \binits{R.}},
+\oauthor{\bsnm{Howe}, \binits{A.C.}},
+\oauthor{\bsnm{Brown}, \binits{C.T.}}:
+These are not the k-mers you are looking for: efficient online k-mer counting
+  using a probabilistic data structure.
+arXiv preprint arXiv:1309.2975
+(2013)
+\end{botherref}
+\endbibitem
+
+%%% 31
+\bibitem{chikhi2014informed}
+\begin{barticle}
+\bauthor{\bsnm{Chikhi}, \binits{R.}},
+\bauthor{\bsnm{Medvedev}, \binits{P.}}:
+\batitle{Informed and automated k-mer size selection for genome assembly}.
+\bjtitle{Bioinformatics}
+\bvolume{30}(\bissue{1}),
+\bfpage{31}--\blpage{37}
+(\byear{2014})
+\end{barticle}
+\endbibitem
+
+\end{thebibliography}
+
+\newcommand{\BMCxmlcomment}[1]{}
+
+\BMCxmlcomment{
+
+<refgrp>
+
+<bibl id="B1">
+  <title><p>Field guide to next-generation DNA sequencers</p></title>
+  <aug>
+    <au><snm>Glenn</snm><fnm>TC</fnm></au>
+  </aug>
+  <source>Molecular Ecology Resources</source>
+  <publisher>Wiley Online Library</publisher>
+  <pubdate>2011</pubdate>
+  <volume>11</volume>
+  <issue>5</issue>
+  <fpage>759</fpage>
+  <lpage>-769</lpage>
+</bibl>
+
+<bibl id="B2">
+  <title><p>Is the \$1,000 genome for real?</p></title>
+  <aug>
+    <au><snm>Hayden</snm><fnm>EC</fnm></au>
+  </aug>
+  <source>Nature News</source>
+  <publisher>Nature Publishing Group</publisher>
+  <pubdate>2014</pubdate>
+</bibl>
+
+<bibl id="B3">
+  <title><p>Quake: quality-aware detection and correction of sequencing
+  errors</p></title>
+  <aug>
+    <au><snm>Kelley</snm><fnm>DR</fnm></au>
+    <au><snm>Schatz</snm><fnm>MC</fnm></au>
+    <au><snm>Salzberg</snm><fnm>SL</fnm></au>
+    <au><cnm>others</cnm></au>
+  </aug>
+  <source>Genome Biol</source>
+  <pubdate>2010</pubdate>
+  <volume>11</volume>
+  <issue>11</issue>
+  <fpage>R116</fpage>
+</bibl>
+
+<bibl id="B4">
+  <title><p>An Eulerian path approach to DNA fragment assembly</p></title>
+  <aug>
+    <au><snm>Pevzner</snm><fnm>PA</fnm></au>
+    <au><snm>Tang</snm><fnm>H</fnm></au>
+    <au><snm>Waterman</snm><fnm>MS</fnm></au>
+  </aug>
+  <source>Proceedings of the National Academy of Sciences</source>
+  <publisher>National Acad Sciences</publisher>
+  <pubdate>2001</pubdate>
+  <volume>98</volume>
+  <issue>17</issue>
+  <fpage>9748</fpage>
+  <lpage>-9753</lpage>
+</bibl>
+
+<bibl id="B5">
+  <title><p>Fragment assembly with short reads</p></title>
+  <aug>
+    <au><snm>Chaisson</snm><fnm>M</fnm></au>
+    <au><snm>Pevzner</snm><fnm>P</fnm></au>
+    <au><snm>Tang</snm><fnm>H</fnm></au>
+  </aug>
+  <source>Bioinformatics</source>
+  <publisher>Oxford Univ Press</publisher>
+  <pubdate>2004</pubdate>
+  <volume>20</volume>
+  <issue>13</issue>
+  <fpage>2067</fpage>
+  <lpage>-2074</lpage>
+</bibl>
+
+<bibl id="B6">
+  <title><p>SHREC: a short-read error correction method</p></title>
+  <aug>
+    <au><snm>Schr{\"o}der</snm><fnm>J</fnm></au>
+    <au><snm>Schr{\"o}der</snm><fnm>H</fnm></au>
+    <au><snm>Puglisi</snm><fnm>SJ</fnm></au>
+    <au><snm>Sinha</snm><fnm>R</fnm></au>
+    <au><snm>Schmidt</snm><fnm>B</fnm></au>
+  </aug>
+  <source>Bioinformatics</source>
+  <publisher>Oxford Univ Press</publisher>
+  <pubdate>2009</pubdate>
+  <volume>25</volume>
+  <issue>17</issue>
+  <fpage>2157</fpage>
+  <lpage>-2163</lpage>
+</bibl>
+
+<bibl id="B7">
+  <title><p>HiTEC: accurate error correction in high-throughput sequencing
+  data</p></title>
+  <aug>
+    <au><snm>Ilie</snm><fnm>L</fnm></au>
+    <au><snm>Fazayeli</snm><fnm>F</fnm></au>
+    <au><snm>Ilie</snm><fnm>S</fnm></au>
+  </aug>
+  <source>Bioinformatics</source>
+  <publisher>Oxford University Press</publisher>
+  <pubdate>2011</pubdate>
+  <volume>27</volume>
+  <issue>3</issue>
+  <fpage>295</fpage>
+  <lpage>-302</lpage>
+</bibl>
+
+<bibl id="B8">
+  <title><p>Correcting errors in short reads by multiple alignments</p></title>
+  <aug>
+    <au><snm>Salmela</snm><fnm>L</fnm></au>
+    <au><snm>Schr{\"o}der</snm><fnm>J</fnm></au>
+  </aug>
+  <source>Bioinformatics</source>
+  <publisher>Oxford Univ Press</publisher>
+  <pubdate>2011</pubdate>
+  <volume>27</volume>
+  <issue>11</issue>
+  <fpage>1455</fpage>
+  <lpage>-1461</lpage>
+</bibl>
+
+<bibl id="B9">
+  <title><p>ECHO: a reference-free short-read error correction
+  algorithm</p></title>
+  <aug>
+    <au><snm>Kao</snm><fnm>WC</fnm></au>
+    <au><snm>Chan</snm><fnm>AH</fnm></au>
+    <au><snm>Song</snm><fnm>YS</fnm></au>
+  </aug>
+  <source>Genome research</source>
+  <publisher>Cold Spring Harbor Lab</publisher>
+  <pubdate>2011</pubdate>
+  <volume>21</volume>
+  <issue>7</issue>
+  <fpage>1181</fpage>
+  <lpage>-1192</lpage>
+</bibl>
+
+<bibl id="B10">
+  <title><p>Reptile: representative tiling for short read error
+  correction</p></title>
+  <aug>
+    <au><snm>Yang</snm><fnm>X</fnm></au>
+    <au><snm>Dorman</snm><fnm>KS</fnm></au>
+    <au><snm>Aluru</snm><fnm>S</fnm></au>
+  </aug>
+  <source>Bioinformatics</source>
+  <publisher>Oxford Univ Press</publisher>
+  <pubdate>2010</pubdate>
+  <volume>26</volume>
+  <issue>20</issue>
+  <fpage>2526</fpage>
+  <lpage>-2533</lpage>
+</bibl>
+
+<bibl id="B11">
+  <title><p>Error correction of high-throughput sequencing datasets with
+  non-uniform coverage</p></title>
+  <aug>
+    <au><snm>Medvedev</snm><fnm>P</fnm></au>
+    <au><snm>Scott</snm><fnm>E</fnm></au>
+    <au><snm>Kakaradov</snm><fnm>B</fnm></au>
+    <au><snm>Pevzner</snm><fnm>P</fnm></au>
+  </aug>
+  <source>Bioinformatics</source>
+  <publisher>Oxford Univ Press</publisher>
+  <pubdate>2011</pubdate>
+  <volume>27</volume>
+  <issue>13</issue>
+  <fpage>i137</fpage>
+  <lpage>-i141</lpage>
+</bibl>
+
+<bibl id="B12">
+  <title><p>A fast, lock-free approach for efficient parallel counting of
+  occurrences of k-mers</p></title>
+  <aug>
+    <au><snm>Mar{\c{c}}ais</snm><fnm>G</fnm></au>
+    <au><snm>Kingsford</snm><fnm>C</fnm></au>
+  </aug>
+  <source>Bioinformatics</source>
+  <publisher>Oxford Univ Press</publisher>
+  <pubdate>2011</pubdate>
+  <volume>27</volume>
+  <issue>6</issue>
+  <fpage>764</fpage>
+  <lpage>-770</lpage>
+</bibl>
+
+<bibl id="B13">
+  <title><p>A parallel algorithm for error correction in high-throughput
+  short-read data on CUDA-enabled graphics hardware</p></title>
+  <aug>
+    <au><snm>Shi</snm><fnm>H</fnm></au>
+    <au><snm>Schmidt</snm><fnm>B</fnm></au>
+    <au><snm>Liu</snm><fnm>W</fnm></au>
+    <au><snm>M{\"u}ller Wittig</snm><fnm>W</fnm></au>
+  </aug>
+  <source>Journal of Computational Biology</source>
+  <publisher>Mary Ann Liebert, Inc. 140 Huguenot Street, 3rd Floor New
+  Rochelle, NY 10801 USA</publisher>
+  <pubdate>2010</pubdate>
+  <volume>17</volume>
+  <issue>4</issue>
+  <fpage>603</fpage>
+  <lpage>-615</lpage>
+</bibl>
+
+<bibl id="B14">
+  <title><p>Musket: a multistage k-mer spectrum-based error corrector for
+  Illumina sequence data</p></title>
+  <aug>
+    <au><snm>Liu</snm><fnm>Y</fnm></au>
+    <au><snm>Schr{\"o}der</snm><fnm>J</fnm></au>
+    <au><snm>Schmidt</snm><fnm>B</fnm></au>
+  </aug>
+  <source>Bioinformatics</source>
+  <publisher>Oxford Univ Press</publisher>
+  <pubdate>2013</pubdate>
+  <volume>29</volume>
+  <issue>3</issue>
+  <fpage>308</fpage>
+  <lpage>-315</lpage>
+</bibl>
+
+<bibl id="B15">
+  <title><p>BLESS: Bloom-filter-based Error Correction Solution for
+  High-throughput Sequencing Reads</p></title>
+  <aug>
+    <au><snm>Heo</snm><fnm>Y</fnm></au>
+    <au><snm>Wu</snm><fnm>XL</fnm></au>
+    <au><snm>Chen</snm><fnm>D</fnm></au>
+    <au><snm>Ma</snm><fnm>J</fnm></au>
+    <au><snm>Hwu</snm><fnm>WM</fnm></au>
+  </aug>
+  <source>Bioinformatics</source>
+  <publisher>Oxford Univ Press</publisher>
+  <pubdate>2014</pubdate>
+  <fpage>btu030</fpage>
+</bibl>
+
+<bibl id="B16">
+  <title><p>Space/time trade-offs in hash coding with allowable
+  errors</p></title>
+  <aug>
+    <au><snm>Bloom</snm><fnm>BH</fnm></au>
+  </aug>
+  <source>Communications of the ACM</source>
+  <publisher>ACM</publisher>
+  <pubdate>1970</pubdate>
+  <volume>13</volume>
+  <issue>7</issue>
+  <fpage>422</fpage>
+  <lpage>-426</lpage>
+</bibl>
+
+<bibl id="B17">
+  <title><p>Theory and practice of bloom filters for distributed
+  systems</p></title>
+  <aug>
+    <au><snm>Tarkoma</snm><fnm>S</fnm></au>
+    <au><snm>Rothenberg</snm><fnm>CE</fnm></au>
+    <au><snm>Lagerspetz</snm><fnm>E</fnm></au>
+  </aug>
+  <source>Communications Surveys \& Tutorials, IEEE</source>
+  <publisher>IEEE</publisher>
+  <pubdate>2012</pubdate>
+  <volume>14</volume>
+  <issue>1</issue>
+  <fpage>131</fpage>
+  <lpage>-155</lpage>
+</bibl>
+
+<bibl id="B18">
+  <title><p>Scaling metagenome sequence assembly with probabilistic de Bruijn
+  graphs</p></title>
+  <aug>
+    <au><snm>Pell</snm><fnm>J</fnm></au>
+    <au><snm>Hintze</snm><fnm>A</fnm></au>
+    <au><snm>Canino Koning</snm><fnm>R</fnm></au>
+    <au><snm>Howe</snm><fnm>A</fnm></au>
+    <au><snm>Tiedje</snm><fnm>JM</fnm></au>
+    <au><snm>Brown</snm><fnm>CT</fnm></au>
+  </aug>
+  <source>Proceedings of the National Academy of Sciences</source>
+  <publisher>National Acad Sciences</publisher>
+  <pubdate>2012</pubdate>
+  <volume>109</volume>
+  <issue>33</issue>
+  <fpage>13272</fpage>
+  <lpage>-13277</lpage>
+</bibl>
+
+<bibl id="B19">
+  <title><p>Compression of next-generation sequencing reads aided by highly
+  efficient de novo assembly</p></title>
+  <aug>
+    <au><snm>Jones</snm><fnm>DC</fnm></au>
+    <au><snm>Ruzzo</snm><fnm>WL</fnm></au>
+    <au><snm>Peng</snm><fnm>X</fnm></au>
+    <au><snm>Katze</snm><fnm>MG</fnm></au>
+  </aug>
+  <source>Nucleic acids research</source>
+  <publisher>Oxford Univ Press</publisher>
+  <pubdate>2012</pubdate>
+  <volume>40</volume>
+  <issue>22</issue>
+  <fpage>e171</fpage>
+  <lpage>-e171</lpage>
+</bibl>
+
+<bibl id="B20">
+  <title><p>Efficient counting of k-mers in DNA sequences using a bloom
+  filter</p></title>
+  <aug>
+    <au><snm>Melsted</snm><fnm>P</fnm></au>
+    <au><snm>Pritchard</snm><fnm>JK</fnm></au>
+  </aug>
+  <source>BMC bioinformatics</source>
+  <publisher>BioMed Central Ltd</publisher>
+  <pubdate>2011</pubdate>
+  <volume>12</volume>
+  <issue>1</issue>
+  <fpage>333</fpage>
+</bibl>
+
+<bibl id="B21">
+  <title><p>KmerStream: Streaming algorithms for k-mer abundance
+  estimation</p></title>
+  <aug>
+    <au><snm>Melsted</snm><fnm>P</fnm></au>
+    <au><snm>Halld{\'o}rsson</snm><fnm>BV</fnm></au>
+  </aug>
+  <source>bioRxiv</source>
+  <publisher>Cold Spring Harbor Labs Journals</publisher>
+  <pubdate>2014</pubdate>
+</bibl>
+
+<bibl id="B22">
+  <title><p>Mason--a read simulator for second generation sequencing
+  data</p></title>
+  <aug>
+    <au><snm>Holtgrewe</snm><fnm>M</fnm></au>
+  </aug>
+  <source>Technical Report FU Berlin</source>
+  <pubdate>2010</pubdate>
+</bibl>
+
+<bibl id="B23">
+  <title><p>Fast gapped-read alignment with Bowtie 2</p></title>
+  <aug>
+    <au><snm>Langmead</snm><fnm>B</fnm></au>
+    <au><snm>Salzberg</snm><fnm>SL</fnm></au>
+  </aug>
+  <source>Nature methods</source>
+  <publisher>Nature Publishing Group</publisher>
+  <pubdate>2012</pubdate>
+  <volume>9</volume>
+  <issue>4</issue>
+  <fpage>357</fpage>
+  <lpage>-359</lpage>
+</bibl>
+
+<bibl id="B24">
+  <title><p>QUAST: quality assessment tool for genome assemblies</p></title>
+  <aug>
+    <au><snm>Gurevich</snm><fnm>A</fnm></au>
+    <au><snm>Saveliev</snm><fnm>V</fnm></au>
+    <au><snm>Vyahhi</snm><fnm>N</fnm></au>
+    <au><snm>Tesler</snm><fnm>G</fnm></au>
+  </aug>
+  <source>Bioinformatics</source>
+  <publisher>Oxford Univ Press</publisher>
+  <pubdate>2013</pubdate>
+  <volume>29</volume>
+  <issue>8</issue>
+  <fpage>1072</fpage>
+  <lpage>-1075</lpage>
+</bibl>
+
+<bibl id="B25">
+  <title><p>Velvet: algorithms for de novo short read assembly using de Bruijn
+  graphs</p></title>
+  <aug>
+    <au><snm>Zerbino</snm><fnm>DR</fnm></au>
+    <au><snm>Birney</snm><fnm>E</fnm></au>
+  </aug>
+  <source>Genome research</source>
+  <publisher>Cold Spring Harbor Lab</publisher>
+  <pubdate>2008</pubdate>
+  <volume>18</volume>
+  <issue>5</issue>
+  <fpage>821</fpage>
+  <lpage>-829</lpage>
+</bibl>
+
+<bibl id="B26">
+  <title><p>GAGE: A critical evaluation of genome assemblies and assembly
+  algorithms</p></title>
+  <aug>
+    <au><snm>Salzberg</snm><fnm>SL</fnm></au>
+    <au><snm>Phillippy</snm><fnm>AM</fnm></au>
+    <au><snm>Zimin</snm><fnm>A</fnm></au>
+    <au><snm>Puiu</snm><fnm>D</fnm></au>
+    <au><snm>Magoc</snm><fnm>T</fnm></au>
+    <au><snm>Koren</snm><fnm>S</fnm></au>
+    <au><snm>Treangen</snm><fnm>TJ</fnm></au>
+    <au><snm>Schatz</snm><fnm>MC</fnm></au>
+    <au><snm>Delcher</snm><fnm>AL</fnm></au>
+    <au><snm>Roberts</snm><fnm>M</fnm></au>
+    <au><cnm>others</cnm></au>
+  </aug>
+  <source>Genome research</source>
+  <publisher>Cold Spring Harbor Lab</publisher>
+  <pubdate>2012</pubdate>
+  <volume>22</volume>
+  <issue>3</issue>
+  <fpage>557</fpage>
+  <lpage>-567</lpage>
+</bibl>
+
+<bibl id="B27">
+  <title><p>Summary cache: a scalable wide-area web cache sharing
+  protocol</p></title>
+  <aug>
+    <au><snm>Fan</snm><fnm>L</fnm></au>
+    <au><snm>Cao</snm><fnm>P</fnm></au>
+    <au><snm>Almeida</snm><fnm>J</fnm></au>
+    <au><snm>Broder</snm><fnm>AZ</fnm></au>
+  </aug>
+  <source>IEEE/ACM Transactions on Networking (TON)</source>
+  <publisher>IEEE Press</publisher>
+  <pubdate>2000</pubdate>
+  <volume>8</volume>
+  <issue>3</issue>
+  <fpage>281</fpage>
+  <lpage>-293</lpage>
+</bibl>
+
+<bibl id="B28">
+  <title><p>An improved construction for counting bloom filters</p></title>
+  <aug>
+    <au><snm>Bonomi</snm><fnm>F</fnm></au>
+    <au><snm>Mitzenmacher</snm><fnm>M</fnm></au>
+    <au><snm>Panigrahy</snm><fnm>R</fnm></au>
+    <au><snm>Singh</snm><fnm>S</fnm></au>
+    <au><snm>Varghese</snm><fnm>G</fnm></au>
+  </aug>
+  <source>Algorithms--ESA 2006</source>
+  <publisher>Springer</publisher>
+  <pubdate>2006</pubdate>
+  <fpage>684</fpage>
+  <lpage>-695</lpage>
+</bibl>
+
+<bibl id="B29">
+  <title><p>An improved data stream summary: the count-min sketch and its
+  applications</p></title>
+  <aug>
+    <au><snm>Cormode</snm><fnm>G</fnm></au>
+    <au><snm>Muthukrishnan</snm><fnm>S</fnm></au>
+  </aug>
+  <source>Journal of Algorithms</source>
+  <publisher>Elsevier</publisher>
+  <pubdate>2005</pubdate>
+  <volume>55</volume>
+  <issue>1</issue>
+  <fpage>58</fpage>
+  <lpage>-75</lpage>
+</bibl>
+
+<bibl id="B30">
+  <title><p>These are not the k-mers you are looking for: efficient online
+  k-mer counting using a probabilistic data structure</p></title>
+  <aug>
+    <au><snm>Zhang</snm><fnm>Q</fnm></au>
+    <au><snm>Pell</snm><fnm>J</fnm></au>
+    <au><snm>Canino Koning</snm><fnm>R</fnm></au>
+    <au><snm>Howe</snm><fnm>AC</fnm></au>
+    <au><snm>Brown</snm><fnm>CT</fnm></au>
+  </aug>
+  <source>arXiv preprint arXiv:1309.2975</source>
+  <pubdate>2013</pubdate>
+</bibl>
+
+<bibl id="B31">
+  <title><p>Informed and automated k-mer size selection for genome
+  assembly</p></title>
+  <aug>
+    <au><snm>Chikhi</snm><fnm>R</fnm></au>
+    <au><snm>Medvedev</snm><fnm>P</fnm></au>
+  </aug>
+  <source>Bioinformatics</source>
+  <publisher>Oxford Univ Press</publisher>
+  <pubdate>2014</pubdate>
+  <volume>30</volume>
+  <issue>1</issue>
+  <fpage>31</fpage>
+  <lpage>-37</lpage>
+</bibl>
+
+</refgrp>
+} % end of \BMCxmlcomment

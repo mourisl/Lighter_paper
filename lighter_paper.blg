@@ -1,0 +1,71 @@
+This is BibTeX, Version 0.99d (TeX Live 2013)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: lighter_paper.aux
+The style file: bmc-mathphys.bst
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
+Reallocated global_strs (elt_size=20001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: lighter_paper.bib
+Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated glb_str_ptr (elt_size=4) to 30 items from 20.
+Reallocated global_strs (elt_size=20001) to 30 items from 20.
+Reallocated glb_str_end (elt_size=4) to 30 items from 20.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+You've used 31 entries,
+            7128 wiz_defined-function locations,
+            1304 strings with 14487 characters,
+and the built_in function-call counts, 170371 in all, are:
+= -- 20813
+> -- 1180
+< -- 740
++ -- 4980
+- -- 246
+* -- 12987
+:= -- 34045
+add.period$ -- 32
+call.type$ -- 31
+change.case$ -- 283
+chr.to.int$ -- 1657
+cite$ -- 31
+duplicate$ -- 3136
+empty$ -- 9570
+format.name$ -- 1049
+if$ -- 38325
+int.to.chr$ -- 1
+int.to.str$ -- 85
+missing$ -- 1071
+newline$ -- 965
+num.names$ -- 155
+pop$ -- 1217
+preamble$ -- 1
+purify$ -- 146
+quote$ -- 62
+skip$ -- 10358
+stack$ -- 0
+substring$ -- 21858
+swap$ -- 1176
+text.length$ -- 470
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 1301
+warning$ -- 0
+while$ -- 1102
+width$ -- 0
+write$ -- 1298
