@@ -1,6 +1,6 @@
 First:
 
-1. Change to the `paper/Evaluation` subdirectory of the repo
+1. Change to the `Evaluation` subdirectory of the repo
 2. Obtain [Quake]; we used version 0.3
 3. Obtain [Musket]; we used version 1.1
 4. Obtain [BLESS]; we used v0p12
