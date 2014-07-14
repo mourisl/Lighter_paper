@@ -384,7 +384,7 @@ We simulated six distinct datasets with 101bp single-end reads, varying average 
 
 We then ran all three tools on all six datasets, with results presented in Table 1.  In these comparisons, a true positive (TP) is an instance where an error is successfully corrected, \thatis with the correct base substituted.  A false positive (FP) is an instance where a spurious substitution is made at an error-free position.  A false negative (FN) is an instance where we either fail to detect an error or an incorrect base is substituted.  As done in previous studies \cite{liu2013musket}, we report the following summaries: recall = TP/(TP$+$NP), precision = TP/(TP$+$FP), F-score = 2$\times$recall$\times$precision/(recall$+$precision) and gain = (TP-FP)/(TP+FN).
 
-Unlike the other tools, Quake both trims the untrusted tails of the reads, and discards reads that it cannot correct. For a more fair comparison, Quake's result will contain the non-correctable reads through out this paper. And for the trimmed reads, the evaluation is done only on the reported portion. This leads to very high precision relative to other tools, though at the expense of discarded data.  Of the remaining tools, \tool and Musket achieve the highest precision, with Musket achieving slightly higher precision.  \tool achieves the highest recall, F-score and gain in all experiments.
+Unlike the other tools, Quake both trims the untrusted tails of the reads and discards reads it cannot correct. For a more fair comparison, Quake's result will contain the non-correctable reads throughout this paper. For reads that Quake trims, the evaluation is done only on the remaining portion. This leads to very high precision relative to other tools, though at the expense of discarded data.  Of the remaining tools, \tool and Musket achieve the highest precision, with Musket achieving slightly higher precision.  \tool achieves the highest recall, F-score and gain in all experiments.
 
 \paragraph{Scaling with depth of simulated sequencing.} We also used Mason to generate a series of datasets with 1\% error, similar to those used in Table 1, but for $10\times$, $20\times$, $35\times$, $70\times$, $140\times$ and $280\times$ average coverage.  We ran \tool on each and measured final occupancies (fraction of bits set) for Bloom filters $A$ and $B$.  If our assumptions and scaling arguments are accurate, we expect the final occupancies of the Bloom filters to remain approximately constant for relatively high levels of coverage.  As seen in Table 2, this is indeed the case.  Note that when coverage is quite low ($10\times$), the occupancy of table $B$ is significantly lower, since distributions of multiplicities of correct and incorrect \kmers become too similar to distinguish clearly.
 
@@ -395,8 +395,15 @@ Unlike the other tools, Quake both trims the untrusted tails of the reads, and d
 \paragraph{Cardinality of Bloom filter B.}  We also measured the number of correct \kmers added to table $B$. We used the Mason dataset with $70$x coverage and $1\%$ error rate. The \ecoli genome has 4,553,699 distinct \kmers, and 4,553,653 (99.999\%) of them are in table $B$.  
 %\myworries{Li: Is 4,553,653 the number of \emph{correct} \kmers in the filter, or just the number of \kmers? (4553653 are the number of correct \kmers. Also The 4553699 is the number of total distinct kmers not distinct canonicalized kmers.)}
 
-We conducted a similar experiment with Mason configured to simulate reads from a diploid version of the \ecoli genome.  Specifically, Mason was configured to introduce heterozygous SNPs at $0.1\%$ of the reference positions. Mason then sampled the same numbers of reads from both haplotypes, making a dataset with $70$x average coverage.
-Of the 159,098 simulated \kmers overlapping a position with a heterozygous SNP, table $B$ held 158,723 (99.764\%) of them at the end of the run.
+\paragraph{Effect of ploidy on Bloom filter B.}  We conducted a experiment similar to that in the previous section but with Mason configured to simulate reads from a diploid version of the \ecoli genome.
+Specifically, Mason was configured to introduce heterozygous SNPs at $0.1\%$ of the reference positions.
+Mason then sampled the same numbers of reads from both haplotypes, making a dataset with $70$x average coverage.
+Of the 159,098 simulated \kmers that overlapped a position with a heterozygous SNP, table $B$ held 158,723 (99.764\%) of them at the end of the run.
+Thus, \tool retained in table B a smaller fraction of the \kmers overlapping heterozygous positions (99.764\%) than of the \kmers overall (99.999\%).
+This is expected, since \kmers overlapping heterozygous positions occur about half as often as a typical correct \kmer.
+The count distribution of \kmers overlapping heterozygous positions is closer to the distribution for incorrect \kmers.
+This is one example of how non-uniformity of \kmer multiplicities can adversely affect \tool's (and most other tools') performance; this is elaborated in the Discussion section.
+
 %\myworries{Li: Need to explain how we configured \ecoli better.  0.1\% SNP is HETs?  HOMs?  Both?  Also, need to have the exact command-line arguments used written down somewhere. (They are are HET. I make sure the corresponding positions of the two references are different.)}
 
 % test the performance of alpha
@@ -478,13 +485,29 @@ Unlike previous methods, \tool does this without counting \kmers.
 By setting its parameters appropriately, its memory usage and accuracy can be held almost constant with respect to depth of sequencing.
 It is also quite fast and memory-efficient, and requires no temporary disk space.
 
-Though we demonstrate \tool in the context of sequencing error correction, \tool's counting-free approach could be applied in other situation where a collection of solid \kmers is desired.
+Though we demonstrate \tool in the context of sequencing error correction, \tool's counting-free approach could be applied in other situations where a collection of solid \kmers is desired.
 For example, one tool for scaling metagenome sequence assembly uses of a Bloom filter populated with solid \kmers as a memory-efficient, probabilistic representation of a De Bruijn graph \cite{pell2012scaling}.
 Other tools use counting Bloom filters \cite{fan2000summary, bonomi2006improved} or the related CountMin sketch \cite{cormode2005improved} to represent De Bruijn graphs for compression \cite{jones2012compression} or digital normalization and related tasks \cite{zhang2013these}.
-We expect Ideas from \tool could be useful in reducing the memory footprint of these and other tools. 
+We expect Ideas from \tool could be useful in reducing the memory footprint of these and other tools.
+
+An important question is how \tool's performance can be improved for datasets where coverage is significantly non-uniform, and where solid \kmers can therefore have widely varying abundance.
+In practice, datasets have non-uniform coverage because of ploidy, repeats and sequencing bias.
+Also, assays such as exome and RNA sequencing intentionally sample non-uniformly from the genome.
+Even in standard whole-genome DNA sequencing of a diploid individual, \kmers overlapping heterozygous variants will be about half as abundant as \kmers overlapping only homozygous variants.
+\tool's ability to classify the heterozygous \kmers deteriorates as a result, as shown in the section ``Effect of ploidy on Bloom Filter B'' above.
+Hammer \cite{medvedev2011error} relaxes the uniformity-of-coverage assumption and favors corrections that increase the multiplicity of a \kmer, without using a threshold to separate solid from non-solid \kmers.
+A question for future work is whether something similar can be accomplished in \tool's non-counting regime, or whether some counting (e.g. with a counting Bloom filter \cite{fan2000summary, bonomi2006improved} or CountMin sketch \cite{cormode2005improved}) is necessary.
+
+A related issue is systematically biased sequencing errors, \thatis errors that correlate with the sequence context.
+One study demonstrates this bias in data from the Illumina GA II sequencer \cite{nakamura2011sequence}.
+This bias boosts the multiplicity of some incorrect \kmers, causing problems for error correction tools.
+For \tool, increased multiplicity of incorrect \kmers causes them to appear more often (and spuriously) in Bloom filters A and/or B, ultimately decreasing accuracy.
+It has also been shown that these errors (a) tend to have low base quality, and (b) tend to occur only on one strand or the other \cite{nakamura2011sequence}.
+\tool's policy of using a 5th-percentile threshold to classify low-quality positions as untrusted will help in some cases.
+However, because \tool canonicalizes \kmers (as do many other error correctors), it loses information about whether an error tends to occur on one strand or the other.
 
 \tool has three parameters the user must specify: the \kmer length $k$, the genome length $G$, and the subsampling fraction $\alpha$.
-While the performance of \tool seems not to be overly sensitive to these parameters (see Figures 3 and 5), it is not desirable to leave these settings to the user.
+While the performance of \tool is not overly sensitive to these parameters (see Figures 3 and 5), it is not desirable to leave these settings to the user.
 In the future, we plan to extend \tool to estimate $G$, along with appropriate values for $k$, and $\alpha$, from the input reads.
 This could be accomplished with methods proposed in the KmerGenie \cite{chikhi2014informed} and KmerStream \cite{melsted2014kmerstream} studies.
 
