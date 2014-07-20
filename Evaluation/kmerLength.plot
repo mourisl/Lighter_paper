@@ -7,8 +7,8 @@ set output "kmerLength.eps"
 set key bottom 
 
 set xlabel "k-mer length"
-set ylabel "percent(%)"
+set ylabel "Gain(%)"
 
 set yrange [0:100]
 
-plot "kmerLength" using 1:2 with linespoint title "Recall", "kmerLength" using 1:3 with linespoint title "Precision", "kmerLength" using 1:4 with linespoint title "F-score", "kmerLength" using 1:5 with linespoint title "Gain"
+plot "kmerLength" using 1:2 with linespoint title "1% error", "kmerLength" using 1:3 with linespoint title "3% Error"

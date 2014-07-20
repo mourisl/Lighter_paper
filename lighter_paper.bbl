@@ -1,6 +1,6 @@
 %% BioMed_Central_Bib_Style_v1.01
 
-\begin{thebibliography}{31}
+\begin{thebibliography}{32}
 % BibTex style file: bmc-mathphys.bst (version 2.0), 2013-07-15
 \ifx \bisbn   \undefined \def \bisbn  #1{ISBN #1}\fi
 \ifx \binits  \undefined \def \binits#1{#1}\fi
@@ -473,6 +473,26 @@ arXiv preprint arXiv:1309.2975
 \endbibitem
 
 %%% 31
+\bibitem{nakamura2011sequence}
+\begin{botherref}
+\oauthor{\bsnm{Nakamura}, \binits{K.}},
+\oauthor{\bsnm{Oshima}, \binits{T.}},
+\oauthor{\bsnm{Morimoto}, \binits{T.}},
+\oauthor{\bsnm{Ikeda}, \binits{S.}},
+\oauthor{\bsnm{Yoshikawa}, \binits{H.}},
+\oauthor{\bsnm{Shiwa}, \binits{Y.}},
+\oauthor{\bsnm{Ishikawa}, \binits{S.}},
+\oauthor{\bsnm{Linak}, \binits{M.C.}},
+\oauthor{\bsnm{Hirai}, \binits{A.}},
+\oauthor{\bsnm{Takahashi}, \binits{H.}}, et al.:
+Sequence-specific error profile of illumina sequencers.
+Nucleic acids research,
+344
+(2011)
+\end{botherref}
+\endbibitem
+
+%%% 32
 \bibitem{chikhi2014informed}
 \begin{barticle}
 \bauthor{\bsnm{Chikhi}, \binits{R.}},
@@ -980,6 +1000,27 @@ arXiv preprint arXiv:1309.2975
 </bibl>
 
 <bibl id="B31">
+  <title><p>Sequence-specific error profile of Illumina sequencers</p></title>
+  <aug>
+    <au><snm>Nakamura</snm><fnm>K</fnm></au>
+    <au><snm>Oshima</snm><fnm>T</fnm></au>
+    <au><snm>Morimoto</snm><fnm>T</fnm></au>
+    <au><snm>Ikeda</snm><fnm>S</fnm></au>
+    <au><snm>Yoshikawa</snm><fnm>H</fnm></au>
+    <au><snm>Shiwa</snm><fnm>Y</fnm></au>
+    <au><snm>Ishikawa</snm><fnm>S</fnm></au>
+    <au><snm>Linak</snm><fnm>MC</fnm></au>
+    <au><snm>Hirai</snm><fnm>A</fnm></au>
+    <au><snm>Takahashi</snm><fnm>H</fnm></au>
+    <au><cnm>others</cnm></au>
+  </aug>
+  <source>Nucleic acids research</source>
+  <publisher>Oxford Univ Press</publisher>
+  <pubdate>2011</pubdate>
+  <fpage>gkr344</fpage>
+</bibl>
+
+<bibl id="B32">
   <title><p>Informed and automated k-mer size selection for genome
   assembly</p></title>
   <aug>
