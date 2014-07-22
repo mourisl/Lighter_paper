@@ -11,4 +11,4 @@ set ylabel "Gain(%)"
 
 set yrange [0:100]
 
-plot "kmerLength" using 1:2 with linespoint title "1% error", "kmerLength" using 1:3 with linespoint title "3% Error"
+plot "kmerLength" using 1:2 with linespoint title "35x 1% Recall", "kmerLength" using 1:3 with linespoint title "35x 1% Precision", "kmerLength" using 1:4 with linespoint title "35x 3% Recall", "kmerLength" using 1:5 with linespoint title "35x 3% Precision"

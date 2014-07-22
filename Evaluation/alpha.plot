@@ -19,4 +19,4 @@ set yrange [85:100]
 
 set key bottom center
 
-plot "alpha" using 1:2 with linespoint title "Recall", "alpha" using 1:3 with linespoint title "Precision", "alpha" using 1:4 with linespoint title "F-score", "alpha" using 1:5 with linespoint title "Gain"
+plot "alpha" using 1:2 with linespoint title "35x 1% Recall", "alpha" using 1:3 with linespoint title "35x 1% Precision", "alpha" using 1:4 with linespoint title "35x 3% Recall", "alpha" using 1:5 with linespoint title "35x 3% Precision"
