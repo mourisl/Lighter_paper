@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  23 JUL 2014 11:54
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  23 JUL 2014 12:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -417,45 +417,45 @@ e
 ))
 
 LaTeX Font Warning: Font shape `OT1/cmss/bx/n' in size <13> not available
-(Font)              size <12> substituted on input line 114.
+(Font)              size <12> substituted on input line 115.
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <24> not available
-(Font)              size <24.88> substituted on input line 122.
+(Font)              size <24.88> substituted on input line 123.
 
-LaTeX Font Info:    Calculating math sizes for size <11> on input line 148.
+LaTeX Font Info:    Calculating math sizes for size <11> on input line 149.
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <5.5> not available
-(Font)              size <5> substituted on input line 148.
+(Font)              size <5> substituted on input line 149.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <5.5> not available
-(Font)              size <5> substituted on input line 148.
+(Font)              size <5> substituted on input line 149.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <5.5> not available
-(Font)              size <5> substituted on input line 148.
+(Font)              size <5> substituted on input line 149.
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <11> on input line 148.
+(Font)              <11> on input line 149.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7.69997> on input line 148.
+(Font)              <7.69997> on input line 149.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5.5> on input line 148.
+(Font)              <5.5> on input line 149.
 \address@aff1=\toks21
 \address@aff2=\toks22
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 205.
+(Font)              <7> on input line 206.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 205.
+(Font)              <5> on input line 206.
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/it' in size <10> not available
-(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 222.
+(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 223.
 
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/it' in size <8> not available
-(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 290.
+(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 291.
 
 
 
@@ -469,7 +469,7 @@ Overfull \hbox (1.0pt too wide) has occurred while \output is active
 [2] [3] [4] [5] [6] [7] [8] [9] [10]
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/it' in size <7> not available
-(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 545.
+(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 548.
 
 
 (./lighter_paper.bbl [11])
@@ -481,7 +481,7 @@ Package epstopdf Info: Source file: <lighter_framework.eps>
 (epstopdf)                    size: 81072 bytes
 (epstopdf)             Command: <repstopdf --outfile=lighter_framework-eps-conv
 erted-to.pdf lighter_framework.eps>
-(epstopdf)             \includegraphics on input line 584.
+(epstopdf)             \includegraphics on input line 587.
 Package epstopdf Info: Output file is already uptodate.
 
 <lighter_framework-eps-converted-to.pdf, id=52, 795.97375pt x 597.23125pt>
@@ -489,12 +489,16 @@ File: lighter_framework-eps-converted-to.pdf Graphic file (type pdf)
 
 <use lighter_framework-eps-converted-to.pdf>
 Package pdftex.def Info: lighter_framework-eps-converted-to.pdf used on input l
-ine 584.
+ine 587.
 (pdftex.def)             Requested size: 270.75pt x 203.14706pt.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 586.
+(Font)              <8> on input line 589.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 586.
+(Font)              <6> on input line 589.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
 Package epstopdf Info: Source file: <ErrorCorrection.eps>
 (epstopdf)                    date: 2014-06-30 11:32:48
 (epstopdf)                    size: 141770 bytes
@@ -503,15 +507,14 @@ Package epstopdf Info: Source file: <ErrorCorrection.eps>
 (epstopdf)                    size: 35640 bytes
 (epstopdf)             Command: <repstopdf --outfile=ErrorCorrection-eps-conver
 ted-to.pdf ErrorCorrection.eps>
-(epstopdf)             \includegraphics on input line 592.
+(epstopdf)             \includegraphics on input line 595.
 Package epstopdf Info: Output file is already uptodate.
-
 <ErrorCorrection-eps-converted-to.pdf, id=53, 795.97375pt x 466.74374pt>
 File: ErrorCorrection-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ErrorCorrection-eps-converted-to.pdf>
 Package pdftex.def Info: ErrorCorrection-eps-converted-to.pdf used on input lin
-e 592.
+e 595.
 (pdftex.def)             Requested size: 270.75pt x 158.762pt.
 
 
@@ -525,16 +528,16 @@ Package epstopdf Info: Source file: <alpha.eps>
 (epstopdf)                    size: 8023 bytes
 (epstopdf)             Command: <repstopdf --outfile=alpha-eps-converted-to.pdf
  alpha.eps>
-(epstopdf)             \includegraphics on input line 601.
+(epstopdf)             \includegraphics on input line 604.
 Package epstopdf Info: Output file is already uptodate.
 <alpha-eps-converted-to.pdf, id=54, 361.35pt x 252.945pt>
 File: alpha-eps-converted-to.pdf Graphic file (type pdf)
 
 <use alpha-eps-converted-to.pdf>
-Package pdftex.def Info: alpha-eps-converted-to.pdf used on input line 601.
+Package pdftex.def Info: alpha-eps-converted-to.pdf used on input line 604.
 (pdftex.def)             Requested size: 361.34912pt x 252.94438pt.
 
-Overfull \hbox (12.84912pt too wide) in paragraph at lines 601--603
+Overfull \hbox (12.84912pt too wide) in paragraph at lines 604--606
  [] 
  []
 
@@ -550,17 +553,17 @@ Package epstopdf Info: Source file: <bloom_occupancy_alpha.eps>
 (epstopdf)                    size: 9983 bytes
 (epstopdf)             Command: <repstopdf --outfile=bloom_occupancy_alpha-eps-
 converted-to.pdf bloom_occupancy_alpha.eps>
-(epstopdf)             \includegraphics on input line 610.
+(epstopdf)             \includegraphics on input line 613.
 Package epstopdf Info: Output file is already uptodate.
 <bloom_occupancy_alpha-eps-converted-to.pdf, id=55, 361.35pt x 252.945pt>
 File: bloom_occupancy_alpha-eps-converted-to.pdf Graphic file (type pdf)
 
 <use bloom_occupancy_alpha-eps-converted-to.pdf>
 Package pdftex.def Info: bloom_occupancy_alpha-eps-converted-to.pdf used on inp
-ut line 610.
+ut line 613.
 (pdftex.def)             Requested size: 361.34912pt x 252.94438pt.
 
-Overfull \hbox (12.84912pt too wide) in paragraph at lines 610--612
+Overfull \hbox (12.84912pt too wide) in paragraph at lines 613--615
  [] 
  []
 
@@ -575,17 +578,17 @@ Package epstopdf Info: Source file: <kmerLength.eps>
 (epstopdf)                    size: 8877 bytes
 (epstopdf)             Command: <repstopdf --outfile=kmerLength-eps-converted-t
 o.pdf kmerLength.eps>
-(epstopdf)             \includegraphics on input line 619.
+(epstopdf)             \includegraphics on input line 622.
 Package epstopdf Info: Output file is already uptodate.
 <kmerLength-eps-converted-to.pdf, id=56, 361.35pt x 252.945pt>
 File: kmerLength-eps-converted-to.pdf Graphic file (type pdf)
 
 <use kmerLength-eps-converted-to.pdf>
-Package pdftex.def Info: kmerLength-eps-converted-to.pdf used on input line 619
+Package pdftex.def Info: kmerLength-eps-converted-to.pdf used on input line 622
 .
 (pdftex.def)             Requested size: 361.34912pt x 252.94438pt.
 
-Overfull \hbox (12.84912pt too wide) in paragraph at lines 619--621
+Overfull \hbox (12.84912pt too wide) in paragraph at lines 622--624
  [] 
  []
 
@@ -600,22 +603,22 @@ Package epstopdf Info: Source file: <per_base.eps>
 (epstopdf)                    size: 10025 bytes
 (epstopdf)             Command: <repstopdf --outfile=per_base-eps-converted-to.
 pdf per_base.eps>
-(epstopdf)             \includegraphics on input line 628.
+(epstopdf)             \includegraphics on input line 631.
 Package epstopdf Info: Output file is already uptodate.
 <per_base-eps-converted-to.pdf, id=57, 361.35pt x 252.945pt>
 File: per_base-eps-converted-to.pdf Graphic file (type pdf)
 
 <use per_base-eps-converted-to.pdf>
-Package pdftex.def Info: per_base-eps-converted-to.pdf used on input line 628.
+Package pdftex.def Info: per_base-eps-converted-to.pdf used on input line 631.
 (pdftex.def)             Requested size: 361.34912pt x 252.94438pt.
 
-Overfull \hbox (12.84912pt too wide) in paragraph at lines 628--630
+Overfull \hbox (12.84912pt too wide) in paragraph at lines 631--633
  [] 
  []
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
-(Font)              using `OT1/cmss/bx/n' instead on input line 630.
+(Font)              using `OT1/cmss/bx/n' instead on input line 633.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -628,23 +631,22 @@ Package epstopdf Info: Source file: <runtime.eps>
 (epstopdf)                    size: 7200 bytes
 (epstopdf)             Command: <repstopdf --outfile=runtime-eps-converted-to.p
 df runtime.eps>
-(epstopdf)             \includegraphics on input line 637.
+(epstopdf)             \includegraphics on input line 640.
 Package epstopdf Info: Output file is already uptodate.
 <runtime-eps-converted-to.pdf, id=58, 361.35pt x 252.945pt>
 File: runtime-eps-converted-to.pdf Graphic file (type pdf)
 
 <use runtime-eps-converted-to.pdf>
-Package pdftex.def Info: runtime-eps-converted-to.pdf used on input line 637.
+Package pdftex.def Info: runtime-eps-converted-to.pdf used on input line 640.
 (pdftex.def)             Requested size: 361.34912pt x 252.94438pt.
 
-Overfull \hbox (12.84912pt too wide) in paragraph at lines 637--639
+Overfull \hbox (12.84912pt too wide) in paragraph at lines 640--642
  [] 
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[12 <./lighter_framework-eps-converted-to.pdf>]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -674,10 +676,10 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 AED: lastpage setting LastPage
-[13 <./ErrorCorrection-eps-converted-to.pdf> <./alpha-eps-converted-to.pdf>]
-[14 <./bloom_occupancy_alpha-eps-converted-to.pdf> <./kmerLength-eps-converted-
-to.pdf>] [15 <./per_base-eps-converted-to.pdf> <./runtime-eps-converted-to.pdf>
-] [16] [17] (./lighter_paper.aux)
+[12] [13 <./lighter_framework-eps-converted-to.pdf> <./ErrorCorrection-eps-conv
+erted-to.pdf>] [14 <./alpha-eps-converted-to.pdf> <./bloom_occupancy_alpha-eps-
+converted-to.pdf>] [15 <./kmerLength-eps-converted-to.pdf> <./per_base-eps-conv
+erted-to.pdf>] [16 <./runtime-eps-converted-to.pdf>] [17] (./lighter_paper.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
@@ -685,15 +687,12 @@ LaTeX Font Warning: Size substitutions with differences
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
- 3032 strings out of 493488
- 41052 string characters out of 3141326
- 151892 words of memory out of 3000000
- 6287 multiletter control sequences out of 15000+200000
+ 3034 strings out of 493488
+ 41083 string characters out of 3141326
+ 160242 words of memory out of 3000000
+ 6289 multiletter control sequences out of 15000+200000
  14015 words of font info for 48 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
  37i,10n,37p,1689b,395s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -718,7 +717,7 @@ texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/te
 xlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texl
 ive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texli
 ve/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on lighter_paper.pdf (17 pages, 427039 bytes).
+Output written on lighter_paper.pdf (17 pages, 427369 bytes).
 PDF statistics:
  182 PDF objects out of 1000 (max. 8388607)
  126 compressed objects within 2 object streams

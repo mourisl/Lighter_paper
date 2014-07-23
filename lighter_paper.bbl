@@ -1,6 +1,6 @@
 %% BioMed_Central_Bib_Style_v1.01
 
-\begin{thebibliography}{32}
+\begin{thebibliography}{33}
 % BibTex style file: bmc-mathphys.bst (version 2.0), 2013-07-15
 \ifx \bisbn   \undefined \def \bisbn  #1{ISBN #1}\fi
 \ifx \binits  \undefined \def \binits#1{#1}\fi
@@ -339,6 +339,28 @@ bioRxiv
 \endbibitem
 
 %%% 22
+\bibitem{luo2012soapdenovo2}
+\begin{barticle}
+\bauthor{\bsnm{Luo}, \binits{R.}},
+\bauthor{\bsnm{Liu}, \binits{B.}},
+\bauthor{\bsnm{Xie}, \binits{Y.}},
+\bauthor{\bsnm{Li}, \binits{Z.}},
+\bauthor{\bsnm{Huang}, \binits{W.}},
+\bauthor{\bsnm{Yuan}, \binits{J.}},
+\bauthor{\bsnm{He}, \binits{G.}},
+\bauthor{\bsnm{Chen}, \binits{Y.}},
+\bauthor{\bsnm{Pan}, \binits{Q.}},
+\bauthor{\bsnm{Liu}, \binits{Y.}}, \betal:
+\batitle{Soapdenovo2: an empirically improved memory-efficient short-read de
+  novo assembler}.
+\bjtitle{Gigascience}
+\bvolume{1}(\bissue{1}),
+\bfpage{18}
+(\byear{2012})
+\end{barticle}
+\endbibitem
+
+%%% 23
 \bibitem{holtgrewe2010mason}
 \begin{botherref}
 \oauthor{\bsnm{Holtgrewe}, \binits{M.}}:
@@ -348,7 +370,7 @@ Technical Report FU Berlin
 \end{botherref}
 \endbibitem
 
-%%% 23
+%%% 24
 \bibitem{langmead2012fast}
 \begin{barticle}
 \bauthor{\bsnm{Langmead}, \binits{B.}},
@@ -361,7 +383,7 @@ Technical Report FU Berlin
 \end{barticle}
 \endbibitem
 
-%%% 24
+%%% 25
 \bibitem{gurevich2013quast}
 \begin{barticle}
 \bauthor{\bsnm{Gurevich}, \binits{A.}},
@@ -376,7 +398,7 @@ Technical Report FU Berlin
 \end{barticle}
 \endbibitem
 
-%%% 25
+%%% 26
 \bibitem{zerbino2008velvet}
 \begin{barticle}
 \bauthor{\bsnm{Zerbino}, \binits{D.R.}},
@@ -390,7 +412,7 @@ Technical Report FU Berlin
 \end{barticle}
 \endbibitem
 
-%%% 26
+%%% 27
 \bibitem{salzberg2012gage}
 \begin{barticle}
 \bauthor{\bsnm{Salzberg}, \binits{S.L.}},
@@ -412,7 +434,7 @@ Technical Report FU Berlin
 \end{barticle}
 \endbibitem
 
-%%% 27
+%%% 28
 \bibitem{fan2000summary}
 \begin{barticle}
 \bauthor{\bsnm{Fan}, \binits{L.}},
@@ -427,7 +449,7 @@ Technical Report FU Berlin
 \end{barticle}
 \endbibitem
 
-%%% 28
+%%% 29
 \bibitem{bonomi2006improved}
 \begin{bchapter}
 \bauthor{\bsnm{Bonomi}, \binits{F.}},
@@ -443,7 +465,7 @@ pp. \bfpage{684}--\blpage{695}.
 \end{bchapter}
 \endbibitem
 
-%%% 29
+%%% 30
 \bibitem{cormode2005improved}
 \begin{barticle}
 \bauthor{\bsnm{Cormode}, \binits{G.}},
@@ -457,7 +479,7 @@ pp. \bfpage{684}--\blpage{695}.
 \end{barticle}
 \endbibitem
 
-%%% 30
+%%% 31
 \bibitem{zhang2013these}
 \begin{botherref}
 \oauthor{\bsnm{Zhang}, \binits{Q.}},
@@ -472,7 +494,7 @@ arXiv preprint arXiv:1309.2975
 \end{botherref}
 \endbibitem
 
-%%% 31
+%%% 32
 \bibitem{nakamura2011sequence}
 \begin{botherref}
 \oauthor{\bsnm{Nakamura}, \binits{K.}},
@@ -492,7 +514,7 @@ Nucleic acids research,
 \end{botherref}
 \endbibitem
 
-%%% 32
+%%% 33
 \bibitem{chikhi2014informed}
 \begin{barticle}
 \bauthor{\bsnm{Chikhi}, \binits{R.}},
@@ -853,6 +875,29 @@ Nucleic acids research,
 </bibl>
 
 <bibl id="B22">
+  <title><p>SOAPdenovo2: an empirically improved memory-efficient short-read de
+  novo assembler</p></title>
+  <aug>
+    <au><snm>Luo</snm><fnm>R</fnm></au>
+    <au><snm>Liu</snm><fnm>B</fnm></au>
+    <au><snm>Xie</snm><fnm>Y</fnm></au>
+    <au><snm>Li</snm><fnm>Z</fnm></au>
+    <au><snm>Huang</snm><fnm>W</fnm></au>
+    <au><snm>Yuan</snm><fnm>J</fnm></au>
+    <au><snm>He</snm><fnm>G</fnm></au>
+    <au><snm>Chen</snm><fnm>Y</fnm></au>
+    <au><snm>Pan</snm><fnm>Q</fnm></au>
+    <au><snm>Liu</snm><fnm>Y</fnm></au>
+    <au><cnm>others</cnm></au>
+  </aug>
+  <source>Gigascience</source>
+  <pubdate>2012</pubdate>
+  <volume>1</volume>
+  <issue>1</issue>
+  <fpage>18</fpage>
+</bibl>
+
+<bibl id="B23">
   <title><p>Mason--a read simulator for second generation sequencing
   data</p></title>
   <aug>
@@ -862,7 +907,7 @@ Nucleic acids research,
   <pubdate>2010</pubdate>
 </bibl>
 
-<bibl id="B23">
+<bibl id="B24">
   <title><p>Fast gapped-read alignment with Bowtie 2</p></title>
   <aug>
     <au><snm>Langmead</snm><fnm>B</fnm></au>
@@ -877,7 +922,7 @@ Nucleic acids research,
   <lpage>-359</lpage>
 </bibl>
 
-<bibl id="B24">
+<bibl id="B25">
   <title><p>QUAST: quality assessment tool for genome assemblies</p></title>
   <aug>
     <au><snm>Gurevich</snm><fnm>A</fnm></au>
@@ -894,7 +939,7 @@ Nucleic acids research,
   <lpage>-1075</lpage>
 </bibl>
 
-<bibl id="B25">
+<bibl id="B26">
   <title><p>Velvet: algorithms for de novo short read assembly using de Bruijn
   graphs</p></title>
   <aug>
@@ -910,7 +955,7 @@ Nucleic acids research,
   <lpage>-829</lpage>
 </bibl>
 
-<bibl id="B26">
+<bibl id="B27">
   <title><p>GAGE: A critical evaluation of genome assemblies and assembly
   algorithms</p></title>
   <aug>
@@ -935,7 +980,7 @@ Nucleic acids research,
   <lpage>-567</lpage>
 </bibl>
 
-<bibl id="B27">
+<bibl id="B28">
   <title><p>Summary cache: a scalable wide-area web cache sharing
   protocol</p></title>
   <aug>
@@ -953,7 +998,7 @@ Nucleic acids research,
   <lpage>-293</lpage>
 </bibl>
 
-<bibl id="B28">
+<bibl id="B29">
   <title><p>An improved construction for counting bloom filters</p></title>
   <aug>
     <au><snm>Bonomi</snm><fnm>F</fnm></au>
@@ -969,7 +1014,7 @@ Nucleic acids research,
   <lpage>-695</lpage>
 </bibl>
 
-<bibl id="B29">
+<bibl id="B30">
   <title><p>An improved data stream summary: the count-min sketch and its
   applications</p></title>
   <aug>
@@ -985,7 +1030,7 @@ Nucleic acids research,
   <lpage>-75</lpage>
 </bibl>
 
-<bibl id="B30">
+<bibl id="B31">
   <title><p>These are not the k-mers you are looking for: efficient online
   k-mer counting using a probabilistic data structure</p></title>
   <aug>
@@ -999,7 +1044,7 @@ Nucleic acids research,
   <pubdate>2013</pubdate>
 </bibl>
 
-<bibl id="B31">
+<bibl id="B32">
   <title><p>Sequence-specific error profile of Illumina sequencers</p></title>
   <aug>
     <au><snm>Nakamura</snm><fnm>K</fnm></au>
@@ -1020,7 +1065,7 @@ Nucleic acids research,
   <fpage>gkr344</fpage>
 </bibl>
 
-<bibl id="B32">
+<bibl id="B33">
   <title><p>Informed and automated k-mer size selection for genome
   assembly</p></title>
   <aug>

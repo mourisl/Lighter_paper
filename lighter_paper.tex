@@ -104,6 +104,7 @@
 \newcommand{\kmers}{\ensuremath{k}-mers\xspace}
 \newcommand{\tool}{Lighter\xspace}
 \newcommand{\ecoli}{\emph{E. coli}\xspace}
+\newcommand{\ecolinoemph}{E. coli\xspace}
 
 \newcommand\myworries[1]{\textcolor{red}{#1}}%\usepackage[applemac]{inputenc} %applemac support if unicode package fails
 
@@ -381,7 +382,7 @@ As shown in Figure 1, Lighter works in three passes: (1) populating Bloom filter
 \section*{Evaluation}
 \subsection*{Simulated data set}
 
-\paragraph{Accuracy on simulated data.} We compared \tool v1.0.0's performance with Quake v0.3\cite{kelley2010quake}, Musket v1.1\cite{liu2013musket} and BLESS v0p17 \cite{heo2014bless}.  We generated collection of reads simulated from the reference genome for the K12 strain of \ecoli (NC\_000913.2) using Mason v0.1.2 \cite{holtgrewe2010mason}.  
+\paragraph{Accuracy on simulated data.} We compared \tool v1.0.2's performance \myworries{(Li: ensure we make a release for the relevant version of the Lighter repo so that it's obvious what version people should use to recreate our results.  Think this should be v1.0.2.)} with Quake v0.3\cite{kelley2010quake}, Musket v1.1\cite{liu2013musket}, BLESS v0p17 \cite{heo2014bless}, and SOAPec v2.0.1 \cite{luo2012soapdenovo2} \myworries{(Li: is this version number right?)}.  We generated collection of reads simulated from the reference genome for the K12 strain of \ecoli (NC\_000913.2) using Mason v0.1.2 \cite{holtgrewe2010mason}.  
 
 We simulated six distinct datasets with 101bp single-end reads, varying average coverage ($35$x, $75$x $140$x) and average error rate ($1\%$ and $3\%$).  For a given error rate $e$ we specify Mason parameters \verb+-qmb+ $e/2$ \verb+-qme+ $3e$, so that the average error rate is $e$ but errors are more common toward the 3' end, as in real datasets.
 
@@ -389,9 +390,11 @@ We then ran all four tools on all six datasets, with results presented in Table 
 
 Since the error correctors are sensitive to the choice of \kmer size, we give different sizes to the tools, the result in Table 1 corresponding to the results with the best gain value. Quake crashed on larger \kmer size through out all the experiments we conducted in this paper.
 
-Unlike the other tools, Quake both trims the untrusted tails of the reads and discards reads it cannot correct. For a more fair comparison, Quake's result will contain the non-correctable reads for all the simulated data sets. For reads that Quake trims, the evaluation is done only on the remaining portion. This leads to very high precision relative to other tools, though at the expense of discarded data. Of the remaining tools, \tool and Musket achieve the highest precision, with Musket achieving slightly higher precision.  \tool achieves the highest recall, F-score and gain in the experiments with 1\% error, and comparable with BLESS when the error rate is 3\%. BLESS sometimes trims reads, but the total amount trimmed should not affect the result much. 
+Unlike the other tools, Quake both trims the untrusted tails of the reads and discards reads it cannot correct. For a more fair comparison, Quake's result will contain the non-correctable reads for all the simulated data sets. For reads that Quake trims, the evaluation is done only on the remaining portion. This leads to very high precision relative to other tools, though at the expense of discarded data.  \myworries{(I see that Quake results in Tables 3 and 5 have changed and are worse now.  Has something changed about how we're accounting for Quake's trimming in our evaluations?  Does this paragraph need revising as a result?)}.
 
-In Table 1, when the error rate is 1\%, Lighter achieve the best performance when the \kmer size is 23. Thus, for the following detailed evaluation for Lighter, we fixed the \kmer size to 23.
+Of the remaining tools, \tool and Musket achieve the highest precision, with Musket achieving slightly higher precision.  \tool achieves the highest recall, F-score and gain in the experiments with 1\% error, and comparable with BLESS when the error rate is 3\%. BLESS sometimes trims reads, but the total amount trimmed should not affect the result much \myworries{(Li: elaborate -- is there only a very small fraction of reads/nucleotides trimmed?  What is the fraction?)}.
+
+For the 1\% error dataset, we found that \tool's gain was maximized by setting the \kmer size to 23.  We therefore fix the \kmer size to 23 for subsequent experiments.
 
 \paragraph{Scaling with depth of simulated sequencing.} We also used Mason to generate a series of datasets with 1\% error, similar to those used in Table 1, but for $20\times$, $35\times$, $70\times$, $140\times$ and $280\times$ average coverage.  We ran \tool on each and measured final occupancies (fraction of bits set) for Bloom filters $A$ and $B$.  If our assumptions and scaling arguments are accurate, we expect the final occupancies of the Bloom filters to remain approximately constant for relatively high levels of coverage.  As seen in Table 2, this is indeed the case.  
 %Note that when coverage is quite low ($10\times$), the occupancy of table $B$ is significantly lower, since distributions of multiplicities of correct and incorrect \kmers become too similar to distinguish clearly.
@@ -409,7 +412,10 @@ Mason then sampled the same numbers of reads from both genomes, making a dataset
 Of the 214,567 simulated \kmers that overlapped a position with a heterozygous SNP, table $B$ held 214,545 (99.990\%) of them at the end of the run. This
 Thus, \tool retained in table B almost the same fraction of the \kmers overlapping heterozygous positions (99.990\%) than of the \kmers overall (99.999\%).
 
-For Musket and BLESS, they can infer the threshold for the multiplicity of solid \kmers. Given this data set, Musket set the threshold to 10 and BLESS set it to 9 when the \kmer size is 23. By counting the multiplicity of the \kmers overlapping heterozygous positions, we can conclude that Musket obtained 214,458 of those \kmers and BLESS obtained 214,557 of them. This shows that at least for the diploid case, Lighter can still retrieve those \kmers with lower multiplicity due to heterozygous SNP and the number Lighter obtained is comparable to other error correctors based on counting.
+Musket and BLESS both infer a threshold for the multiplicity of solid \kmers. In this experiment, Musket inferred a threshold of 10 and BLESS inferred a threshold of 9.
+Both used a \kmer size is 23 \myworries{(both used this size, right?)}.
+By counting the multiplicity of the \kmers overlapping heterozygous positions, we can conclude that Musket obtained 214,458 of those \kmers and BLESS obtained 214,557 of them. This shows that at least for the diploid case,
+So for this experiment \tool succeeds at classifying lower multiplicity due to heterozygous SNP and the number Lighter obtained is comparable to other error correctors based on counting.
 
 Nevertheless, we belive for higher ploidity, we may have some issue. 
 The count distribution of \kmers overlapping heterozygous positions is closer to the distribution for incorrect \kmers.
@@ -445,10 +451,10 @@ A key parameter of \tool is the \kmer length $k$.  Smaller $k$ yields higher pro
 
 
 \subsection*{Real datasets}
-\paragraph{\ecoli.}  Next we benchmarked the same error correction tools using a real sequencing dataset, ERR022075.
+\paragraph{\ecolinoemph.}  Next we benchmarked the same error correction tools using a real sequencing dataset, ERR022075.
 This is a deep DNA sequencing dataset of the the K-12 strain of the \ecoli genome.
 We again used Quake, Musket, BLESS and Lighter to correct errors in the dataset.
-To obtain a level of coverage more reflective of other projects, we randomly subsampled the reads in the dataset to obtain roughly 75x coverage (~3.5M reads) of the \ecoli K-12 reference genome.
+To obtain a level of coverage more reflective of other projects, we randomly subsampled the reads in the dataset to obtain roughly 75x coverage ($\sim$3.5M reads) of the \ecoli K-12 reference genome.
 The reads are 100 $\times$ 102 bp paired-end reads.
 Because BLESS cannot handle paired-end reads where the ends have different lengths, we truncated the last 2 bases from the 102 bp end before running our experiments.
 
@@ -473,7 +479,7 @@ N50 is the length such that the total length of the contigs no shorter than the 
 Assemblies produced from reads corrected with the four programs are very similar according to these measures, with Quake and Lighter yielding the longest contigs and the best genome coverage. Surprisingly, the post-correction assemblies have more differences at nucleotide level compared to the pre-correction assemblies, perhaps due to spurious corrections.
 
 \subsubsection*{Human Chr14}
-We also evaluated \tool's effect on alignment and assembly using a dataset from the GAGE project \cite{salzberg2012gage}.  The dataset consists of real 101 $\times$ 101 bp paired-end reads covering human chromosome 14 to $35\times$ average coverage (~36.5M reads).  We set the \kmer length to 19 for all error correctors for these experiments.
+We also evaluated \tool's effect on alignment and assembly using a dataset from the GAGE project \cite{salzberg2012gage}.  The dataset consists of real 101 $\times$ 101 bp paired-end reads covering human chromosome 14 to $35\times$ average coverage ($\sim$36.5M reads).  We set the \kmer length to 19 for all error correctors for these experiments.
 
 Error correction's effect on Bowtie 2 alignment statistics are shown in Table 5.  We used Bowtie 2 with default parameters to align the reads to an index of the human chromosome 14 sequence of the hg19 build of the human genome.  Programs had comparable performance, adding between 171,000 - 323,000 aligned reads and increasing the average number of matching bases per read by 0.61 - 0.70 bases. As before, Quake produced fewer correct bases per mapped read on average due to trimming.   
 
