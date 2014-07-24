@@ -1,27 +1,16 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  23 JUL 2014 12:18
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=latex 2014.5.26)  23 JUL 2014 22:42
 entering extended mode
  restricted \write18 enabled.
- file:line:error style messages enabled.
  %&-line parsing enabled.
-**lighter_paper.tex
+**lighter_paper
 (./lighter_paper.tex
 LaTeX2e <2011/06/27>
-Babel <v3.8m> and hyphenation patterns for english, dumylang, nohyphenation, ge
-rman-x-2012-05-30, ngerman-x-2012-05-30, afrikaans, ancientgreek, ibycus, arabi
-c, armenian, basque, bulgarian, catalan, pinyin, coptic, croatian, czech, danis
-h, dutch, ukenglish, usenglishmax, esperanto, estonian, ethiopic, farsi, finnis
-h, french, friulan, galician, german, ngerman, swissgerman, monogreek, greek, h
-ungarian, icelandic, assamese, bengali, gujarati, hindi, kannada, malayalam, ma
-rathi, oriya, panjabi, tamil, telugu, indonesian, interlingua, irish, italian, 
-kurmanji, latin, latvian, lithuanian, mongolian, mongolianlmc, bokmal, nynorsk,
- polish, portuguese, romanian, romansh, russian, sanskrit, serbian, serbianc, s
-lovak, slovenian, spanish, swedish, turkish, turkmen, ukrainian, uppersorbian, 
-welsh, loaded.
+Babel <3.9k> and hyphenation patterns for 78 languages loaded.
 (./bmcart.cls
 Document Class: bmcart 2012/06/27BioMed Central class (VS)
-(/usr/local/texlive/2012/texmf-dist/tex/latex/base/article.cls
+(/usr/local/texlive/2013/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
-(/usr/local/texlive/2012/texmf-dist/tex/latex/base/size10.clo
+(/usr/local/texlive/2013/texmf-dist/tex/latex/base/size10.clo
 File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -38,31 +27,22 @@ File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \mathindent=\dimen103
 
-(/usr/local/texlive/2012/texmf-dist/tex/latex/graphics/keyval.sty
+(/usr/local/texlive/2013/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks14
 )
-(/usr/local/texlive/2012/texmf-dist/tex/latex/xcolor/xcolor.sty
+(/usr/local/texlive/2013/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
 
-(/usr/local/texlive/2012/texmf-dist/tex/latex/latexconfig/color.cfg
+(/usr/local/texlive/2013/texmf-dist/tex/latex/latexconfig/color.cfg
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
-Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Driver file: dvips.def on input line 225.
 
-(/usr/local/texlive/2012/texmf-dist/tex/latex/pdftex-def/pdftex.def
-File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
-
-(/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/infwarerr.sty
-Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
-)
-(/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
-Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
-)
-\Gread@gobject=\count87
+(/usr/local/texlive/2013/texmf-dist/tex/latex/graphics/dvips.def
+File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
 )
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
-Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
 Package xcolor Info: Model `RGB' extended on input line 1353.
 Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
 Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
@@ -71,34 +51,35 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
 )
-(/usr/local/texlive/2012/texmf-dist/tex/latex/lastpage/lastpage.sty
-Package: lastpage 2011/09/01 v1.2k Refers to last page's name (HMM; JPG)
+(/home/songli/texmf/tex/latex/lastpage.sty
+Package: lastpage 1994/06/25 v0.1b LaTeX2e package for refs to last page number
+ (JPG)
 )
-\c@thanks=\count88
+\c@thanks=\count87
 \bmcfloat@box=\box26
-\c@author=\count89
-\c@address=\count90
+\c@author=\count88
+\c@address=\count89
 \sv@mathsurround=\dimen104
 \fm@box=\box27
-\c@addressref=\count91
+\c@addressref=\count90
 \thanks@box=\box28
 \abstract@box=\box29
 \authors@list=\toks15
 \keywords@list=\toks16
 )
-(/usr/local/texlive/2012/texmf-dist/tex/latex/base/inputenc.sty
+(/usr/local/texlive/2013/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2008/03/30 v1.1d Input encoding file
 \inpenc@prehook=\toks17
 \inpenc@posthook=\toks18
 
-(/usr/local/texlive/2012/texmf-dist/tex/latex/base/utf8.def
+(/usr/local/texlive/2013/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OML ...
 ... no UTF-8 mapping file for font encoding OML
 Now handling font encoding T1 ...
 ... processing UTF-8 mapping file for font encoding T1
 
-(/usr/local/texlive/2012/texmf-dist/tex/latex/base/t1enc.dfu
+(/usr/local/texlive/2013/texmf-dist/tex/latex/base/t1enc.dfu
 File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
@@ -248,7 +229,7 @@ File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OT1 ...
 ... processing UTF-8 mapping file for font encoding OT1
 
-(/usr/local/texlive/2012/texmf-dist/tex/latex/base/ot1enc.dfu
+(/usr/local/texlive/2013/texmf-dist/tex/latex/base/ot1enc.dfu
 File: ot1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
@@ -279,7 +260,7 @@ File: ot1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OMS ...
 ... processing UTF-8 mapping file for font encoding OMS
 
-(/usr/local/texlive/2012/texmf-dist/tex/latex/base/omsenc.dfu
+(/usr/local/texlive/2013/texmf-dist/tex/latex/base/omsenc.dfu
 File: omsenc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A7 (decimal 167)
    defining Unicode char U+00B6 (decimal 182)
@@ -303,29 +284,29 @@ Now handling font encoding U ...
    defining Unicode char U+2122 (decimal 8482)
    defining Unicode char U+2423 (decimal 9251)
 ))
-(/usr/local/texlive/2012/texmf-dist/tex/latex/url/url.sty
+(/usr/local/texlive/2013/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip10
-Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-(/usr/local/texlive/2012/texmf-dist/tex/latex/tools/hhline.sty
+(/usr/local/texlive/2013/texmf-dist/tex/latex/tools/hhline.sty
 Package: hhline 1994/05/23 v2.03 Table rule package (DPC)
 )
-(/usr/local/texlive/2012/texmf-dist/tex/latex/tools/xspace.sty
+(/usr/local/texlive/2013/texmf-dist/tex/latex/tools/xspace.sty
 Package: xspace 2009/10/20 v1.13 Space after command names (DPC,MH)
 )
-(/usr/local/texlive/2012/texmf-dist/tex/latex/graphics/graphicx.sty
+(/home/songli/texmf/tex/latex/graphicx.sty
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/usr/local/texlive/2012/texmf-dist/tex/latex/graphics/graphics.sty
+(/home/songli/texmf/tex/latex/graphics.sty
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-(/usr/local/texlive/2012/texmf-dist/tex/latex/graphics/trig.sty
+(/usr/local/texlive/2013/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-(/usr/local/texlive/2012/texmf-dist/tex/latex/latexconfig/graphics.cfg
+(/usr/local/texlive/2013/texmf-dist/tex/latex/latexconfig/graphics.cfg
 File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
 )
-Package graphics Info: Driver file: pdftex.def on input line 91.
+Package graphics Info: Driver file: dvips.def on input line 91.
 )
 \Gin@req@height=\dimen105
 \Gin@req@width=\dimen106
@@ -346,75 +327,6 @@ LaTeX Font Info:    ... okay on input line 96.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 96.
 LaTeX Font Info:    ... okay on input line 96.
 
-(/usr/local/texlive/2012/texmf-dist/tex/context/base/supp-pdf.mkii
-[Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count92
-\scratchdimen=\dimen107
-\scratchbox=\box30
-\nofMPsegments=\count93
-\nofMParguments=\count94
-\everyMPshowfont=\toks19
-\MPscratchCnt=\count95
-\MPscratchDim=\dimen108
-\MPnumerator=\count96
-\makeMPintoPDFobject=\count97
-\everyMPtoPDFconversion=\toks20
-)
-Package lastpage Info: Please have a look at the pageslts package at
-(lastpage)             http://www.ctan.org/tex-archive/ 
-(lastpage)             macros/latex/contrib/pageslts/ 
-(lastpage)             or
-(lastpage)             http://www.ctan.org/tex-archive/ 
-(lastpage)             install/macros/latex/contrib/pageslts.tds.zip
-(lastpage)             ! on input line 96.
- (/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
-Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
-)
-
-(/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/ifluatex.sty
-Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
-Package ifluatex Info: LuaTeX not detected.
-)
-(/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/ifpdf.sty
-Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
-Package ifpdf Info: pdfTeX in PDF mode is detected.
-)
-Package pdftexcmds Info: LuaTeX not detected.
-Package pdftexcmds Info: \pdf@primitive is available.
-Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode found.
-)
-(/usr/local/texlive/2012/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
-Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
-
-(/usr/local/texlive/2012/texmf-dist/tex/latex/oberdiek/grfext.sty
-Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
-
-(/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
-Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
-))
-(/usr/local/texlive/2012/texmf-dist/tex/latex/oberdiek/kvoptions.sty
-Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
-
-(/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
-Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
-
-(/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/etexcmds.sty
-Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
-Package etexcmds Info: Could not find \expanded.
-(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
-(etexcmds)             that some package has redefined \expanded.
-(etexcmds)             In the latter case, load this package earlier.
-)))
-Package grfext Info: Graphics extension search list:
-(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
-G,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 452.
-
-(/usr/local/texlive/2012/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
-e
-))
 
 LaTeX Font Warning: Font shape `OT1/cmss/bx/n' in size <13> not available
 (Font)              size <12> substituted on input line 115.
@@ -442,8 +354,8 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7.69997> on input line 149.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5.5> on input line 149.
-\address@aff1=\toks21
-\address@aff2=\toks22
+\address@aff1=\toks19
+\address@aff2=\toks20
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 206.
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -463,184 +375,73 @@ Overfull \hbox (1.0pt too wide) has occurred while \output is active
  [] 
  []
 
-[1{/usr/local/texlive/2012/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+[1
 
-]
-[2] [3] [4] [5] [6] [7] [8] [9] [10]
+] [2] [3] [4] [5] [6] [7] [8] [9] [10]
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/it' in size <7> not available
-(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 548.
+(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 551.
 
 
 (./lighter_paper.bbl [11])
-Package epstopdf Info: Source file: <lighter_framework.eps>
-(epstopdf)                    date: 2014-06-30 11:32:48
-(epstopdf)                    size: 334846 bytes
-(epstopdf)             Output file: <lighter_framework-eps-converted-to.pdf>
-(epstopdf)                    date: 2014-07-23 11:51:37
-(epstopdf)                    size: 81072 bytes
-(epstopdf)             Command: <repstopdf --outfile=lighter_framework-eps-conv
-erted-to.pdf lighter_framework.eps>
-(epstopdf)             \includegraphics on input line 587.
-Package epstopdf Info: Output file is already uptodate.
-
-<lighter_framework-eps-converted-to.pdf, id=52, 795.97375pt x 597.23125pt>
-File: lighter_framework-eps-converted-to.pdf Graphic file (type pdf)
-
-<use lighter_framework-eps-converted-to.pdf>
-Package pdftex.def Info: lighter_framework-eps-converted-to.pdf used on input l
-ine 587.
-(pdftex.def)             Requested size: 270.75pt x 203.14706pt.
+File: lighter_framework.eps Graphic file (type eps)
+ <lighter_framework.eps>
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 589.
+(Font)              <8> on input line 592.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 589.
+(Font)              <6> on input line 592.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-Package epstopdf Info: Source file: <ErrorCorrection.eps>
-(epstopdf)                    date: 2014-06-30 11:32:48
-(epstopdf)                    size: 141770 bytes
-(epstopdf)             Output file: <ErrorCorrection-eps-converted-to.pdf>
-(epstopdf)                    date: 2014-07-23 11:49:22
-(epstopdf)                    size: 35640 bytes
-(epstopdf)             Command: <repstopdf --outfile=ErrorCorrection-eps-conver
-ted-to.pdf ErrorCorrection.eps>
-(epstopdf)             \includegraphics on input line 595.
-Package epstopdf Info: Output file is already uptodate.
-<ErrorCorrection-eps-converted-to.pdf, id=53, 795.97375pt x 466.74374pt>
-File: ErrorCorrection-eps-converted-to.pdf Graphic file (type pdf)
-
-<use ErrorCorrection-eps-converted-to.pdf>
-Package pdftex.def Info: ErrorCorrection-eps-converted-to.pdf used on input lin
-e 595.
-(pdftex.def)             Requested size: 270.75pt x 158.762pt.
-
+File: ErrorCorrection.eps Graphic file (type eps)
+<ErrorCorrection.eps>
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-Package epstopdf Info: Source file: <alpha.eps>
-(epstopdf)                    date: 2014-07-23 08:57:11
-(epstopdf)                    size: 20881 bytes
-(epstopdf)             Output file: <alpha-eps-converted-to.pdf>
-(epstopdf)                    date: 2014-07-23 11:51:37
-(epstopdf)                    size: 8023 bytes
-(epstopdf)             Command: <repstopdf --outfile=alpha-eps-converted-to.pdf
- alpha.eps>
-(epstopdf)             \includegraphics on input line 604.
-Package epstopdf Info: Output file is already uptodate.
-<alpha-eps-converted-to.pdf, id=54, 361.35pt x 252.945pt>
-File: alpha-eps-converted-to.pdf Graphic file (type pdf)
-
-<use alpha-eps-converted-to.pdf>
-Package pdftex.def Info: alpha-eps-converted-to.pdf used on input line 604.
-(pdftex.def)             Requested size: 361.34912pt x 252.94438pt.
-
-Overfull \hbox (12.84912pt too wide) in paragraph at lines 604--606
+File: alpha.eps Graphic file (type eps)
+<alpha.eps>
+Overfull \hbox (12.84999pt too wide) in paragraph at lines 607--609
  [] 
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-Package epstopdf Info: Source file: <bloom_occupancy_alpha.eps>
-(epstopdf)                    date: 2014-07-23 08:57:11
-(epstopdf)                    size: 22291 bytes
-(epstopdf)             Output file: <bloom_occupancy_alpha-eps-converted-to.pdf
->
-(epstopdf)                    date: 2014-07-23 11:51:38
-(epstopdf)                    size: 9983 bytes
-(epstopdf)             Command: <repstopdf --outfile=bloom_occupancy_alpha-eps-
-converted-to.pdf bloom_occupancy_alpha.eps>
-(epstopdf)             \includegraphics on input line 613.
-Package epstopdf Info: Output file is already uptodate.
-<bloom_occupancy_alpha-eps-converted-to.pdf, id=55, 361.35pt x 252.945pt>
-File: bloom_occupancy_alpha-eps-converted-to.pdf Graphic file (type pdf)
-
-<use bloom_occupancy_alpha-eps-converted-to.pdf>
-Package pdftex.def Info: bloom_occupancy_alpha-eps-converted-to.pdf used on inp
-ut line 613.
-(pdftex.def)             Requested size: 361.34912pt x 252.94438pt.
-
-Overfull \hbox (12.84912pt too wide) in paragraph at lines 613--615
+File: bloom_occupancy_alpha.eps Graphic file (type eps)
+<bloom_occupancy_alpha.eps>
+Overfull \hbox (12.84999pt too wide) in paragraph at lines 616--618
  [] 
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-Package epstopdf Info: Source file: <kmerLength.eps>
-(epstopdf)                    date: 2014-07-23 08:57:11
-(epstopdf)                    size: 21168 bytes
-(epstopdf)             Output file: <kmerLength-eps-converted-to.pdf>
-(epstopdf)                    date: 2014-07-23 11:51:39
-(epstopdf)                    size: 8877 bytes
-(epstopdf)             Command: <repstopdf --outfile=kmerLength-eps-converted-t
-o.pdf kmerLength.eps>
-(epstopdf)             \includegraphics on input line 622.
-Package epstopdf Info: Output file is already uptodate.
-<kmerLength-eps-converted-to.pdf, id=56, 361.35pt x 252.945pt>
-File: kmerLength-eps-converted-to.pdf Graphic file (type pdf)
-
-<use kmerLength-eps-converted-to.pdf>
-Package pdftex.def Info: kmerLength-eps-converted-to.pdf used on input line 622
-.
-(pdftex.def)             Requested size: 361.34912pt x 252.94438pt.
-
-Overfull \hbox (12.84912pt too wide) in paragraph at lines 622--624
+File: kmerLength.eps Graphic file (type eps)
+<kmerLength.eps>
+Overfull \hbox (12.84999pt too wide) in paragraph at lines 625--627
  [] 
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-Package epstopdf Info: Source file: <per_base.eps>
-(epstopdf)                    date: 2014-07-23 08:57:11
-(epstopdf)                    size: 24695 bytes
-(epstopdf)             Output file: <per_base-eps-converted-to.pdf>
-(epstopdf)                    date: 2014-07-23 11:51:39
-(epstopdf)                    size: 10025 bytes
-(epstopdf)             Command: <repstopdf --outfile=per_base-eps-converted-to.
-pdf per_base.eps>
-(epstopdf)             \includegraphics on input line 631.
-Package epstopdf Info: Output file is already uptodate.
-<per_base-eps-converted-to.pdf, id=57, 361.35pt x 252.945pt>
-File: per_base-eps-converted-to.pdf Graphic file (type pdf)
-
-<use per_base-eps-converted-to.pdf>
-Package pdftex.def Info: per_base-eps-converted-to.pdf used on input line 631.
-(pdftex.def)             Requested size: 361.34912pt x 252.94438pt.
-
-Overfull \hbox (12.84912pt too wide) in paragraph at lines 631--633
+File: per_base.eps Graphic file (type eps)
+<per_base.eps>
+Overfull \hbox (12.84999pt too wide) in paragraph at lines 634--636
  [] 
  []
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
-(Font)              using `OT1/cmss/bx/n' instead on input line 633.
+(Font)              using `OT1/cmss/bx/n' instead on input line 636.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-Package epstopdf Info: Source file: <runtime.eps>
-(epstopdf)                    date: 2014-07-23 08:57:11
-(epstopdf)                    size: 20222 bytes
-(epstopdf)             Output file: <runtime-eps-converted-to.pdf>
-(epstopdf)                    date: 2014-07-23 11:51:40
-(epstopdf)                    size: 7200 bytes
-(epstopdf)             Command: <repstopdf --outfile=runtime-eps-converted-to.p
-df runtime.eps>
-(epstopdf)             \includegraphics on input line 640.
-Package epstopdf Info: Output file is already uptodate.
-<runtime-eps-converted-to.pdf, id=58, 361.35pt x 252.945pt>
-File: runtime-eps-converted-to.pdf Graphic file (type pdf)
-
-<use runtime-eps-converted-to.pdf>
-Package pdftex.def Info: runtime-eps-converted-to.pdf used on input line 640.
-(pdftex.def)             Requested size: 361.34912pt x 252.94438pt.
-
-Overfull \hbox (12.84912pt too wide) in paragraph at lines 640--642
+File: runtime.eps Graphic file (type eps)
+<runtime.eps>
+Overfull \hbox (12.84999pt too wide) in paragraph at lines 643--645
  [] 
  []
 
@@ -648,11 +449,9 @@ Overfull \hbox (12.84912pt too wide) in paragraph at lines 640--642
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
+ [12]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -675,11 +474,12 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-AED: lastpage setting LastPage
-[12] [13 <./lighter_framework-eps-converted-to.pdf> <./ErrorCorrection-eps-conv
-erted-to.pdf>] [14 <./alpha-eps-converted-to.pdf> <./bloom_occupancy_alpha-eps-
-converted-to.pdf>] [15 <./kmerLength-eps-converted-to.pdf> <./per_base-eps-conv
-erted-to.pdf>] [16 <./runtime-eps-converted-to.pdf>] [17] (./lighter_paper.aux)
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+AED: lastpage setting LastPage [13] [14] [15] [16] [17] (./lighter_paper.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
@@ -689,38 +489,12 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 3034 strings out of 493488
- 41083 string characters out of 3141326
- 160242 words of memory out of 3000000
- 6289 multiletter control sequences out of 15000+200000
- 14015 words of font info for 48 fonts, out of 3000000 for 9000
+ 2040 strings out of 493309
+ 24697 string characters out of 6137848
+ 138810 words of memory out of 5000000
+ 5493 multiletter control sequences out of 15000+600000
+ 14015 words of font info for 48 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 37i,10n,37p,1689b,395s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmbsy
-8.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.
-pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.p
-fb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb
-></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><
-/usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></u
-sr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb
-></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><
-/usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></us
-r/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/l
-ocal/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/lo
-cal/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/loc
-al/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local
-/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/loca
-l/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/loca
-l/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/local
-/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/
-texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/te
-xlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texl
-ive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texli
-ve/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on lighter_paper.pdf (17 pages, 427369 bytes).
-PDF statistics:
- 182 PDF objects out of 1000 (max. 8388607)
- 126 compressed objects within 2 object streams
- 0 named destinations out of 1000 (max. 500000)
- 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 30i,10n,37p,1685b,397s stack positions out of 5000i,500n,10000p,200000b,80000s
 
+Output written on lighter_paper.dvi (17 pages, 110748 bytes).

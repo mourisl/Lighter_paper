@@ -382,7 +382,7 @@ As shown in Figure 1, Lighter works in three passes: (1) populating Bloom filter
 \section*{Evaluation}
 \subsection*{Simulated data set}
 
-\paragraph{Accuracy on simulated data.} We compared \tool v1.0.2's performance \myworries{(Li: ensure we make a release for the relevant version of the Lighter repo so that it's obvious what version people should use to recreate our results.  Think this should be v1.0.2.)} with Quake v0.3\cite{kelley2010quake}, Musket v1.1\cite{liu2013musket}, BLESS v0p17 \cite{heo2014bless}, and SOAPec v2.0.1 \cite{luo2012soapdenovo2} \myworries{(Li: is this version number right?)}.  We generated collection of reads simulated from the reference genome for the K12 strain of \ecoli (NC\_000913.2) using Mason v0.1.2 \cite{holtgrewe2010mason}.  
+\paragraph{Accuracy on simulated data.} We compared \tool v1.0.2's performance \myworries{(Li: ensure we make a release for the relevant version of the Lighter repo so that it's obvious what version people should use to recreate our results.  Think this should be v1.0.2. Answer: Done)} with Quake v0.3\cite{kelley2010quake}, Musket v1.1\cite{liu2013musket}, BLESS v0p17 \cite{heo2014bless}, and SOAPec v2.0.1 \cite{luo2012soapdenovo2} \myworries{(Li: is this version number right? Answer: Yes.)}.  We generated collection of reads simulated from the reference genome for the K12 strain of \ecoli (NC\_000913.2) using Mason v0.1.2 \cite{holtgrewe2010mason}.  
 
 We simulated six distinct datasets with 101bp single-end reads, varying average coverage ($35$x, $75$x $140$x) and average error rate ($1\%$ and $3\%$).  For a given error rate $e$ we specify Mason parameters \verb+-qmb+ $e/2$ \verb+-qme+ $3e$, so that the average error rate is $e$ but errors are more common toward the 3' end, as in real datasets.
 
@@ -390,9 +390,9 @@ We then ran all four tools on all six datasets, with results presented in Table 
 
 Since the error correctors are sensitive to the choice of \kmer size, we give different sizes to the tools, the result in Table 1 corresponding to the results with the best gain value. Quake crashed on larger \kmer size through out all the experiments we conducted in this paper.
 
-Unlike the other tools, Quake both trims the untrusted tails of the reads and discards reads it cannot correct. For a more fair comparison, Quake's result will contain the non-correctable reads for all the simulated data sets. For reads that Quake trims, the evaluation is done only on the remaining portion. This leads to very high precision relative to other tools, though at the expense of discarded data.  \myworries{(I see that Quake results in Tables 3 and 5 have changed and are worse now.  Has something changed about how we're accounting for Quake's trimming in our evaluations?  Does this paragraph need revising as a result?)}.
+Unlike the other tools, Quake both trims the untrusted tails of the reads and discards reads it cannot correct. For a more fair comparison, Quake's result will contain the non-correctable reads for all the simulated data sets. For reads that Quake trims, the evaluation is done only on the remaining portion. This leads to very high precision relative to other tools, though at the expense of discarded data.  \myworries{(I see that Quake results in Tables 3 and 5 have changed and are worse now.  Has something changed about how we're accounting for Quake's trimming in our evaluations?  Does this paragraph need revising as a result? I did not change the way of evaluating the trimming part. The only difference from the old version of the paper is that quake does not use those discarded reads for real data sets. )}.
 
-Of the remaining tools, \tool and Musket achieve the highest precision, with Musket achieving slightly higher precision.  \tool achieves the highest recall, F-score and gain in the experiments with 1\% error, and comparable with BLESS when the error rate is 3\%. BLESS sometimes trims reads, but the total amount trimmed should not affect the result much \myworries{(Li: elaborate -- is there only a very small fraction of reads/nucleotides trimmed?  What is the fraction?)}.
+Of the remaining tools, \tool and Musket achieve the highest precision, with Musket achieving slightly higher precision.  \tool achieves the highest recall, F-score and gain in the experiments with 1\% error, and comparable with BLESS when the error rate is 3\%. BLESS sometimes trims reads, but the total amount trimmed should not affect the result much \myworries{(Li: elaborate -- is there only a very small fraction of reads/nucleotides trimmed?  What is the fraction? Answer: For simulated data set, less than 0.1\% of the reads got trimmed, while quake trimmed about 33\% of the reads. As Heng said, these trimmed reads seem to be caused by bugs.)}.
 
 For the 1\% error dataset, we found that \tool's gain was maximized by setting the \kmer size to 23.  We therefore fix the \kmer size to 23 for subsequent experiments.
 
@@ -413,7 +413,7 @@ Of the 214,567 simulated \kmers that overlapped a position with a heterozygous S
 Thus, \tool retained in table B almost the same fraction of the \kmers overlapping heterozygous positions (99.990\%) than of the \kmers overall (99.999\%).
 
 Musket and BLESS both infer a threshold for the multiplicity of solid \kmers. In this experiment, Musket inferred a threshold of 10 and BLESS inferred a threshold of 9.
-Both used a \kmer size is 23 \myworries{(both used this size, right?)}.
+Both used a \kmer size is 23 \myworries{(both used this size, right? Right. But in Table 1, their reported kmer size is different.)}.
 By counting the multiplicity of the \kmers overlapping heterozygous positions, we can conclude that Musket obtained 214,458 of those \kmers and BLESS obtained 214,557 of them. This shows that at least for the diploid case,
 So for this experiment \tool succeeds at classifying lower multiplicity due to heterozygous SNP and the number Lighter obtained is comparable to other error correctors based on counting.
 
@@ -461,7 +461,7 @@ Because BLESS cannot handle paired-end reads where the ends have different lengt
 % We measured that out of 4,559,707 distinct \kmers in the \ecoli K12 reference genome,4,535,442 (99.468\%) appear in table $B$. 
  
 % Result of bowtie2
-These data are not simulated, so we cannot measure accuracy directly.  But we can measure it indirectly, as other have done \cite{heo2014bless}, by measuring read alignment statistics before and after error correction.  We use Bowtie2 \cite{langmead2012fast} with default parameters to align the original reads and the corrected reads to the \ecoli K-12 reference genome.  We then count the total number of the matched positions in all the alignments.  Results are shown in Table 3.  \tool yields the greatest improvement in number of reads aligned and in average matched positions per aligned reads.  As before, Quake is hard to compare to the other tools because it trims and discards reads.  This leads to negative values in the ``Increase'' columns.
+These data are not simulated, so we cannot measure accuracy directly.  But we can measure it indirectly, as other have done \cite{heo2014bless}, by measuring read alignment statistics before and after error correction.  We use Bowtie2 \cite{langmead2012fast} with default parameters to align the original reads and the corrected reads to the \ecoli K-12 reference genome.  We then count the total number of the matched positions in all the alignments. Again, for each tool, we tested several different \kmer sizes and reported the one with largest number of matched positions. Results are shown in Table 3.  \tool yields the greatest improvement in number of reads aligned and in average matched positions per aligned reads.  As before, Quake is hard to compare to the other tools because it trims and discards reads.  This leads to negative values in the ``Increase'' columns.
 
 %The, "Gain" means how much improvement for its previous column comparing with the original data set. Match/Read represents the average matched position against the reference genome for the mapped reads.
 
@@ -471,7 +471,7 @@ Also, for each tool we examined the alignments for the first read in the pair.  
 
 
 
-To further assess accuracy, we assembled the reads before and after error correction and measured relevant assembly statistics using Quast \cite{gurevich2013quast}.  We used Velvet 1.2.10\cite{zerbino2008velvet} to assemble.  Velvet is a De Bruijn graph-based assembler designed for second-generation sequencing reads.  A key parameter of Velvet is the De Bruijn graph's \kmer length.  To avoid being overly influenced by choice of \kmer length, for each dataset we ran Velvet with several \kmer lengths and reported statistics for the assembly with the best N50 contig size.  For each assembly, we then evaluated the assembly's quality using Quast, which was configured to discard contigs shorter than 100 bp before calculating statistics. Results are shown in Table 4.
+To further assess accuracy, we assembled the reads before and after error correction and measured relevant assembly statistics using Quast \cite{gurevich2013quast}.  The corrected reads are those reported in Table 3. We used Velvet 1.2.10\cite{zerbino2008velvet} to assemble.  Velvet is a De Bruijn graph-based assembler designed for second-generation sequencing reads.  A key parameter of Velvet is the De Bruijn graph's \kmer length.  To avoid being overly influenced by choice of \kmer length, for each dataset we ran Velvet with several \kmer lengths and reported statistics for the assembly with the best NG50 contig size.  For each assembly, we then evaluated the assembly's quality using Quast, which was configured to discard contigs shorter than 100 bp before calculating statistics. Results are shown in Table 4.
 
 
 N50 is the length such that the total length of the contigs no shorter than the N50 cover at least half the assembled genome.  NG50 is similar, but with the requirement that contigs cover half the reference genome rather than half the assembled genome. Edits per 100kbps is the number of mismatches or indels per 100kbps when aligning the contigs to the reference genome. A misassembly is an instance where two adjacent stretches of bases in the assembly align either to two very distant or to two highly overlapping stretches of the reference genome.  The Quast study defines these metrics in more detail \cite{gurevich2013quast}.
@@ -479,13 +479,16 @@ N50 is the length such that the total length of the contigs no shorter than the 
 Assemblies produced from reads corrected with the four programs are very similar according to these measures, with Quake and Lighter yielding the longest contigs and the best genome coverage. Surprisingly, the post-correction assemblies have more differences at nucleotide level compared to the pre-correction assemblies, perhaps due to spurious corrections.
 
 \subsubsection*{Human Chr14}
-We also evaluated \tool's effect on alignment and assembly using a dataset from the GAGE project \cite{salzberg2012gage}.  The dataset consists of real 101 $\times$ 101 bp paired-end reads covering human chromosome 14 to $35\times$ average coverage ($\sim$36.5M reads).  We set the \kmer length to 19 for all error correctors for these experiments.
+We also evaluated \tool's effect on alignment and assembly using a dataset from the GAGE project \cite{salzberg2012gage}.  The dataset consists of real 101 $\times$ 101 bp paired-end reads covering human chromosome 14 to $35\times$ average coverage ($\sim$36.5M reads).  Like before, for each \tool we tested different \kmer size and chose the best one based on Bowtie 2's results for assembly.
 
 Error correction's effect on Bowtie 2 alignment statistics are shown in Table 5.  We used Bowtie 2 with default parameters to align the reads to an index of the human chromosome 14 sequence of the hg19 build of the human genome.  Programs had comparable performance, adding between 171,000 - 323,000 aligned reads and increasing the average number of matching bases per read by 0.61 - 0.70 bases. As before, Quake produced fewer correct bases per mapped read on average due to trimming.   
 
 
 
 We also tested error correction's effect on de novo assembly using Velvet for assembly and Quast to evaluate the quality of the assembly.  Results are shown in Table 6.  Overall, \tool's accuracy on real data is comparable with other error correction tools, producing the longest contigs and covering the largest portion of the genome with the smallest number of assembly errors.   
+
+\subsubsection*{C.Elegans} % Here or Supp?
+Using the same procedure for the GAGE's chr14 data set, we measured the effect on another large real data using the reads from SRR065390. SRR065390 contains real 100 $\times$ 100 bp paired-edn reads covering C.Elegans genoe to $66\times$ average coverage($\sim$ 67.6M reads). The reference genome we used is WBcel235. 
 
 \subsection*{Speed, space usage, and scalability}
 
