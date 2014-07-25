@@ -305,6 +305,33 @@ Gain	&musket	&99.93	&99.92	&99.93	 \\ \hline
 \end{tabular}
 \end{table}
 
+\begin{table}[h!] 
+\caption{Alignment statistics for the $75\times$ \ecoli data set using bowtie2 --very-fast mode}
+\begin{tabular}{|c|c|c||c|c|} \hline
+	 & \multicolumn{2}{|c||}{Read Level} & \multicolumn{2}{|c|}{Base Level} \\ \hline
+     & Mapped Reads & Increase(\%) & Base Match/Read & Increase(\%) \\ \hline
+Original&	3,459,316&	-&	99.048&	-  \\ \hline 
+Quake&	3,373,491&	-2.48&	97.321&	-1.74  \\ \hline
+SOAPec&	3,464,456&	0.15&	99.135&	0.09  \\ \hline
+Musket&	3,467,805&	0.25&	99.601&	0.56  \\ \hline
+Bless&	3,468,604&	0.27&	99.558&	0.51	 \\ \hline
+Lighter&	3,478,210&	0.55&	99.641&	0.60  \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[h!] 
+\caption{Alignment statistics for the $75\times$ \ecoli data set using "bwa mem"}
+\begin{tabular}{|c|c|c||c|c|} \hline
+	 & \multicolumn{2}{|c||}{Read Level} & \multicolumn{2}{|c|}{Base Level} \\ \hline
+     & Mapped Reads & Increase(\%) & Base Match/Read & Increase(\%) \\ \hline
+Original&	3,483,157&	-&	98.923&	- \\ \hline 
+Quake&	3,369,449&	-3.26&	97.601&	-1.33 \\ \hline 
+SOAPec&	3,483,159&	0.00&	99.027&	0.10 \\ \hline 
+Musket&	3,483,572&	0.01&	99.585&	0.67 \\ \hline 
+Bless&	3,482,265&	-0.03&	99.673&	0.76 \\ \hline 
+Lighter&	3,484,915&	0.05&	99.808&	0.89 \\ \hline 
+\end{tabular}
+\end{table}
 
 \bibliographystyle{abbrv}
 \bibliography{lighter_paper_supp}

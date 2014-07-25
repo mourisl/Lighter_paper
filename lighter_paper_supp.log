@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.10.17)  23 JUL 2014 00:39
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.10.17)  24 JUL 2014 23:55
 entering extended mode
  %&-line parsing enabled.
 **lighter_paper_supp.tex
@@ -460,8 +460,14 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
 No file lighter_paper_supp.bbl.
-[2] [3] (./lighter_paper_supp.aux)
+[2] [3] [4] (./lighter_paper_supp.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -469,11 +475,11 @@ LaTeX Warning: There were undefined references.
 Here is how much of TeX's memory you used:
  2607 strings out of 495061
  30571 string characters out of 1182620
- 117685 words of memory out of 3000000
+ 124685 words of memory out of 3000000
  5773 multiletter control sequences out of 15000+50000
  6257 words of font info for 23 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 27i,9n,35p,954b,211s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 27i,9n,35p,954b,225s stack positions out of 5000i,500n,10000p,200000b,50000s
 </usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/sha
 re/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-te
 xlive/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-texlive/fonts
@@ -486,9 +492,9 @@ ve/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-texlive/fonts/type
 1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/public/am
 sfonts/cm/cmsy7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cm
 ti10.pfb>
-Output written on lighter_paper_supp.pdf (3 pages, 174115 bytes).
+Output written on lighter_paper_supp.pdf (4 pages, 177511 bytes).
 PDF statistics:
- 64 PDF objects out of 1000 (max. 8388607)
+ 67 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
