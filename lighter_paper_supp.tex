@@ -189,13 +189,15 @@
 % The idea of using a Bloom filter to store the solid k-mers is not new; CUDA-EC does this
 % What's our story w/r/t choosing k-mer length?
 
-\section*{Supplementary Note 1: Blocked Bloom filter}
+\section*{Supplementary Note 1: Pattern-blocked Bloom filter}
 
 For a standard Bloom filter, each of the $h$ hash functions could map item $o$ to any element of the bit array. The bit array will often be very large, much larger than the processor cache.  Thus, each probe into the bit array is likely to cause a cache miss. Putze \emph{et al} \cite{Putze:2010:CHS:1498698.1594230} propose a \emph{blocked} Bloom filter. Given a block size $b$, the first hash function $H_0(o)$ is used to select a size-$b$ block of consecutive positions in the bit array.  Then, $H_1(o),...,H_{h-1}(o)$ map $o$ onto elements of that block. When $b$ is less than or equal to the size of a cache line, the $h$ accesses will tend to cause only one or two cache misses, rather than approximately $h$ cache misses.
 
 The drawback is that $h$ and $m$ must be somewhat larger to achieve the same false positive rate (FPR) as a corresponding standard Bloom filter.  To estimate the FPR of the blocked Bloom filter, we can consider each of the possible $m-b+1$ blocks. For the $i$-th block, the FPR within the block is $(b'_i/b)^h$, where $b'_i$ is the number of bits set to 1 in block $i$. So the overall FPR is:
 
 $$\frac{\sum_i (b'_i/b)^h}{m-b+1}$$
+
+In that paper, the author further proposed \emph{pattern-blocked} Bllom filter, where the difference is that instead of updating the $h$ positions in the block separately, we can pre-compute a list of patterns where each pattern is a bit-mask that can update $h$ positions in a block with just a simple bit operation. When update, we find the pattern using hash function and update the corresponding position simultaneously. In Lighter, we used the 64-bit integers to form the mask. For example, if the $b=256$, then  the pattern is formed by 4 64-bit integers and we can update the corresponding positions with only 4 bit operations regardless of $h$. And we still use the FPR formula above to roughly estimate the FPR for the pattern-blocked bloom filter.
 
 \section*{Supplementary Note 2: Correcting positions at the ends of reads}
 
@@ -274,7 +276,7 @@ Gain	&musket	&93.74	&93.72	&93.72	 \\ \hline
 \end{table}
 
 \begin{table}[h!]
-\caption{The accuracy evaluation for the simulated data set from E.Coli genome with different coverage and default error profile}
+\caption{The accuracy evaluation for the simulated data set from E.Coli genome with different coverage and default error profile using art\_illumina}
 \begin{tabular}{|c|c|c|c|c|} \hline
 Coverage &	&$35\times$  & $70\times$ & $140\times$ \\ \hline
 $\alpha$ for lighter & & $0.2$ & $0.1$ & $0.05$ \\ \hhline{|=|=|=|=|=|}
@@ -304,6 +306,18 @@ Gain	&musket	&99.93	&99.92	&99.93	 \\ \hline
 	
 \end{tabular}
 \end{table}
+
+\begin{table}[h!]
+\caption{The accuracy evaluation for the simulated data set from C.Elegans genome with $35\times$ coverage and $1\%$ error rate using Mason}
+\begin{tabular}{|c|c|c|c|c|c|} \hline
+	&Quake	&SOAPec	&Musket	&Bless	&Lighter \\ \hline
+Recall	&85.70	&53.40	&90.31	&98.99	&98.12 \\ \hline
+Precision	&99.82	&99.84	&99.59	&95.64	&99.66 \\ \hline
+F-score	&92.22	&69.58	&94.72	&97.29	&98.88 \\ \hline
+Gain	&85.55	&53.31	&89.94	&94.48	&97.78 \\ \hline
+\end{tabular}
+\end{table}
+
 
 \begin{table}[h!] 
 \caption{Alignment statistics for the $75\times$ \ecoli data set using bowtie2 --very-fast mode}
