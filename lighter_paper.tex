@@ -453,7 +453,6 @@ A key parameter of \tool is the \kmer length $k$.  Smaller $k$ yields higher pro
 \subsection*{Real datasets}
 \paragraph{\ecolinoemph.}  Next we benchmarked the same error correction tools using a real sequencing dataset, ERR022075.
 This is a deep DNA sequencing dataset of the the K-12 strain of the \ecoli genome.
-We again used Quake, Musket, BLESS and Lighter to correct errors in the dataset.
 To obtain a level of coverage more reflective of other projects, we randomly subsampled the reads in the dataset to obtain roughly 75x coverage ($\sim$3.5M reads) of the \ecoli K-12 reference genome.
 The reads are 100 $\times$ 102 bp paired-end reads.
 Because BLESS cannot handle paired-end reads where the ends have different lengths, we truncated the last 2 bases from the 102 bp end before running our experiments.
