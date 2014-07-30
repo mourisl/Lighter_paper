@@ -105,6 +105,7 @@
 \newcommand{\tool}{Lighter\xspace}
 \newcommand{\ecoli}{\emph{E. coli}\xspace}
 \newcommand{\ecolinoemph}{E. coli\xspace}
+\newcommand{\elegans}{\emph{C. elegans}\xspace}
 
 \newcommand\myworries[1]{\textcolor{red}{#1}}%\usepackage[applemac]{inputenc} %applemac support if unicode package fails
 
@@ -419,30 +420,33 @@ For the 1\% error dataset, we found that \tool's gain was maximized by setting t
 %\myworries{Li: Is 4,553,653 the number of \emph{correct} \kmers in the filter, or just the number of \kmers? (4553653 are the number of correct \kmers. Also The 4553699 is the number of total distinct kmers not distinct canonicalized kmers.)}
 
 \paragraph{Effect of ploidy on Bloom filter B.}  We conducted a experiment similar to that in the previous section but with Mason configured to simulate reads from a diploid version of the \ecoli genome.
-Specifically, we introduced heterozygous SNPs at $0.1\%$ to the reference positions, as a result we have two similar genomes.
-Mason then sampled the same numbers of reads from both genomes, making a dataset with $70$x average coverage.
+Specifically, we introduced heterozygous SNPs at $0.1\%$ of the positions in the reference genome.
+Mason then sampled equal numbers of reads from both genomes, making a dataset with $70$x average coverage in total.
 Of the 214,567 simulated \kmers that overlapped a position with a heterozygous SNP, table $B$ held 214,545 (99.990\%) of them at the end of the run. This
-Thus, \tool retained in table B almost the same fraction of the \kmers overlapping heterozygous positions (99.990\%) than of the \kmers overall (99.999\%).
+Thus, \tool retained in table B almost the same fraction of the \kmers overlapping heterozygous positions (99.990\%) as of the \kmers overall (99.999\%).
 
 Musket and BLESS both infer a threshold for the multiplicity of solid \kmers. In this experiment, Musket inferred a threshold of 10 and BLESS inferred a threshold of 9.
-Both used a \kmer size is 23 \myworries{(both used this size, right? Right. But in Table 1, their reported kmer size is different.)}.
-By counting the multiplicity of the \kmers overlapping heterozygous positions, we can conclude that Musket obtained 214,458 of those \kmers and BLESS obtained 214,557 of them. This shows that at least for the diploid case,
-So for this experiment \tool succeeds at classifying lower multiplicity due to heterozygous SNP and the number \tool obtained is comparable to other error correctors based on counting.
+All three tools are using a \kmer size of 23.
+By counting the multiplicity of the \kmers overlapping heterozygous positions, we conclude that Musket would classify 214,458 (99.949\%) as solid and BLESS would classify 214,557 (99.995\%) as solid.
+So in the diploid case, it seems \tool's ability to identify correct \kmers overlapping heterozygous SNPs is comparable to that of error correctors that are based on counting.
 
-Nevertheless, we belive for higher ploidity, we may have some issue. 
-The count distribution of \kmers overlapping heterozygous positions is closer to the distribution for incorrect \kmers.
-This is one example of how non-uniformity of \kmer multiplicities can adversely affect \tool's (and most other tools') performance; this is elaborated in the Discussion section.
+Diploidy is one example of a phenomenon that tends to drive the count distribution for some correct \kmers (those overlapping heterozygous variants) closer to the count distribution for incorrect \kmers.
+In the Discussion section we elaborate on other such phenomena, such as copy number, sequencing bias, and non-uniform coverage.
+
+%Nevertheless, we belive for higher ploidity, we may have some issue. 
+%The count distribution of \kmers overlapping heterozygous positions is closer to the distribution for incorrect \kmers.
+%This is one example of how non-uniformity of \kmer multiplicities can adversely affect \tool's (and most other tools') performance; this is elaborated in the Discussion section.
 %This is expected, since \kmers overlapping heterozygous positions occur about half as often as a typical correct \kmer.
 
 %\myworries{Li: Need to explain how we configured \ecoli better.  0.1\% SNP is HETs?  HOMs?  Both?  Also, need to have the exact command-line arguments used written down somewhere. (They are are HET. I make sure the corresponding positions of the two references are different.)}
 
 % test the performance of alpha
-\paragraph{Effect of varying $\alpha$.} In a series of experiments, we measured how different settings for the subsampling fraction $\alpha$ affected \tool's accuracy (recall, precision) as well as the occupancies of Bloom filters $A$ and $B$.  We still use the datasets simulated by Mason with $35\times$, $70\times$ and $140\times$ coverage. 
+\paragraph{Effect of varying $\alpha$.} In a series of experiments, we measured how different settings for the subsampling fraction $\alpha$ affected \tool's accuracy as well as the occupancies of Bloom filters $A$ and $B$.  We still use the datasets simulated by Mason with $35\times$, $70\times$ and $140\times$ coverage. 
 
 %The sampling rate $\alpha$ is the key in Lighter which ensures the near constant space complexity. We did an evaluation on the simulated data set with $35\times$ coverage and $1\%$ error rate. The result is shown in Figure \ref{fig:alpha}.
 
 
-As shown in Figures 3 and 4, only a fraction of the correct \kmers are added to $A$ when $\alpha$ is very small, causing many correct read positions to fail the threshold test.  \tool attempts to ``correct'' these error-free positions, decreasing accuracy.  This also has the effect of reducing the number of consecutive stretches of $k$ trusted positions in the reads, leading to a smaller fraction of correct \kmers added to $B$, and ultimately to lower accuracy.  When $\alpha$ grows too large, the $y_x$ thresholds grow to be greater than $k$, causing all positions to fail the threshold test, as seen in Figure 4's right-hand side.  This also leads to a dramatic drop in accuracy as seen in Figure 3.  Between the two extremes, we find a broad range of values for $\alpha$ (from 0.15 to 0.3) that yield high accuracy when the error rate is $1\%$ or $3\%$. and this range is much wider when the error rate is lower.
+As shown in Figures 3 and 4, only a fraction of the correct \kmers are added to $A$ when $\alpha$ is very small, causing many correct read positions to fail the threshold test.  \tool attempts to ``correct'' these error-free positions, decreasing accuracy.  This also has the effect of reducing the number of consecutive stretches of $k$ trusted positions in the reads, leading to a smaller fraction of correct \kmers added to $B$, and ultimately to lower accuracy.  When $\alpha$ grows too large, the $y_x$ thresholds grow to be greater than $k$, causing all positions to fail the threshold test, as seen in Figure 4's right-hand side.  This also leads to a dramatic drop in accuracy as seen in Figure 3.  Between the two extremes, we find a fairly broad range of values for $\alpha$ (from about 0.15 to 0.3) that yield high accuracy when the error rate is $1\%$ or $3\%$.  The range is wider when the error rate is lower.
 %\myworries{Li: Figure 3 is too hard to read.  We might either supplement with a table, or make a second plot zoomed in on y = [95, 100] or something. (Replaced by a figure from [85-100])}
 
 %If $\alpha$ is larger, $y'$ will increase due to larger $\beta$ and the $f(\alpha)$ becomes constant when $\alpha>0.05$. As a result, it can handle this case nicely. However, when $\alpha$ is too large, the \kmer length $k$ will be smaller than $y'$, and all the positions will be regarded as untrusted. We can observe this from the dramatic drop in Figure \ref{fig:alpha}.
@@ -468,43 +472,49 @@ This is a deep DNA sequencing dataset of the the K-12 strain of the \ecoli genom
 To obtain a level of coverage more reflective of other projects, we randomly subsampled the reads in the dataset to obtain roughly 75x coverage ($\sim$3.5M reads) of the \ecoli K-12 reference genome.
 The reads are 100 $\times$ 102 bp paired-end reads.
 Because BLESS cannot handle paired-end reads where the ends have different lengths, we truncated the last 2 bases from the 102 bp end before running our experiments.
+We again ran BLESS with the \verb+-notrim+ option.
 
 % We measured that out of 4,559,707 distinct \kmers in the \ecoli K12 reference genome,4,535,442 (99.468\%) appear in table $B$. 
  
 % Result of bowtie2
-These data are not simulated, so we cannot measure accuracy directly.  But we can measure it indirectly, as other have done \cite{heo2014bless}, by measuring read alignment statistics before and after error correction.  We use Bowtie2 \cite{langmead2012fast} with default parameters to align the original reads and the corrected reads to the \ecoli K-12 reference genome.  We then count the total number of the matched positions in all the alignments. Again, for each tool, we tested several different \kmer sizes and reported the one with largest number of matched positions. Results are shown in Table 3.  \tool yields the greatest improvement in number of reads aligned and in average matched positions per aligned reads.  As before, Quake is hard to compare to the other tools because it trims and discards reads.  This leads to negative values in the ``Increase'' columns.
+These data are not simulated, so we cannot measure accuracy directly.  But we can measure it indirectly, as other studies have done \cite{heo2014bless}, by measuring read alignment statistics before and after error correction.  We use Bowtie2 \cite{langmead2012fast} v2.2.2 with default parameters to align the original reads and the corrected reads to the \ecoli K-12 reference genome.  We then count the total number of the matched positions in all the alignments. Again, for each tool, we tested several different \kmer sizes and reported the one with largest number of matched positions.
+In the case of Quake and BLESS, we only used the reads (and partial reads) that remained after trimming and discarding.
+Results are shown in Table 3.  \tool yields the greatest improvement in number of reads aligned and in average matched positions per aligned reads.  As before, Quake is hard to compare to the other tools because it aggressively trims and discards reads.  This leads to a negative value in the read-level ``Increase'' column.
+
+We repeated this experiment using a less sensitive setting for Bowtie 2 (Supplementary Table 4) and using BWA-MEM \cite{li2013aligning} v0.7.9a-r786 to align the reads instead of Bowtie 2 (Supplementary Table 5) and found that the tools performed similarly.
 
 %The, "Gain" means how much improvement for its previous column comparing with the original data set. Match/Read represents the average matched position against the reference genome for the mapped reads.
 
 %For Quake, the gain is negative mainly due to unreported reads and trimmed 3' end. It turns out Lighter gives the most improvement for both read level and base level.
 
-Also, for each tool we examined the alignments for the first read in the pair.  We filtered out the alignments with indels or trimmed bases (in the case of Quake), then calculated the fraction of nucleotides at each alignment position that match the reference genome.  These are plotted in Figure 6. ``Position'' on the x axis is the offset from the 5' end of the read.  An unusual feature of this dataset is that many reads begin with an ``N'' indicating that the sequencer was unable to make a base call at that position. Nevertheless, error correction significantly improved the fraction of nucleotides matching the reference genome, especially at the ends of the reads.
+Also, for each tool we examined the alignments for the first read in the pair.  We filtered out the alignments with indels or trimmed bases (in the case of Quake), then calculated the fraction of nucleotides at each alignment position that match the reference genome.  These are plotted in Figure 6. ``Position'' on the $x$ axis is the offset from the 5' end of the read.  An unusual feature of this dataset is that many reads begin with an ``N'' indicating that the sequencer was unable to make a base call at that position. Nevertheless, error correction significantly improved the fraction of nucleotides matching the reference genome, especially at the ends of the reads.
 
 
 
-To further assess accuracy, we assembled the reads before and after error correction and measured relevant assembly statistics using Quast \cite{gurevich2013quast}.  The corrected reads are those reported in Table 3. We used Velvet 1.2.10\cite{zerbino2008velvet} to assemble.  Velvet is a De Bruijn graph-based assembler designed for second-generation sequencing reads.  A key parameter of Velvet is the De Bruijn graph's \kmer length.  To avoid being overly influenced by choice of \kmer length, for each dataset we ran Velvet with several \kmer lengths and reported statistics for the assembly with the best NG50 contig size.  For each assembly, we then evaluated the assembly's quality using Quast, which was configured to discard contigs shorter than 100 bp before calculating statistics. Results are shown in Table 4.
+To further assess accuracy, we assembled the reads before and after error correction and measured relevant assembly statistics using Quast \cite{gurevich2013quast}.  The corrected reads are those reported in Table 3. We used Velvet 1.2.10\cite{zerbino2008velvet} to assemble.  Velvet is a De Bruijn graph-based assembler designed for second-generation sequencing reads.  A key parameter of Velvet is the De Bruijn graph's \kmer length.  To avoid being overly influenced by choice of \kmer length, for each dataset we ran Velvet with several \kmer lengths and reported statistics for the assembly with the best NG50 contig size.  As before, we only used the reads (and partial reads) that remained after trimming and discarding for Quake and BLESS.  For each assembly, we then evaluated the assembly's quality using Quast, which was configured to discard contigs shorter than 100 bp before calculating statistics. Results are shown in Table 4.
 
 
 N50 is the length such that the total length of the contigs no shorter than the N50 cover at least half the assembled genome.  NG50 is similar, but with the requirement that contigs cover half the reference genome rather than half the assembled genome. Edits per 100kbps is the number of mismatches or indels per 100kbps when aligning the contigs to the reference genome. A misassembly is an instance where two adjacent stretches of bases in the assembly align either to two very distant or to two highly overlapping stretches of the reference genome.  The Quast study defines these metrics in more detail \cite{gurevich2013quast}.
 
 Assemblies produced from reads corrected with the four programs are very similar according to these measures, with Quake and \tool yielding the longest contigs and the best genome coverage. Surprisingly, the post-correction assemblies have more differences at nucleotide level compared to the pre-correction assemblies, perhaps due to spurious corrections.
 
-\subsubsection*{Human Chr14}
+\paragraph{GAGE human chromosome 14.}
 We also evaluated \tool's effect on alignment and assembly using a dataset from the GAGE project \cite{salzberg2012gage}.  The dataset consists of real 101 $\times$ 101 bp paired-end reads covering human chromosome 14 to $35\times$ average coverage ($\sim$36.5M reads).  Like before, for each \tool we tested different \kmer size and chose the best one based on Bowtie 2's results for assembly.
 
-Error correction's effect on Bowtie 2 alignment statistics are shown in Table 5.  We used Bowtie 2 with default parameters to align the reads to an index of the human chromosome 14 sequence of the hg19 build of the human genome.  Programs had comparable performance, adding between 171,000 - 323,000 aligned reads and increasing the average number of matching bases per read by 0.61 - 0.70 bases. As before, Quake produced fewer correct bases per mapped read on average due to trimming.   
+Error correction's effect on Bowtie 2 alignment statistics are shown in Table 5.  We used Bowtie 2 with default parameters to align the reads to an index of the human chromosome 14 sequence of the hg19 build of the human genome.  Programs had comparable performance, adding between 171,000 - 323,000 aligned reads and increasing the average number of matching bases per read by 0.61 - 0.70 bases.
+%As before, Quake produced fewer correct bases per mapped read on average due to trimming.   
 
+We repeated this experiment using BWA-MEM as the aligner instead of Bowtie 2 (Supplementary Table 6) and found that the tools performed similarly.
 
+We also tested error correction's effect on de novo assembly of this dataset using Velvet for assembly and Quast to evaluate the quality of the assembly.  Results are shown in Table 6.  Overall, \tool's accuracy on real data is comparable to other error correction tools, with \tool and BLESS achieving the best N50, NG50 and coverage.
 
-We also tested error correction's effect on de novo assembly using Velvet for assembly and Quast to evaluate the quality of the assembly.  Results are shown in Table 6.  Overall, \tool's accuracy on real data is comparable with other error correction tools, producing the longest contigs and covering the largest portion of the genome with the smallest number of assembly errors.   
-
-\subsubsection*{C.Elegans} % Here or Supp?
-Using the same procedure for the GAGE's chr14 dataset, we measured the effect on another large real data using the reads from SRR065390. SRR065390 contains real 100 $\times$ 100 bp paired-edn reads covering C.Elegans genoe to $66\times$ average coverage($\sim$ 67.6M reads). The reference genome we used is WBcel235. 
+\paragraph{C. elegans.}
+Using the same procedure as in the previous sections, we measured the effect of error correction on another large real data using the reads from accession SRR065390. Results are shown in Tables 7 and 8.  This run contains real 100 $\times$ 100 bp paired-end reads covering the \elegans genome (WBcel235) to $66\times$ average coverage ($\sim$ 67.6M reads).  The alignment results are similar to those for GAGE human chromosome 14, except that a substantially greater fraction of the BLESS-corrected reads align compared to the other tools, due to BLESS's trimming.  \tool and SOAPec achieve the best N50, NG50, and coverage in the assembly comparison.
 
 \subsection*{Speed, space usage, and scalability}
 
 We compared \tool's peak memory usage, disk usage, and running time with Quake, Musket and BLESS.  These experiments were run on a computer running Red Hat Linux 4.1.2-52 with 48 2.1GHz AMD Opteron processors and 512G memory.
-The input datasets are the same simulated \ecoli datasets with $1\%$ error rate discussed previously, plus the human chromosome 14 data from Gage.
+The input datasets are the same simulated \ecoli datasets with $1\%$ error rate discussed previously, plus the GAGE human chromosome 14 dataset.
 
 The measure of space usage is shown in Table 7. BLESS and \tool achieve constant memory footprint across sequencing depths.  While Musket uses less memory than Quake, it uses more than either BLESS or \tool.  BLESS achieves constant memory footprint across sequencing depths, but consumes more disk space for datasets with deeper sequencing.  Note that BLESS can be configured to trade off between peak memory footprint and the number of temporary files it creates.  \tool's algorithm uses no disk space.  \tool's only sizable data structures are the two Bloom filters, which reside in memory.
 
