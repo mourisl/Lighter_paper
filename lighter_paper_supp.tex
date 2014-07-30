@@ -197,7 +197,7 @@ The drawback is that $h$ and $m$ must be somewhat larger to achieve the same fal
 
 $$\frac{\sum_i (b'_i/b)^h}{m-b+1}$$
 
-Putze \emph{et al} also propose a \emph{pattern-blocked} Bloom filter \cite{Putze:2010:CHS:1498698.1594230}, where the difference is that instead of updating the $h$ positions in the block separately, we pre-compute a list of patterns where each pattern is a bit-mask describing how to update $h$ positions in a block with a few bitwise operations. To perform such an update we first find the appropriate pattern using hash function, then update the corresponding positions simultaneously. In Lighter, 64-bit integers are used to form the mask. For example, if $b=256$, the pattern is made up of 4 64-bit integers, and we can update in 4 64-bit operations, regardless of $h$. The FPR formula above still roughly estimates the FPR for the pattern-blocked bloom filter.
+Putze \emph{et al} also propose a \emph{pattern-blocked} Bloom filter \cite{Putze:2010:CHS:1498698.1594230}, where the difference is that instead of updating the $h$ positions in the block separately, we pre-compute a list of patterns where each pattern is a bit-mask describing how to update $h$ positions in a block with a few bitwise operations. To perform such an update we first find the appropriate pattern using hash function, then update the corresponding positions simultaneously. In \tool, 64-bit integers are used to form the mask. For example, if $b=256$, the pattern is made up of 4 64-bit integers, and we can update in 4 64-bit operations, regardless of $h$. The FPR formula above still roughly estimates the FPR for the pattern-blocked bloom filter.
 
 \section*{Supplementary Note 2: Correcting positions at the ends of reads}
 
@@ -249,59 +249,61 @@ Given the analysis in the previous section, we expect that the collection of \km
 
 \section*{Supplementary Note 4: More simulated evaluation results}
 \begin{table}[h!]
-\caption{The accuracy evaluation for the same simulated data sets in Table 1 without the quality scores. Only consider 1\% error rate}
+\caption{Accuracy evaluation similar to that shown in Table 1, but without the quality scores.  The simulated error rate is 1\% in these experiments.}
+\vspace{5 mm}
 \begin{tabular}{|c|c|c|c|c|}  \hline
 Coverage &	&$35\times$  & $70\times$ & $140\times$ \\ \hline
-$\alpha$ for lighter & & $0.2$ & $0.1$ & $0.05$ \\ \hhline{|=|=|=|=|=|}
-		&soapec	&63.45	&63.36	&63.07  \\ \hline
-Recall	&musket	&93.75	&93.73	&93.73   \\ \hline
-		&bless	&49.69	&49.85	&49.85	 \\ \hline
+$\alpha$ for \tool & & $0.2$ & $0.1$ & $0.05$ \\ \hhline{|=|=|=|=|=|}
+		&soapec	&63.45	&63.36	&63.07  \\ \cline{2-5}
+Recall	&musket	&93.75	&93.73	&93.73   \\ \cline{2-5}
+		&bless	&49.69	&49.85	&49.85	 \\ \cline{2-5}
 		&lighter	&99.89	&99.84	&99.88	 \\ \hhline{|=|=|=|=|=|}
 		
-		&soapec	&99.99	&99.99	&99.99    \\ \hline
-Prec	&musket	&99.99	&99.99	&99.99	 \\ \hline
-		&bless	&95.36	&98.22	&98.14	 \\ \hline
+		&soapec	&99.99	&99.99	&99.99    \\ \cline{2-5}
+Prec	&musket	&99.99	&99.99	&99.99	 \\ \cline{2-5}
+		&bless	&95.36	&98.22	&98.14	 \\ \cline{2-5}
 		&lighter	&99.96	&99.95	&99.95	 \\  \hhline{|=|=|=|=|=|}
 		
-		&soapec	&77.63	&77.57	&77.35	 \\ \hline
-F-score	&musket	&96.77	&96.76	&96.76	 \\ \hline
-		&bless	&65.33	&66.14	&66.11	 \\ \hline
-		&lighter	&99.92	&99.90	&99.91	 \\ \hline
+		&soapec	&77.63	&77.57	&77.35	 \\ \cline{2-5}
+F-score	&musket	&96.77	&96.76	&96.76	 \\ \cline{2-5}
+		&bless	&65.33	&66.14	&66.11	 \\ \cline{2-5}
+		&lighter	&99.92	&99.90	&99.91	 \\ \hhline{|=|=|=|=|=|}
 		
-		&soapec	&63.44	&63.36	&63.06	 \\ \hline
-Gain	&musket	&93.74	&93.72	&93.72	 \\ \hline
-		&bless	&47.27	&48.95	&48.90	 \\ \hline
+		&soapec	&63.44	&63.36	&63.06	 \\ \cline{2-5}
+Gain	&musket	&93.74	&93.72	&93.72	 \\ \cline{2-5}
+		&bless	&47.27	&48.95	&48.90	 \\ \cline{2-5}
 		&lighter	&99.84	&99.79	&99.82 \\ \hhline{|=|=|=|=|=|}
 \end{tabular}
 \end{table}
 
 \begin{table}[h!]
 \caption{The accuracy evaluation for the simulated data set from E.Coli genome with different coverage and default error profile using art\_illumina}
+\vspace{5 mm}
 \begin{tabular}{|c|c|c|c|c|} \hline
 Coverage &	&$35\times$  & $70\times$ & $140\times$ \\ \hline
-$\alpha$ for lighter & & $0.2$ & $0.1$ & $0.05$ \\ \hhline{|=|=|=|=|=|}
-		&quake	&99.46	&99.47	&99.46 \\ \hline
-		&soapec	&77.97	&77.98	&78.02  \\ \hline 
-Recall	&musket	&99.93	&99.93	&99.93  \\ \hline
-		&bless	&99.95	&99.94	&99.94  \\ \hline
+$\alpha$ for \tool & & $0.2$ & $0.1$ & $0.05$ \\ \hhline{|=|=|=|=|=|}
+		&quake	&99.46	&99.47	&99.46 \\ \cline{2-5}
+		&soapec	&77.97	&77.98	&78.02  \\ \cline{2-5}
+Recall	&musket	&99.93	&99.93	&99.93  \\ \cline{2-5}
+		&bless	&99.95	&99.94	&99.94  \\ \cline{2-5}
 		&lighter&99.91	&99.94	&99.94  \\ \hhline{|=|=|=|=|=|}
 		
-		&quake	&99.99	&99.99	&99.99  \\ \hline
-		&soapec	&99.99	&100.00	&99.99   \\ \hline
-Prec	&musket	&99.99	&99.99	&99.99   \\ \hline
-		&bless	&99.57	&99.55	&99.54	 \\ \hline
+		&quake	&99.99	&99.99	&99.99  \\ \cline{2-5}
+		&soapec	&99.99	&100.00	&99.99   \\ \cline{2-5}
+Prec	&musket	&99.99	&99.99	&99.99   \\ \cline{2-5}
+		&bless	&99.57	&99.55	&99.54	 \\ \cline{2-5}
 		&lighter	&99.98	&99.99	&99.99 \\ \hhline{|=|=|=|=|=|}
 		
-		&quake	&99.73	&99.73	&99.73	 \\ \hline
-		&soapec	&87.62	&87.63	&87.65	 \\ \hline
-F-score	&musket	&99.96	&99.96	&99.96	 \\ \hline
-		&bless	&99.76	&99.75	&99.74	 \\ \hline
+		&quake	&99.73	&99.73	&99.73	 \\ \cline{2-5}
+		&soapec	&87.62	&87.63	&87.65	 \\ \cline{2-5}
+F-score	&musket	&99.96	&99.96	&99.96	 \\ \cline{2-5}
+		&bless	&99.76	&99.75	&99.74	 \\ \cline{2-5}
 		&lighter	&99.95	&99.96	&99.96	\\ \hhline{|=|=|=|=|=|}
 		
-		&quake	&99.45	&99.45	&99.45	 \\ \hline
-		&soapec	&77.97	&77.98	&78.01	 \\ \hline
-Gain	&musket	&99.93	&99.92	&99.93	 \\ \hline
-		&bless	&99.52	&99.49	&99.48	 \\ \hline
+		&quake	&99.45	&99.45	&99.45	 \\ \cline{2-5}
+		&soapec	&77.97	&77.98	&78.01	 \\ \cline{2-5}
+Gain	&musket	&99.93	&99.92	&99.93	 \\ \cline{2-5}
+		&bless	&99.52	&99.49	&99.48	 \\ \cline{2-5}
 		&lighter	&99.89	&99.92	&99.92 \\ \hhline{|=|=|=|=|=|}
 	
 \end{tabular}
@@ -360,6 +362,8 @@ Bless&	36,481,303&	-0.03&	98.909&	0.86 \\ \hline
 Lighter&	36,494,905&	0.00&	99.353&	1.31 \\ \hline
 \end{tabular}
 \end{table}
+
+\clearpage
 
 \bibliographystyle{abbrv}
 \bibliography{lighter_paper_supp}
