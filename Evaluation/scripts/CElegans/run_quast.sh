@@ -1,0 +1,2 @@
+#~/Softwares/quast-2.3/quast.py -o quast_M100 -T 10 -M 100 -R /home/lsong/data/Lighter/CElegans/Caenorhabditis_elegans.WBcel235.75.dna.toplevel.fa orig/velvet_53/contigs.fa quake/velvet_53/contigs.fa musket/velvet_57/contigs.fa bless/velvet_53/contigs.fa #lighter/velvet_63/contigs.fa
+~/Softwares/quast-2.3/quast.py -o quast_M100 -T 10 -M 100 -R /home/lsong/data/Lighter/CElegans/Caenorhabditis_elegans.WBcel235.75.dna.toplevel.fa soapec/velvet_57/contigs.fa lighter_rev/velvet_57/contigs.fa

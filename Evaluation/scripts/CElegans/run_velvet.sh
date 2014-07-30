@@ -12,8 +12,8 @@ do
 	for i in 47 53 57 63 67
 	do
 		velveth velvet_${i} ${i} -fmtAuto -separate -shortPaired ${prog}_read1.fq ${prog}_read2.fq
-		velvetg velvet_${i} -ins_length 155 -exp_cov auto -scaffolding no 
-		perl ../../Tools/VelvetN50.pl 107349540 < velvet_${i}/contigs.fa > velvet_${i}.N50
+		velvetg velvet_${i} -ins_length 356 -exp_cov auto -scaffolding no 
+		perl ../../Tools/VelvetN50.pl 100286401 < velvet_${i}/contigs.fa > velvet_${i}.N50
 	done
 	cd .. 
 done
