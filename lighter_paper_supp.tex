@@ -197,7 +197,7 @@ The drawback is that $h$ and $m$ must be somewhat larger to achieve the same fal
 
 $$\frac{\sum_i (b'_i/b)^h}{m-b+1}$$
 
-In that paper, the author further proposed \emph{pattern-blocked} Bllom filter, where the difference is that instead of updating the $h$ positions in the block separately, we can pre-compute a list of patterns where each pattern is a bit-mask that can update $h$ positions in a block with just a simple bit operation. When update, we find the pattern using hash function and update the corresponding position simultaneously. In Lighter, we used the 64-bit integers to form the mask. For example, if the $b=256$, then  the pattern is formed by 4 64-bit integers and we can update the corresponding positions with only 4 bit operations regardless of $h$. And we still use the FPR formula above to roughly estimate the FPR for the pattern-blocked bloom filter.
+Putze \emph{et al} also propose a \emph{pattern-blocked} Bloom filter \cite{Putze:2010:CHS:1498698.1594230}, where the difference is that instead of updating the $h$ positions in the block separately, we pre-compute a list of patterns where each pattern is a bit-mask describing how to update $h$ positions in a block with a few bitwise operations. To perform such an update we first find the appropriate pattern using hash function, then update the corresponding positions simultaneously. In Lighter, 64-bit integers are used to form the mask. For example, if $b=256$, the pattern is made up of 4 64-bit integers, and we can update in 4 64-bit operations, regardless of $h$. The FPR formula above still roughly estimates the FPR for the pattern-blocked bloom filter.
 
 \section*{Supplementary Note 2: Correcting positions at the ends of reads}
 
