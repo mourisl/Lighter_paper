@@ -122,6 +122,7 @@
 \newcommand{\kmers}{\ensuremath{k}-mers\xspace}
 \newcommand{\tool}{Lighter\xspace}
 \newcommand{\ecoli}{\emph{E. coli}\xspace}
+\newcommand{\elegans}{\emph{C. elegans}\xspace}
 
 \newcommand\myworries[1]{\textcolor{red}{#1}}%\usepackage[applemac]{inputenc} %applemac support if unicode package fails
 
@@ -247,10 +248,11 @@ Given the analysis in the previous section, we expect that the collection of \km
 
 %Therefore, the number of \kmers coming from the consecutive trusted positions does not increase which means there is no need to increase the size of Bloom filter $B$ when increasing coverage. Also, the analysis showed that the ability of capturing solid kmers remains almost the same when we change $\alpha$ linearly. 
 
-\section*{Supplementary Note 4: More simulated evaluation results}
+\section*{Supplementary Table 1: Quality-free simulation results}
+
+Here we give accuracy results from an evaluation similar to that shown in Table 1, except with quality values omitted.  Each of the tools was run on a FASTA file (with no qualities) instead of a FASTQ file.  Quake is omitted as it requires quality values.  The simulated error rate is 1\% in these experiments.
+
 \begin{table}[h!]
-\caption{Accuracy evaluation similar to that shown in Table 1, but without the quality scores.  The simulated error rate is 1\% in these experiments.}
-\vspace{5 mm}
 \begin{tabular}{|c|c|c|c|c|}  \hline
 Coverage &	&$35\times$  & $70\times$ & $140\times$ \\ \hline
 $\alpha$ for \tool & & $0.2$ & $0.1$ & $0.05$ \\ \hhline{|=|=|=|=|=|}
@@ -275,9 +277,13 @@ Gain	&musket	&93.74	&93.72	&93.72	 \\ \cline{2-5}
 		&lighter	&99.84	&99.79	&99.82 \\ \hhline{|=|=|=|=|=|}
 \end{tabular}
 \end{table}
+\clearpage
 
+\section*{Supplementary Table 2: Simulation results using the Art simulator.}
 \begin{table}[h!]
-\caption{The accuracy evaluation for the simulated data set from E.Coli genome with different coverage and default error profile using art\_illumina}
+
+Here we give accuracy results from an evaluation similar to that shown in Table 1, except that the simulation was conducted using \verb+art_illumina+ v2.1.8 from the Art \cite{huang2012art} package.
+
 \vspace{5 mm}
 \begin{tabular}{|c|c|c|c|c|} \hline
 Coverage &	&$35\times$  & $70\times$ & $140\times$ \\ \hline
@@ -308,9 +314,13 @@ Gain	&musket	&99.93	&99.92	&99.93	 \\ \cline{2-5}
 	
 \end{tabular}
 \end{table}
+\clearpage
+
+\section*{Supplementary Table 3: Simulation results with \elegans genome.}
+
+The accuracy evaluation for the simulated data set from \elegans genome with $35\times$ coverage and $1\%$ error rate using Mason \cite{holtgrewe2010mason} v0.1.2.
 
 \begin{table}[h!]
-\caption{The accuracy evaluation for the simulated data set from C.Elegans genome with $35\times$ coverage and $1\%$ error rate using Mason}
 \begin{tabular}{|c|c|c|c|c|c|} \hline
 	&Quake	&SOAPec	&Musket	&Bless	&Lighter \\ \hline
 Recall	&85.70	&53.40	&90.31	&98.99	&98.12 \\ \hline
@@ -319,10 +329,13 @@ F-score	&92.22	&69.58	&94.72	&97.29	&98.88 \\ \hline
 Gain	&85.55	&53.31	&89.94	&94.48	&97.78 \\ \hline
 \end{tabular}
 \end{table}
+\clearpage
 
+\section*{Supplementary Table 4: Alignment statistics for various aligners and sensitivities.}
+
+Alignment statistics for the $75\times$ \ecoli data set using Bowtie 2 \cite{langmead2012fast} v2.2.2 with \verb+--very-fast+.
 
 \begin{table}[h!] 
-\caption{Alignment statistics for the $75\times$ \ecoli data set using bowtie2 --very-fast mode}
 \begin{tabular}{|c|c|c||c|c|} \hline
 	 & \multicolumn{2}{|c||}{Read Level} & \multicolumn{2}{|c|}{Base Level} \\ \hline
      & Mapped Reads & Increase(\%) & Base Match/Read & Increase(\%) \\ \hline
@@ -335,8 +348,9 @@ Lighter&	3,478,210&	0.55&	99.641&	0.60  \\ \hline
 \end{tabular}
 \end{table}
 
+\noindent Alignment statistics for the $75\times$ \ecoli data set using BWA-MEM \cite{li2013aligning} v0.7.9a-r786 with default parameters.
+
 \begin{table}[h!] 
-\caption{Alignment statistics for the $75\times$ \ecoli data set using "bwa mem"}
 \begin{tabular}{|c|c|c||c|c|} \hline
 	 & \multicolumn{2}{|c||}{Read Level} & \multicolumn{2}{|c|}{Base Level} \\ \hline
      & Mapped Reads & Increase(\%) & Base Match/Read & Increase(\%) \\ \hline
@@ -349,8 +363,9 @@ Lighter&	3,484,166&	0.05&	99.821&	0.89  \\ \hline
 \end{tabular}
 \end{table}
 
-\begin{table}[h!] 
-\caption{Alignment statistics for the GAGE chr14 data set using "bwa mem"}
+\noindent Alignment statistics for the GAGE chr14 data set using BWA-MEM \cite{li2013aligning} v0.7.9a-r786 with default parameters.
+
+\begin{table}[h!]
 \begin{tabular}{|c|c|c||c|c|} \hline
 	 & \multicolumn{2}{|c||}{Read Level} & \multicolumn{2}{|c|}{Base Level} \\ \hline
      & Mapped Reads & Increase(\%) & Base Match/Read & Increase(\%) \\ \hline
