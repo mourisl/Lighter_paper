@@ -220,7 +220,7 @@
 \begin{abstractbox}
 \begin{abstract}
         % Do not use inserted blank lines (ie \\) until main body of text.
-\emph{Lighter} is a fast and memory-efficient tool for correcting sequencing errors in high-throughput sequencing datasets.
+\tool is a fast and memory-efficient tool for correcting sequencing errors in high-throughput sequencing datasets.
 \tool avoids counting \kmers in the sequencing reads.
 Instead, it uses a pair of Bloom filters, one populated with a sample of the input \kmers and the other populated with \kmers likely to be correct based on a simple test.
 As long as the sampling fraction is adjusted in inverse proportion to the depth of sequencing, the Bloom filter size can be held constant while maintaining near-constant accuracy.
@@ -304,7 +304,7 @@ This is in contrast to BLESS and Quake/Jellyfish, which use secondary memory to 
 These advantages make \tool quite practical compared to previous counting-based approaches, all of which require an amount of memory or secondary storage that increases with depth of coverage.
 
 \section*{Method}
-Lighter's workflow is illustrated in Figure 1. Lighter makes three passes over the input reads.  The first pass obtains a sample of the \kmers present in the input reads, storing the sample in Bloom filter A.  The second pass uses Bloom filter A to identify solid \kmers, which it stores in Bloom filter B.  The third pass uses Bloom filter B and a greedy procedure to correct errors in the input reads.
+\tool's workflow is illustrated in Figure 1. \tool makes three passes over the input reads.  The first pass obtains a sample of the \kmers present in the input reads, storing the sample in Bloom filter A.  The second pass uses Bloom filter A to identify solid \kmers, which it stores in Bloom filter B.  The third pass uses Bloom filter B and a greedy procedure to correct errors in the input reads.
 
 
 
@@ -327,7 +327,7 @@ We model incorrect \kmers similarly.  The sequencer obtains incorrect \kmers by 
 Others have noted that, given a dataset with deep and uniform coverage, incorrect \kmers occur rarely while correct \kmers occur many times, proportionally to coverage \cite{pevzner2001eulerian, chaisson2004fragment}.
 
 \subsection*{Stages of the method}
-\paragraph{First pass.}    In the first pass, Lighter examines each \kmer of each read.  With probability $1 - \alpha$, the \kmer is ignored.  \kmers containing ambiguous nucleotides (e.g. ``N'') are also ignored.  Otherwise, the \kmer is canonicalized and added to Bloom filter $A$.
+\paragraph{First pass.}    In the first pass, \tool examines each \kmer of each read.  With probability $1 - \alpha$, the \kmer is ignored.  \kmers containing ambiguous nucleotides (e.g. ``N'') are also ignored.  Otherwise, the \kmer is canonicalized and added to Bloom filter $A$.
 
 Say a distinct \kmer $a$ occurs a total of $N_a$ times in the dataset.  If none of the $N_a$ occurrences survive subsampling, the \kmer is never added to $A$ and $A$'s cardinality is reduced by one.  Thus, reducing $\alpha$ can in turn reduce $A$'s cardinality.  Because correct \kmers are more numerous, incorrect \kmers tend to be discarded from $A$ before correct \kmers as $\alpha$ decreases.
 
@@ -374,25 +374,37 @@ When errors are located near to end of a read, the stretches of consecutive \kme
 \tool's accuracy can be made near-constant as the depth of sequencing $K$ increases and its memory footprint is held constant.  This is accomplished by holding $\alpha K$ constant, \thatis, by adjusting $\alpha$ in inverse proportion to $K$.  This is illustrated in Tables 1 and 2.  We also argue this more formally in Supplementary Note 3.
 
 \subsection*{Quality score}
-A low base quality value at a certain position can force \tool to treat that position as untrusted even if the overlapping \kmers indicate it is trusted.  First, \tool scans the first 1 million reads in the input, recording the quality value at the last position in each read.  \tool then chooses the 5th-percentile quality value; that is, the value such that 5\% of the values are less than or equal to it say $t_1$. Use the same idea, we get another 5th-percentile quality, say $t_2$ value for the first 1 million reads' first base. When Lighter decides whether a position is trusted or not, if its quality score is less or equal to $min\{t_1, t_2 - 1\}$, then call it untrusted regardless of how many of the overlapping \kmers appear in Bloom filter $A$. 
+A low base quality value at a certain position can force \tool to treat that position as untrusted even if the overlapping \kmers indicate it is trusted.  First, \tool scans the first 1 million reads in the input, recording the quality value at the last position in each read.  \tool then chooses the 5th-percentile quality value; that is, the value such that 5\% of the values are less than or equal to it say $t_1$. Use the same idea, we get another 5th-percentile quality, say $t_2$ value for the first 1 million reads' first base. When \tool decides whether a position is trusted or not, if its quality score is less or equal to $min\{t_1, t_2 - 1\}$, then call it untrusted regardless of how many of the overlapping \kmers appear in Bloom filter $A$. 
 
 \subsection*{Parallelization} 
-As shown in Figure 1, Lighter works in three passes: (1) populating Bloom filter $A$ with a \kmer subsample, (2) applying the per-position test and populating Bloom filter $B$ with likely-correct \kmers, and (3) error correction.  For pass 1, because $\alpha$ is usually small, most time is spent scanning the input reads.  Consequently, we found little benefit to parallelizing pass 1.  Pass 2 is parallelized by using concurrent threads handle subsets of input reads.  Because Bloom filter $A$ is only being queried (not added to), we need not synchronize accesses to $A$.  Accesses to $B$ are synchronized so that additions of \kmers to $B$ by different threads do not interfere.  Since it is typical for the same correct \kmer to be added repeatedly to $B$, we can save synchronization effort by first checking whether the \kmer is already present and adding it (synchronously) only if necessary.  Pass 3 is parallelized by using concurrent threads to handle subsets of the reads; since Bloom filter $B$ is only being queried, we need not synchronize accesses.
+As shown in Figure 1, \tool works in three passes: (1) populating Bloom filter $A$ with a \kmer subsample, (2) applying the per-position test and populating Bloom filter $B$ with likely-correct \kmers, and (3) error correction.  For pass 1, because $\alpha$ is usually small, most time is spent scanning the input reads.  Consequently, we found little benefit to parallelizing pass 1.  Pass 2 is parallelized by using concurrent threads handle subsets of input reads.  Because Bloom filter $A$ is only being queried (not added to), we need not synchronize accesses to $A$.  Accesses to $B$ are synchronized so that additions of \kmers to $B$ by different threads do not interfere.  Since it is typical for the same correct \kmer to be added repeatedly to $B$, we can save synchronization effort by first checking whether the \kmer is already present and adding it (synchronously) only if necessary.  Pass 3 is parallelized by using concurrent threads to handle subsets of the reads; since Bloom filter $B$ is only being queried, we need not synchronize accesses.
 
 \section*{Evaluation}
 \subsection*{Simulated data set}
 
-\paragraph{Accuracy on simulated data.} We compared \tool v1.0.2's performance \myworries{(Li: ensure we make a release for the relevant version of the Lighter repo so that it's obvious what version people should use to recreate our results.  Think this should be v1.0.2. Answer: Done)} with Quake v0.3\cite{kelley2010quake}, Musket v1.1\cite{liu2013musket}, BLESS v0p17 \cite{heo2014bless}, and SOAPec v2.0.1 \cite{luo2012soapdenovo2} \myworries{(Li: is this version number right? Answer: Yes.)}.  We generated collection of reads simulated from the reference genome for the K12 strain of \ecoli (NC\_000913.2) using Mason v0.1.2 \cite{holtgrewe2010mason}.  
+\paragraph{Accuracy on simulated data.} We compared \tool v1.0.2's performance with Quake v0.3\cite{kelley2010quake}, Musket v1.1\cite{liu2013musket}, BLESS v0p17 \cite{heo2014bless}, and SOAPec v2.0.1 \cite{luo2012soapdenovo2}.  We simulated a collection of reads from the reference genome for the K12 strain of \ecoli (NC\_000913.2) using Mason v0.1.2 \cite{holtgrewe2010mason}.  
 
 We simulated six distinct datasets with 101bp single-end reads, varying average coverage ($35$x, $75$x $140$x) and average error rate ($1\%$ and $3\%$).  For a given error rate $e$ we specify Mason parameters \verb+-qmb+ $e/2$ \verb+-qme+ $3e$, so that the average error rate is $e$ but errors are more common toward the 3' end, as in real datasets.
 
-We then ran all four tools on all six datasets, with results presented in Table 1.  In these comparisons, a true positive (TP) is an instance where an error is successfully corrected, \thatis with the correct base substituted.  A false positive (FP) is an instance where a spurious substitution is made at an error-free position.  A false negative (FN) is an instance where we either fail to detect an error or an incorrect base is substituted.  As done in previous studies \cite{liu2013musket}, we report the following summaries: recall = TP/(TP$+$NP), precision = TP/(TP$+$FP), F-score = 2$\times$recall$\times$precision/(recall$+$precision) and gain = (TP-FP)/(TP+FN). 
+We then ran all four tools on all six datasets, with results presented in Table 1.  BLESS was run with the \verb+-notrim+ option to make the results more comparable. In these comparisons, a true positive (TP) is an instance where an error is successfully corrected, \thatis with the correct base substituted.  A false positive (FP) is an instance where a spurious substitution is made at an error-free position.  A false negative (FN) is an instance where we either fail to detect an error or an incorrect base is substituted.  As done in previous studies \cite{liu2013musket}, we report the following summaries: recall = TP/(TP$+$NP), precision = TP/(TP$+$FP), F-score = 2$\times$recall$\times$precision/(recall$+$precision) and gain = (TP-FP)/(TP+FN). 
 
 Since the error correctors are sensitive to the choice of \kmer size, we give different sizes to the tools, the result in Table 1 corresponding to the results with the best gain value. Quake crashed on larger \kmer size through out all the experiments we conducted in this paper.
 
-Unlike the other tools, Quake both trims the untrusted tails of the reads and discards reads it cannot correct. For a more fair comparison, Quake's result will contain the non-correctable reads for all the simulated data sets. For reads that Quake trims, the evaluation is done only on the remaining portion. This leads to very high precision relative to other tools, though at the expense of discarded data.  \myworries{(I see that Quake results in Tables 3 and 5 have changed and are worse now.  Has something changed about how we're accounting for Quake's trimming in our evaluations?  Does this paragraph need revising as a result? I did not change the way of evaluating the trimming part. The only difference from the old version of the paper is that quake does not use those discarded reads for real data sets. )}.
+Unlike the other tools, Quake both trims the untrusted tails of the reads and discards reads it cannot correct. BLESS also trims some reads (even in \verb+-notrim+ mode), but only a small fraction (\textless0.1\%) of them, which has only a slight effect on results.  For these simulation experiments, we measure precision and recall with respect to all the nucleotides (even the trimmed ones) in all the reads (even those discarded).  This tends to lead to higher precision but lower recall for Quake relative to the other tools.
 
-Of the remaining tools, \tool and Musket achieve the highest precision, with Musket achieving slightly higher precision.  \tool achieves the highest recall, F-score and gain in the experiments with 1\% error, and comparable with BLESS when the error rate is 3\%. BLESS sometimes trims reads, but the total amount trimmed should not affect the result much \myworries{(Li: elaborate -- is there only a very small fraction of reads/nucleotides trimmed?  What is the fraction? Answer: For simulated data set, less than 0.1\% of the reads got trimmed, while quake trimmed about 33\% of the reads. As Heng said, these trimmed reads seem to be caused by bugs.)}.
+%\myworries{(I see that Quake results in Tables 3 and 5 have changed and are worse now.  Has something changed about how we're accounting for Quake's trimming in our evaluations?  Does this paragraph need revising as a result? I did not change the way of evaluating the trimming part. The only difference from the old version of the paper is that quake does not use those discarded reads for real data sets. )}.
+
+Apart from Quake, SOAPec, Musket and \tool achieve the highest precision.  \tool achieves the highest recall, F-score and gain in the experiments with 1\% error, and is comparable to BLESS when the error rate is 3\%.
+%BLESS will trim some reads even when instructed not to (with the \verb+-notrim+ option), but the total amount trimmed should not affect the result much \myworries{(Li: elaborate -- is there only a very small fraction of reads/nucleotides trimmed?  What is the fraction? Answer: For simulated data set, less than 0.1\% of the reads got trimmed, while quake trimmed about 33\% of the reads. As Heng said, these trimmed reads seem to be caused by bugs.)}.
+
+To see how quality value information affects performance, we repeated these experiments with quality values omitted.
+Quake and BLESS accept only FASTQ input files (which include quality values), and so were not included in the experiment.
+Supplementary Table 1 summarizes the results, which show \tool achieving superior recall, gain and F-score.
+
+To see how the choice of read simulator affects performance, we repeated these experiments using the Art \cite{huang2012art} simulator to generate the reads instead of Mason.
+Supplementary Table 2 summarizes the results.
+All the tools perform quite similarly in this experiment, except SOAPec, which has poor recall compared to the other tools.
+\tool and Musket perform best overall.
 
 For the 1\% error dataset, we found that \tool's gain was maximized by setting the \kmer size to 23.  We therefore fix the \kmer size to 23 for subsequent experiments.
 
@@ -415,7 +427,7 @@ Thus, \tool retained in table B almost the same fraction of the \kmers overlappi
 Musket and BLESS both infer a threshold for the multiplicity of solid \kmers. In this experiment, Musket inferred a threshold of 10 and BLESS inferred a threshold of 9.
 Both used a \kmer size is 23 \myworries{(both used this size, right? Right. But in Table 1, their reported kmer size is different.)}.
 By counting the multiplicity of the \kmers overlapping heterozygous positions, we can conclude that Musket obtained 214,458 of those \kmers and BLESS obtained 214,557 of them. This shows that at least for the diploid case,
-So for this experiment \tool succeeds at classifying lower multiplicity due to heterozygous SNP and the number Lighter obtained is comparable to other error correctors based on counting.
+So for this experiment \tool succeeds at classifying lower multiplicity due to heterozygous SNP and the number \tool obtained is comparable to other error correctors based on counting.
 
 Nevertheless, we belive for higher ploidity, we may have some issue. 
 The count distribution of \kmers overlapping heterozygous positions is closer to the distribution for incorrect \kmers.
@@ -475,7 +487,7 @@ To further assess accuracy, we assembled the reads before and after error correc
 
 N50 is the length such that the total length of the contigs no shorter than the N50 cover at least half the assembled genome.  NG50 is similar, but with the requirement that contigs cover half the reference genome rather than half the assembled genome. Edits per 100kbps is the number of mismatches or indels per 100kbps when aligning the contigs to the reference genome. A misassembly is an instance where two adjacent stretches of bases in the assembly align either to two very distant or to two highly overlapping stretches of the reference genome.  The Quast study defines these metrics in more detail \cite{gurevich2013quast}.
 
-Assemblies produced from reads corrected with the four programs are very similar according to these measures, with Quake and Lighter yielding the longest contigs and the best genome coverage. Surprisingly, the post-correction assemblies have more differences at nucleotide level compared to the pre-correction assemblies, perhaps due to spurious corrections.
+Assemblies produced from reads corrected with the four programs are very similar according to these measures, with Quake and \tool yielding the longest contigs and the best genome coverage. Surprisingly, the post-correction assemblies have more differences at nucleotide level compared to the pre-correction assemblies, perhaps due to spurious corrections.
 
 \subsubsection*{Human Chr14}
 We also evaluated \tool's effect on alignment and assembly using a dataset from the GAGE project \cite{salzberg2012gage}.  The dataset consists of real 101 $\times$ 101 bp paired-end reads covering human chromosome 14 to $35\times$ average coverage ($\sim$36.5M reads).  Like before, for each \tool we tested different \kmer size and chose the best one based on Bowtie 2's results for assembly.
@@ -662,7 +674,7 @@ The authors thank Jeff Leek for helpful discussions.
 \begin{tabular}{|c|c|c|c|c|c|c|c|}\hline
 Coverage &	& \multicolumn{2}{|c|}{$35\times$}  & \multicolumn{2}{|c|}{$70\times$} & \multicolumn{2}{|c|}{$140\times$} \\ \hline
 Error rate & & $1\%$ & $3\%$ & $1\%$ & $3\%$ & $1\%$ & $3\%$ \\ \hline
-$\alpha$ for lighter & & $0.2$ & $0.2$ & $0.1$ & $0.1$ & $0.05$ & $0.05$ \\ \hhline{|=|=|=|=|=|=|=|=|}
+$\alpha$ for \tool & & $0.2$ & $0.2$ & $0.1$ & $0.1$ & $0.05$ & $0.05$ \\ \hhline{|=|=|=|=|=|=|=|=|}
 		&	quake&	89.68&	48.77&	89.64&	48.82&	89.59&	48.78	\\ \cline{2-8}
 		& 	soapec & 57.71	& 38.00	& 57.57	& 37.71	& 57.09	& 36.76 \\ \cline{2-8}
 Recall	&	musket&	93.75&	92.62&	93.73&	92.64&	93.73&	92.63	\\ \cline{2-8}
