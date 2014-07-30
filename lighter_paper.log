@@ -1,16 +1,26 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=latex 2014.5.26)  23 JUL 2014 22:42
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=latex 2012.6.30)  30 JUL 2014 18:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **lighter_paper
 (./lighter_paper.tex
 LaTeX2e <2011/06/27>
-Babel <3.9k> and hyphenation patterns for 78 languages loaded.
+Babel <v3.8m> and hyphenation patterns for english, dumylang, nohyphenation, ge
+rman-x-2012-05-30, ngerman-x-2012-05-30, afrikaans, ancientgreek, ibycus, arabi
+c, armenian, basque, bulgarian, catalan, pinyin, coptic, croatian, czech, danis
+h, dutch, ukenglish, usenglishmax, esperanto, estonian, ethiopic, farsi, finnis
+h, french, friulan, galician, german, ngerman, swissgerman, monogreek, greek, h
+ungarian, icelandic, assamese, bengali, gujarati, hindi, kannada, malayalam, ma
+rathi, oriya, panjabi, tamil, telugu, indonesian, interlingua, irish, italian, 
+kurmanji, latin, latvian, lithuanian, mongolian, mongolianlmc, bokmal, nynorsk,
+ polish, portuguese, romanian, romansh, russian, sanskrit, serbian, serbianc, s
+lovak, slovenian, spanish, swedish, turkish, turkmen, ukrainian, uppersorbian, 
+welsh, loaded.
 (./bmcart.cls
 Document Class: bmcart 2012/06/27BioMed Central class (VS)
-(/usr/local/texlive/2013/texmf-dist/tex/latex/base/article.cls
+(/usr/local/texlive/2012/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
-(/usr/local/texlive/2013/texmf-dist/tex/latex/base/size10.clo
+(/usr/local/texlive/2012/texmf-dist/tex/latex/base/size10.clo
 File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -27,19 +37,19 @@ File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \mathindent=\dimen103
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/graphics/keyval.sty
+(/usr/local/texlive/2012/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks14
 )
-(/usr/local/texlive/2013/texmf-dist/tex/latex/xcolor/xcolor.sty
+(/usr/local/texlive/2012/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/latexconfig/color.cfg
+(/usr/local/texlive/2012/texmf-dist/tex/latex/latexconfig/color.cfg
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package xcolor Info: Driver file: dvips.def on input line 225.
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/graphics/dvips.def
+(/usr/local/texlive/2012/texmf-dist/tex/latex/graphics/dvips.def
 File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
 )
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
@@ -51,9 +61,8 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
 )
-(/home/songli/texmf/tex/latex/lastpage.sty
-Package: lastpage 1994/06/25 v0.1b LaTeX2e package for refs to last page number
- (JPG)
+(/usr/local/texlive/2012/texmf-dist/tex/latex/lastpage/lastpage.sty
+Package: lastpage 2011/09/01 v1.2k Refers to last page's name (HMM; JPG)
 )
 \c@thanks=\count87
 \bmcfloat@box=\box26
@@ -67,19 +76,19 @@ Package: lastpage 1994/06/25 v0.1b LaTeX2e package for refs to last page number
 \authors@list=\toks15
 \keywords@list=\toks16
 )
-(/usr/local/texlive/2013/texmf-dist/tex/latex/base/inputenc.sty
+(/usr/local/texlive/2012/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2008/03/30 v1.1d Input encoding file
 \inpenc@prehook=\toks17
 \inpenc@posthook=\toks18
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/base/utf8.def
+(/usr/local/texlive/2012/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OML ...
 ... no UTF-8 mapping file for font encoding OML
 Now handling font encoding T1 ...
 ... processing UTF-8 mapping file for font encoding T1
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/base/t1enc.dfu
+(/usr/local/texlive/2012/texmf-dist/tex/latex/base/t1enc.dfu
 File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
@@ -229,7 +238,7 @@ File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OT1 ...
 ... processing UTF-8 mapping file for font encoding OT1
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/base/ot1enc.dfu
+(/usr/local/texlive/2012/texmf-dist/tex/latex/base/ot1enc.dfu
 File: ot1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
@@ -260,7 +269,7 @@ File: ot1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OMS ...
 ... processing UTF-8 mapping file for font encoding OMS
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/base/omsenc.dfu
+(/usr/local/texlive/2012/texmf-dist/tex/latex/base/omsenc.dfu
 File: omsenc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A7 (decimal 167)
    defining Unicode char U+00B6 (decimal 182)
@@ -284,26 +293,26 @@ Now handling font encoding U ...
    defining Unicode char U+2122 (decimal 8482)
    defining Unicode char U+2423 (decimal 9251)
 ))
-(/usr/local/texlive/2013/texmf-dist/tex/latex/url/url.sty
+(/usr/local/texlive/2012/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip10
-Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
 )
-(/usr/local/texlive/2013/texmf-dist/tex/latex/tools/hhline.sty
+(/usr/local/texlive/2012/texmf-dist/tex/latex/tools/hhline.sty
 Package: hhline 1994/05/23 v2.03 Table rule package (DPC)
 )
-(/usr/local/texlive/2013/texmf-dist/tex/latex/tools/xspace.sty
+(/usr/local/texlive/2012/texmf-dist/tex/latex/tools/xspace.sty
 Package: xspace 2009/10/20 v1.13 Space after command names (DPC,MH)
 )
-(/home/songli/texmf/tex/latex/graphicx.sty
+(/usr/local/texlive/2012/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/home/songli/texmf/tex/latex/graphics.sty
+(/usr/local/texlive/2012/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/graphics/trig.sty
+(/usr/local/texlive/2012/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-(/usr/local/texlive/2013/texmf-dist/tex/latex/latexconfig/graphics.cfg
+(/usr/local/texlive/2012/texmf-dist/tex/latex/latexconfig/graphics.cfg
 File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
 )
 Package graphics Info: Driver file: dvips.def on input line 91.
@@ -326,48 +335,50 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 96.
 LaTeX Font Info:    ... okay on input line 96.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 96.
 LaTeX Font Info:    ... okay on input line 96.
+Package lastpage Info: Please have a look at the pageslts package at
+(lastpage)             http://www.ctan.org/tex-archive/ 
+(lastpage)             macros/latex/contrib/pageslts/ 
+(lastpage)             or
+(lastpage)             http://www.ctan.org/tex-archive/ 
+(lastpage)             install/macros/latex/contrib/pageslts.tds.zip
+(lastpage)             ! on input line 96.
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/bx/n' in size <13> not available
-(Font)              size <12> substituted on input line 115.
+(Font)              size <12> substituted on input line 116.
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <24> not available
-(Font)              size <24.88> substituted on input line 123.
+(Font)              size <24.88> substituted on input line 124.
 
-LaTeX Font Info:    Calculating math sizes for size <11> on input line 149.
+LaTeX Font Info:    Calculating math sizes for size <11> on input line 150.
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <5.5> not available
-(Font)              size <5> substituted on input line 149.
+(Font)              size <5> substituted on input line 150.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <5.5> not available
-(Font)              size <5> substituted on input line 149.
+(Font)              size <5> substituted on input line 150.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <5.5> not available
-(Font)              size <5> substituted on input line 149.
+(Font)              size <5> substituted on input line 150.
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <11> on input line 149.
+(Font)              <11> on input line 150.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7.69997> on input line 149.
+(Font)              <7.69997> on input line 150.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5.5> on input line 149.
+(Font)              <5.5> on input line 150.
 \address@aff1=\toks19
 \address@aff2=\toks20
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 206.
+(Font)              <7> on input line 207.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 206.
-
-LaTeX Font Warning: Font shape `OT1/cmss/m/it' in size <10> not available
-(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 223.
-
-
+(Font)              <5> on input line 207.
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/it' in size <8> not available
-(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 291.
+(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 292.
 
 
 
@@ -377,31 +388,41 @@ Overfull \hbox (1.0pt too wide) has occurred while \output is active
 
 [1
 
-] [2] [3] [4] [5] [6] [7] [8] [9] [10]
+] [2] [3] [4] [5]
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 394.
+
+
+(/usr/local/texlive/2012/texmf-dist/tex/latex/base/omlcmr.fd
+File: omlcmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 394.
+ [6] [7] [8]
+
+LaTeX Warning: Citation `li2013aligning' on page 9 undefined on input line 486.
+
+
+[9] [10] [11]
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/it' in size <7> not available
-(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 551.
+(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 577.
 
 
-(./lighter_paper.bbl [11])
+(./lighter_paper.bbl [12])
 File: lighter_framework.eps Graphic file (type eps)
  <lighter_framework.eps>
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 592.
+(Font)              <8> on input line 618.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 592.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
+(Font)              <6> on input line 618.
 File: ErrorCorrection.eps Graphic file (type eps)
-<ErrorCorrection.eps>
+ <ErrorCorrection.eps>
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 File: alpha.eps Graphic file (type eps)
 <alpha.eps>
-Overfull \hbox (12.84999pt too wide) in paragraph at lines 607--609
+Overfull \hbox (12.84999pt too wide) in paragraph at lines 633--635
  [] 
  []
 
@@ -410,7 +431,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 File: bloom_occupancy_alpha.eps Graphic file (type eps)
 <bloom_occupancy_alpha.eps>
-Overfull \hbox (12.84999pt too wide) in paragraph at lines 616--618
+Overfull \hbox (12.84999pt too wide) in paragraph at lines 642--644
  [] 
  []
 
@@ -419,7 +440,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 File: kmerLength.eps Graphic file (type eps)
 <kmerLength.eps>
-Overfull \hbox (12.84999pt too wide) in paragraph at lines 625--627
+Overfull \hbox (12.84999pt too wide) in paragraph at lines 651--653
  [] 
  []
 
@@ -428,20 +449,20 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 File: per_base.eps Graphic file (type eps)
 <per_base.eps>
-Overfull \hbox (12.84999pt too wide) in paragraph at lines 634--636
+Overfull \hbox (12.84999pt too wide) in paragraph at lines 660--662
  [] 
  []
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
-(Font)              using `OT1/cmss/bx/n' instead on input line 636.
+(Font)              using `OT1/cmss/bx/n' instead on input line 662.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 File: runtime.eps Graphic file (type eps)
 <runtime.eps>
-Overfull \hbox (12.84999pt too wide) in paragraph at lines 643--645
+Overfull \hbox (12.84999pt too wide) in paragraph at lines 669--671
  [] 
  []
 
@@ -449,10 +470,6 @@ Overfull \hbox (12.84999pt too wide) in paragraph at lines 643--645
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [12]
-
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
@@ -479,7 +496,9 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-AED: lastpage setting LastPage [13] [14] [15] [16] [17] (./lighter_paper.aux)
+
+AED: lastpage setting LastPage
+[13] [14] [15] [16] [17] [18] (./lighter_paper.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
@@ -487,14 +506,17 @@ LaTeX Font Warning: Size substitutions with differences
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
+
+LaTeX Warning: There were undefined references.
+
  ) 
 Here is how much of TeX's memory you used:
- 2040 strings out of 493309
- 24697 string characters out of 6137848
- 138810 words of memory out of 5000000
- 5493 multiletter control sequences out of 15000+600000
- 14015 words of font info for 48 fonts, out of 8000000 for 9000
+ 2081 strings out of 493489
+ 25528 string characters out of 3141349
+ 137253 words of memory out of 3000000
+ 5379 multiletter control sequences out of 15000+200000
+ 13967 words of font info for 48 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
- 30i,10n,37p,1685b,397s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 30i,10n,37p,1685b,397s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on lighter_paper.dvi (17 pages, 110748 bytes).
+Output written on lighter_paper.dvi (18 pages, 112700 bytes).

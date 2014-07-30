@@ -398,16 +398,18 @@ Unlike the other tools, Quake both trims the untrusted tails of the reads and di
 Apart from Quake, SOAPec, Musket and \tool achieve the highest precision.  \tool achieves the highest recall, F-score and gain in the experiments with 1\% error, and is comparable to BLESS when the error rate is 3\%.
 %BLESS will trim some reads even when instructed not to (with the \verb+-notrim+ option), but the total amount trimmed should not affect the result much \myworries{(Li: elaborate -- is there only a very small fraction of reads/nucleotides trimmed?  What is the fraction? Answer: For simulated data set, less than 0.1\% of the reads got trimmed, while quake trimmed about 33\% of the reads. As Heng said, these trimmed reads seem to be caused by bugs.)}.
 
-To see how quality value information affects performance, we repeated these experiments with quality values omitted.
+To see how quality value information affects performance, we repeated these experiments with quality values omitted (Supplementary Table 1).
 Quake and BLESS accept only FASTQ input files (which include quality values), and so were not included in the experiment.
-Supplementary Table 1 summarizes the results, which show \tool achieving superior recall, gain and F-score.
+\tool achieves superior recall, gain and F-score.
 
-To see how the choice of read simulator affects performance, we repeated these experiments using the Art \cite{huang2012art} simulator to generate the reads instead of Mason.
-Supplementary Table 2 summarizes the results.
-All the tools perform quite similarly in this experiment, except SOAPec, which has poor recall compared to the other tools.
+To see how the choice of read simulator affects performance, we repeated these experiments using the Art \cite{huang2012art} simulator to generate the reads instead of Mason (Supplementary Table 2).
+All tools perform quite similarly in this experiment, except SOAPec, which has poor recall compared to the other tools.
 \tool and Musket perform best overall.
 
 For the 1\% error dataset, we found that \tool's gain was maximized by setting the \kmer size to 23.  We therefore fix the \kmer size to 23 for subsequent experiments.
+
+\paragraph{C. elegans simulation.}
+We performed a similar accuracy test as in the previous section, but using data simulated from the larger \elegans genome, WBcel235 (Supplementary Table 3).  We used Mason to simulate a dataset of 101bp single-end reads with a 1\% error rate totaling 35x coverage.  As for the \ecoli experiment, \tool had the greatest recall, F-score and gain.
 
 \paragraph{Scaling with depth of simulated sequencing.} We also used Mason to generate a series of datasets with 1\% error, similar to those used in Table 1, but for $20\times$, $35\times$, $70\times$, $140\times$ and $280\times$ average coverage.  We ran \tool on each and measured final occupancies (fraction of bits set) for Bloom filters $A$ and $B$.  If our assumptions and scaling arguments are accurate, we expect the final occupancies of the Bloom filters to remain approximately constant for relatively high levels of coverage.  As seen in Table 2, this is indeed the case.  
 %Note that when coverage is quite low ($10\times$), the occupancy of table $B$ is significantly lower, since distributions of multiplicities of correct and incorrect \kmers become too similar to distinguish clearly.

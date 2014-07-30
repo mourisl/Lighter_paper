@@ -46,6 +46,8 @@
 \citation{holtgrewe2010mason}
 \citation{liu2013musket}
 \@writefile{toc}{\contentsline {paragraph}{Accuracy on simulated data.}{6}}
+\citation{huang2012art}
+\@writefile{toc}{\contentsline {paragraph}{C. elegans simulation.}{7}}
 \@writefile{toc}{\contentsline {paragraph}{Scaling with depth of simulated sequencing.}{7}}
 \@writefile{toc}{\contentsline {paragraph}{Cardinality of Bloom filter B.}{7}}
 \@writefile{toc}{\contentsline {paragraph}{Effect of ploidy on Bloom filter B.}{7}}
@@ -54,10 +56,13 @@
 \@writefile{toc}{\contentsline {paragraph}{Effect of varying $\alpha $.}{8}}
 \@writefile{toc}{\contentsline {paragraph}{Effect of varying $k$.}{8}}
 \@writefile{toc}{\contentsline {paragraph}{E. coli\xspace  .}{8}}
+\citation{li2013aligning}
 \citation{gurevich2013quast}
 \citation{zerbino2008velvet}
 \citation{gurevich2013quast}
 \citation{salzberg2012gage}
+\@writefile{toc}{\contentsline {paragraph}{GAGE human chromosome 14.}{10}}
+\@writefile{toc}{\contentsline {paragraph}{C. elegans.}{10}}
 \citation{pell2012scaling}
 \citation{fan2000summary}
 \citation{bonomi2006improved}
@@ -77,8 +82,6 @@
 \bibcite{glenn2011field}{1}
 \bibcite{1kgenomeforreal}{2}
 \bibcite{kelley2010quake}{3}
-\thanksnewlabel{aff1thanks}{{1}{11}}
-\thanksnewlabel{aff2thanks}{{2}{11}}
 \bibcite{pevzner2001eulerian}{4}
 \bibcite{chaisson2004fragment}{5}
 \bibcite{schroder2009shrec}{6}
@@ -97,33 +100,38 @@
 \bibcite{jones2012compression}{19}
 \bibcite{melsted2011efficient}{20}
 \bibcite{melsted2014kmerstream}{21}
+\thanksnewlabel{aff1thanks}{{1}{12}}
+\thanksnewlabel{aff2thanks}{{2}{12}}
 \bibcite{luo2012soapdenovo2}{22}
 \bibcite{holtgrewe2010mason}{23}
-\bibcite{langmead2012fast}{24}
-\bibcite{gurevich2013quast}{25}
-\bibcite{zerbino2008velvet}{26}
-\bibcite{salzberg2012gage}{27}
-\bibcite{fan2000summary}{28}
-\bibcite{bonomi2006improved}{29}
-\bibcite{cormode2005improved}{30}
-\bibcite{zhang2013these}{31}
-\bibcite{nakamura2011sequence}{32}
-\bibcite{chikhi2014informed}{33}
+\bibcite{huang2012art}{24}
+\bibcite{langmead2012fast}{25}
+\bibcite{gurevich2013quast}{26}
+\bibcite{zerbino2008velvet}{27}
+\bibcite{salzberg2012gage}{28}
+\bibcite{fan2000summary}{29}
+\bibcite{bonomi2006improved}{30}
+\bibcite{cormode2005improved}{31}
+\bibcite{zhang2013these}{32}
+\bibcite{nakamura2011sequence}{33}
+\bibcite{chikhi2014informed}{34}
 \@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces {\mathversion  {bold}\bfseries  The framework of Lighter}}}{13}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces {\mathversion  {bold}\bfseries  An example of the greedy error correction procedure} \ensuremath  {k}-mer\xspace  CCGATTC does not appear in Bloom filter $B$, so we attempt to substitute a different nucleotide for the C shown in red. We select A since it yields the longest stretch of consecutive \ensuremath  {k}-mers\xspace  that appear in Bloom filter $B$. }}{13}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces {\mathversion  {bold}\bfseries  An example of the greedy error correction procedure} \ensuremath  {k}-mer\xspace  CCGATTC does not appear in Bloom filter $B$, so we attempt to substitute a different nucleotide for the C shown in red. We select A since it yields the longest stretch of consecutive \ensuremath  {k}-mers\xspace  that appear in Bloom filter $B$. }}{14}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces {\mathversion  {bold}\bfseries  The effect of $\alpha $ on the accuracy using the simulated $35\times $ dataset}}}{14}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces {\mathversion  {bold}\bfseries  The effect of $\alpha $ on occupancy of Bloom filters $A$ and $B$} The effect of $\alpha $ on occupancy of Bloom filters $A$ and $B$ using simulated $35\times $, $70\times $ and $140\times $ datasets. The error rate is $1\%$}}{14}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces {\mathversion  {bold}\bfseries  The effect of $\alpha $ on occupancy of Bloom filters $A$ and $B$} The effect of $\alpha $ on occupancy of Bloom filters $A$ and $B$ using simulated $35\times $, $70\times $ and $140\times $ datasets. The error rate is $1\%$}}{15}}
 \@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces {\mathversion  {bold}\bfseries  The effect of \ensuremath  {k}-mer\xspace  length $k$ on accuracy}}}{15}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces {\mathversion  {bold}\bfseries  The matching ratio for each base in \emph  {E. coli}\xspace  data set}}}{15}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces {\mathversion  {bold}\bfseries  Running times} The running times of Quake, Musket and Lighter\xspace  on $70\times $ simulated data set with increasing number of threads}}{16}}
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Accuracy measures for simulated data sets. Different error rate(\%) for each table for different coverages}}{16}}
-\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Occupancy rate(\%) for each table for different coverages}}{16}}
-\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Alignment statistics for the $75\times $ \emph  {E. coli}\xspace  data set, before error correction (Original row) and after error correction (Quake, Musket, BLESS and Lighter\xspace  rows). The first ``Increase'' column shows percent increase in reads aligned. The second ``Increase'' column shows percent increase in average number of matching positions per aligned read.}}{17}}
-\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces De novo assembly of \emph  {E. coli}\xspace  data set}}{17}}
-\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Alignment of chr14 data set}}{17}}
-\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces De novo assembly of chr14 data set}}{17}}
-\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces Alignment of C.Elegans data set}}{17}}
-\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces De novo assembly of C.Elegans data set}}{17}}
-\@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces Comparison of four error correction tools based on their memory usage (peak resident memory) and disk usage.}}{17}}
-\newlabel{table:memory_usage}{{9}{17}}
-\newlabel{LastPage}{{}{17}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces {\mathversion  {bold}\bfseries  The matching ratio for each base in \emph  {E. coli}\xspace  dataset}}}{16}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces {\mathversion  {bold}\bfseries  Running times} The running times of Quake, Musket and Lighter\xspace  on $70\times $ simulated dataset with increasing number of threads}}{16}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Accuracy measures for simulated datasets. Different error rate(\%) for each table for different coverages}}{17}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Occupancy rate(\%) for each table for different coverages}}{17}}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Alignment statistics for the $75\times $ \emph  {E. coli}\xspace  dataset, before error correction (Original row) and after error correction (other rows). The first ``Increase'' column shows percent increase in reads aligned. The second ``Increase'' column shows percent increase in average number of matching positions per aligned read.}}{17}}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces De novo assembly of \emph  {E. coli}\xspace  dataset}}{17}}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Alignment of chr14 dataset}}{17}}
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces De novo assembly of chr14 dataset}}{18}}
+\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces Alignment of C.Elegans dataset}}{18}}
+\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces De novo assembly of C.Elegans dataset}}{18}}
+\@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces Comparison of four error correction tools based on their memory usage (peak resident memory) and disk usage.}}{18}}
+\newlabel{table:memory_usage}{{9}{18}}
+\newlabel{LastPage}{{}{18}}
+\xdef\lastpage@lastpage{18}
+\gdef\lastpage@lastpageHy{}
