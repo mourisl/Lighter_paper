@@ -15,4 +15,4 @@ plot "bloom_occupancy_alpha" using 1:2 with linespoint title "35x Table A", \
 	"bloom_occupancy_alpha" using 1:4 with linespoint title "70x Table A", \
 	"bloom_occupancy_alpha" using 1:5 with linespoint title "70x Table B", \
 	"bloom_occupancy_alpha" using 1:6 with linespoint title "140x Table A", \
-	"bloom_occupancy_alpha" using 1:7 with linespoint title "140x Table B"
+	"bloom_occupancy_alpha" using 1:7 with linespoint title "140x Table B" lt rgb "orange"
