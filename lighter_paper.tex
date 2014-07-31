@@ -367,9 +367,9 @@ We pick the substitution that creates the longest stretch of consecutive \kmers 
 If more than one candidate substitution is equally good (\thatis results in the same number of consecutive \kmers from $B$), we call position $i+k-1$ ambiguous and make no attempt to correct it.
 The procedure then resumes starting at $k_{i+k}$, or the procedure ends if the read is too short to contain \kmer $k_{i+k}$.
 
-
-
 When errors are located near to end of a read, the stretches of consecutive \kmers used to prioritize substitutions are short.  E.g. if the error is at the very last position of the read, we must choose a substation on the basis of just one \kmer: the rightmost \kmer.  This very often results in a tie, and no correction.  \tool avoid many of these ties by considering \kmers that extend beyond the end of the read, as discussed in Supplementary Note 2.
+
+For better precision, we will constrain the number of correction with any window of size $k$ in the read. And if the correction is to a low-quality base, then that correction is only counted as 0.5.
 
 \subsection*{Scaling with depth of sequencing}
 \tool's accuracy can be made near-constant as the depth of sequencing $K$ increases and its memory footprint is held constant.  This is accomplished by holding $\alpha K$ constant, \thatis, by adjusting $\alpha$ in inverse proportion to $K$.  This is illustrated in Tables 1 and 2.  We also argue this more formally in Supplementary Note 3.
@@ -520,7 +520,7 @@ The input datasets are the same simulated \ecoli datasets with $1\%$ error rate 
 
 The measure of space usage is shown in Table 7. BLESS and \tool achieve constant memory footprint across sequencing depths.  While Musket uses less memory than Quake, it uses more than either BLESS or \tool.  BLESS achieves constant memory footprint across sequencing depths, but consumes more disk space for datasets with deeper sequencing.  Note that BLESS can be configured to trade off between peak memory footprint and the number of temporary files it creates.  \tool's algorithm uses no disk space.  \tool's only sizable data structures are the two Bloom filters, which reside in memory.
 
-To assess scalability, we also compared running time for Quake, Musket and \tool using different number of threads.  For these experiments we used the simulated \ecoli dataset with $70\times$ coverage and $1\%$ error.  Results are shown in Figure 7.  Note that Musket requires at least 2 threads due to its master-slave design.  BLESS can only be run with one thread and its running time is 1475s, which is slower than Quake.
+To assess scalability, we also compared running time for Quake, Musket and \tool using different number of threads.  For these experiments we used the simulated \ecoli dataset with $70\times$ coverage and $1\%$ error.  Results are shown in Figure 7.  Note that Musket requires at least 2 threads due to its master-slave design.  BLESS can only be run with one thread and its running time is 1812s, which is slower than Quake.
 
 
 \section*{Discussion}
@@ -687,29 +687,35 @@ The authors thank Jeff Leek for helpful discussions.
 Coverage &	& \multicolumn{2}{|c|}{$35\times$}  & \multicolumn{2}{|c|}{$70\times$} & \multicolumn{2}{|c|}{$140\times$} \\ \hline
 Error rate & & $1\%$ & $3\%$ & $1\%$ & $3\%$ & $1\%$ & $3\%$ \\ \hline
 $\alpha$ for \tool & & $0.2$ & $0.2$ & $0.1$ & $0.1$ & $0.05$ & $0.05$ \\ \hhline{|=|=|=|=|=|=|=|=|}
-		&	quake&	89.68&	48.77&	89.64&	48.82&	89.59&	48.78	\\ \cline{2-8}
-		& 	soapec & 57.71	& 38.00	& 57.57	& 37.71	& 57.09	& 36.76 \\ \cline{2-8}
-Recall	&	musket&	93.75&	92.62&	93.73&	92.64&	93.73&	92.63	\\ \cline{2-8}
-		&	bless&	99.81&	\textbf{99.33}&	99.82&	\textbf{99.58}&	99.82&	\textbf{99.58}	\\ \cline{2-8}
-		&	lighter&	\textbf{99.87}&	98.53&	\textbf{99.84}&	98.72&	\textbf{99.86}&	98.78\\ \hhline{|=|=|=|=|=|=|=|=|}
+		&	Quake&	89.68&	48.77&	89.64&	48.82&	89.59&	48.78	\\ \cline{2-8}
+		& 	SOAPec & 57.71	& 38.00	& 57.57	& 37.71	& 57.09	& 36.76 \\ \cline{2-8}
+Recall	&	Musket&	93.75&	92.62&	93.73&	92.64&	93.73&	92.63	\\ \cline{2-8}
+		&	Bless&	99.81&	\textbf{99.33}&	99.82&	\textbf{99.58}&	99.82&	\textbf{99.58}	\\ \cline{2-8}
+		&	Lighter&	\textbf{99.87}&	98.53&	\textbf{99.84}&	98.72&	\textbf{99.86}&	98.78\\ \hhline{|=|=|=|=|=|=|=|=|}
 		
-		&	quake&	\textbf{99.99}&	99.99 &	\textbf{99.99}&	\textbf{99.99}&	\textbf{99.99}&	\textbf{99.99}\\ \cline{2-8}
-		&  soapec& \textbf{99.99}	&	\textbf{100.00}	&	\textbf{99.99}	& \textbf{99.99}	& \textbf{99.99}	& \textbf{99.99} \\ \cline{2-8}
-Prec	&	musket&	\textbf{99.99}&	99.93&	\textbf{99.99}&	99.93&	\textbf{99.99}&	99.93	\\ \cline{2-8}
-		&	bless&	99.73&	98.86&	99.73&	99.35&	99.72&	99.36	\\ \cline{2-8}
+		&	Quake&	\textbf{99.99}&	99.99 &	\textbf{99.99}&	\textbf{99.99}&	\textbf{99.99}&	\textbf{99.99}\\ \cline{2-8}
+		&  SOAPec& \textbf{99.99}	&	\textbf{100.00}	&	\textbf{99.99}	& \textbf{99.99}	& \textbf{99.99}	& \textbf{99.99} \\ \cline{2-8}
+Prec	&	Musket&	\textbf{99.99}&	99.93&	\textbf{99.99}&	99.93&	\textbf{99.99}&	99.93	\\ \cline{2-8}
+		&	Bless&	99.73&	98.86&	99.73&	99.35&	99.72&	99.36	\\ \cline{2-8}
 		&	lighter&	99.98&	99.96&	99.98&	99.96&	99.98&	99.96\\ \hhline{|=|=|=|=|=|=|=|=|}
 		
-		&	quake&	94.55&	65.56&	94.54&	65.61&	94.51&	65.57	\\ \cline{2-8}
-		& soapec & 73.18 &	55.07 &	73.07 &	54.77&	72.68&	53.75   \\ \cline{2-8}
-F-score	&	musket&	96.77&	96.14&	96.76&	96.15&	96.76&	96.15	\\ \cline{2-8}
-		&	bless&	99.77&	99.09&	99.77&	\textbf{99.47}&	99.77&	\textbf{99.47}	\\ \cline{2-8}
-		&	lighter&	\textbf{99.93}&	\textbf{99.24}&	\textbf{99.91}&	99.33&	\textbf{99.92}&	99.36\\ \hhline{|=|=|=|=|=|=|=|=|}
+		&	Quake&	94.55&	65.56&	94.54&	65.61&	94.51&	65.57	\\ \cline{2-8}
+		& SOAPec & 73.18 &	55.07 &	73.07 &	54.77&	72.68&	53.75   \\ \cline{2-8}
+F-score	&	Musket&	96.77&	96.14&	96.76&	96.15&	96.76&	96.15	\\ \cline{2-8}
+		&	Bless&	99.77&	99.09&	99.77&	\textbf{99.47}&	99.77&	\textbf{99.47}	\\ \cline{2-8}
+		&	Lighter&	\textbf{99.93}&	\textbf{99.24}&	\textbf{99.91}&	99.33&	\textbf{99.92}&	99.36\\ \hhline{|=|=|=|=|=|=|=|=|}
 		
-		&	quake&	89.67&	48.76&	89.64&	48.82&	89.59&	48.78	\\ \cline{2-8}
-		& soapec&	57.70& 	38.00& 	57.57&	37.71&	57.09&	36.75 	\\ \cline{2-8}
-Gain	&	musket&	93.74&	92.56&	93.72&	92.58&	93.72&	92.57	\\ \cline{2-8}
-		&	bless&	99.54&	98.19&	99.54&	\textbf{98.93}&	99.54&	\textbf{98.94}	\\ \cline{2-8}
-		&	lighter&\textbf{99.85}&	\textbf{98.49}&	\textbf{99.81}&	98.68&	\textbf{99.84}&	98.73	\\ \hhline{|=|=|=|=|=|=|=|=|}
+		&	Quake&	89.67&	48.76&	89.64&	48.82&	89.59&	48.78	\\ \cline{2-8}
+		& SOAPec&	57.70& 	38.00& 	57.57&	37.71&	57.09&	36.75 	\\ \cline{2-8}
+Gain	&	Musket&	93.74&	92.56&	93.72&	92.58&	93.72&	92.57	\\ \cline{2-8}
+		&	Bless&	99.54&	98.19&	99.54&	\textbf{98.93}&	99.54&	\textbf{98.94}	\\ \cline{2-8}
+		&	Lighter&\textbf{99.85}&	\textbf{98.49}&	\textbf{99.81}&	98.68&	\textbf{99.84}&	98.73	\\ \hhline{|=|=|=|=|=|=|=|=|}
+		
+		&Quake	&17	&17	&17	&17	&17	&17 \\ \cline{2-8}
+		&SOAPec	&17	&17	&17	&17	&17	&17 \\ \cline{2-8}
+$k$		&Musket	&23	&19	&23	&19	&23	&19 \\ \cline{2-8}
+		&Bless	&31	&23	&31	&23	&31	&23 \\ \cline{2-8}
+		&Lighter	&23	&19	&23	&19	&23	&19 \\ \hhline{|=|=|=|=|=|=|=|=|}
 \end{tabular}
 \end{table}
 
@@ -730,13 +736,13 @@ $280\times$ & 0.025 & 53.088 &34.419\\ \hline
 \caption{Alignment statistics for the $75\times$ \ecoli dataset, before error correction (Original row) and after error correction (other rows).  The first ``Increase'' column shows percent increase in reads aligned.  The second ``Increase'' column shows percent increase in average number of matching positions per aligned read.}
 \begin{tabular}{|c|c|c||c|c|} \hline
 	 & \multicolumn{2}{|c||}{Read Level} & \multicolumn{2}{|c|}{Base Level} \\ \hline
-     & Mapped Reads & Increase(\%) & Base Match/Read & Increase(\%) \\ \hline
-Original & 	3,464,137	 & - & 99.038	& - \\ \hline
-Quake	& 3,373,498	& -2.62	& 97.321	& -1.97  \\ \hline
-SOAPec  & 3,465,819 & 0.05 &  99.130 & 0.09 \\ \hline
-Musket	& 3,467,875	& 0.11	& 99.601	& 0.57  \\ \hline
-BLESS	& 3,468,677& 0.13	& 99.557	& 0.52  \\ \hline
-Lighter	&  3,478,658	& 0.42	& 99.639	& 0.61  \\ \hline
+     & Mapped Reads & Increase(\%) & Base Match/Read & Portion Match/Read(\%) \\ \hline
+Original & 	3,464,137	 & - & 99.038	& 99.038 \\ \hline
+Quake	& 3,373,498	& -2.62	& 97.321	& 99.659  \\ \hline
+SOAPec  & 3,465,819 & 0.05 &  99.130 & 99.130 \\ \hline
+Musket	& 3,467,875	& 0.11	& 99.601	& 99.601 \\ \hline
+BLESS	& 3,468,677& 0.13	& 99.557	& 99.666  \\ \hline
+Lighter	&  3,478,658	& 0.42	& 99.639	& 99.639  \\ \hline
 \end{tabular}
 \end{table}
 
@@ -750,7 +756,6 @@ SOAPec	& 98,111 &	94,879	& 3.49	& 1	& 97.473	\\ \hline
 Musket	& 86,421  &	86,421	& 6.45	& 0	 & 97.53 \\ \hline
 BLESS	& 85,486  &	85,486	& 3.58	& 1	& 97.302  \\ \hline
 Lighter	& 105,460 &	105,460	& 3.71	& 1	& 97.477  \\ \hline
-
 \end{tabular}
 \end{table}
 
@@ -759,13 +764,13 @@ Lighter	& 105,460 &	105,460	& 3.71	& 1	& 97.477  \\ \hline
 \caption{Alignment of chr14 dataset}
 \begin{tabular}{|c|c|c||c|c|}\hline
   & \multicolumn{2}{|c||}{Read Level} & \multicolumn{2}{|c|}{Base Level} \\ \hline
-  & Mapped Reads  &Increase(\%) & Base Match/Read	& Increase(\%) \\ \hline
-Original & 35,993,147	&- 		&	99.492	& - \\ \hline
-Quake 	& 32,547,091	& -9.57 &	93.410	& -6.11 \\ \hline
-SOAPec  & 36,116,405  & 0.34 & 99.756 & 0.27 \\ \hline
-Musket 	&	36,316,699	& 0.90	& 100.100	& 0.61 \\ \hline
-BLESS 	&36,301,816	& 0.86	& 99.583	&	0.09 \\ \hline
-Lighter	& 36,320,688 & 0.91	& 100.227	&  0.74 \\ \hline
+  & Mapped Reads  &Increase(\%) & Base Match/Read	& Portion Match/Read(\%) \\ \hline
+Original & 35,993,147	&- 		&	99.492	& 98.507 \\ \hline
+Quake 	& 32,547,091	& -9.57 &	93.410	& 99.845 \\ \hline
+SOAPec  & 36,116,405  & 0.34 & 99.756 & 98.768 \\ \hline
+Musket 	&	36,316,699	& 0.90	& 100.100	& 99.109 \\ \hline
+BLESS 	&36,301,816	& 0.86	& 99.583	&	99.411 \\ \hline
+Lighter	& 36,320,688 & 0.91	& 100.227	&  99.235 \\ \hline
 \end{tabular}
 \end{table}
 
@@ -786,13 +791,13 @@ Lighter	&	5827 & 4280	& 127.69	& 618 & 79.287 \\ \hline
 \caption{Alignment of C.Elegans dataset}
 \begin{tabular}{|c|c|c||c|c|}\hline
   & \multicolumn{2}{|c||}{Read Level} & \multicolumn{2}{|c|}{Base Level} \\ \hline
-  & Mapped Reads  &Increase(\%) & Base Match/Read	& Increase(\%) \\ \hline
-Original & 63,017,855	& - 	&	99.048	& - \\ \hline
-Quake 	& 60,469,150	& -4.04	&	93.573	& -5.53 \\ \hline
-SOAPec  & 63,032,768    & 0.02	& 	99.185	&	0.14 \\ \hline
-Musket 	&	63,060,601	&	0.07 &	99.420 & 0.38 \\ \hline
-BLESS 	& 64,150,807	& 1.80 &98.652	& -0.40 \\ \hline
-Lighter	& 63,081,655	& 0.10	& 99.469 &0.43 \\ \hline
+  & Mapped Reads  &Increase(\%) & Base Match/Read	& Portion Match/Read(\%) \\ \hline
+Original & 63,017,855	& - 	&	99.048	& 99.048 \\ \hline
+Quake 	& 60,469,150	& -4.04	&	93.573	& 99.834 \\ \hline
+SOAPec  & 63,032,768    & 0.02	& 	99.185	&	99.185 \\ \hline
+Musket 	&	63,060,601	&	0.07 &	99.420 & 99.420 \\ \hline
+BLESS 	& 64,150,807	& 1.80 &98.652	& 99.744 \\ \hline
+Lighter	& 63,081,655	& 0.10	& 99.469 & 99.469 \\ \hline
 \end{tabular}
 \end{table}
 
@@ -811,13 +816,13 @@ Lighter	&	19,222	& 19,333	& 26.9	& 434	& 95.332 \\ \hline
 
 \begin{table}[h!] %7
 \caption{Comparison of four error correction tools based on their memory usage (peak resident memory) and disk usage.\label{table:memory_usage}}
-\begin{tabular}{|c|c|c||c|c||c|c||c|c|} \hline
-		& \multicolumn{2}{|c||}{$35\times$} & \multicolumn{2}{|c||}{$70\times$}  & \multicolumn{2}{|c||}{$140\times$} & \multicolumn{2}{|c|}{chr14}  \\ \hline
-		& memory & disk & memory & disk & memory & disk & memory & disk \\ \hline
-Quake   & 2.8G	& 3.3G & 7.1G & 6.0G & 14G & 12G & 48G & 57G \\ \hline		
-Musket	& 119M	& 0 & 165M & 0 & 225M & 0 & 1.4G & 0 \\ \hline
-BLESS	& 11M	& 918M & 11M & 1.8G & 13M & 3.5G & 138M & 15G \\ \hline
-Lighter	& 35M	& 0 & 35M & 0 & 35M & 0 & 514M & 0 \\ \hline
+\begin{tabular}{|c|c|c||c|c||c|c||c|c||c|c|} \hline
+		& \multicolumn{2}{|c||}{$35\times$} & \multicolumn{2}{|c||}{$70\times$}  & \multicolumn{2}{|c||}{$140\times$} & \multicolumn{2}{|c||}{chr14}  & \multicolumn{2}{|c|}{C.Elegans} \\ \hline
+		& Mem & Disk & Mem & Disk & Mem & Disk & Mem & Disk & Mem & Disk \\ \hline
+Quake   & 2.8G	& 3.3G & 7.1G & 6.0G & 14G & 12G & 48G & 57G & 86G & 99G \\ \hline		
+Musket	& 119M	& 0 & 165M & 0 & 225M & 0 & 1.4G & 0 & 2.5G & 0 \\ \hline
+BLESS	& 11M	& 918M & 11M & 1.8G & 13M & 3.5G & 138M & 15G & 175M & 36G \\ \hline
+Lighter	& 35M	& 0 & 35M & 0 & 35M & 0 & 514M & 0 & 514M & 0 \\ \hline
 \end{tabular}
 \end{table}
 

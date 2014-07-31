@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.10.17)  26 JUL 2014 20:55
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.10.17)  30 JUL 2014 23:58
 entering extended mode
  %&-line parsing enabled.
 **lighter_paper_supp.tex
@@ -449,55 +449,84 @@ LaTeX Font Info:    ... okay on input line 116.
 )
 
 LaTeX Warning: Citation `Putze:2010:CHS:1498698.1594230' on page 1 undefined on
- input line 194.
+ input line 195.
+
+
+LaTeX Warning: Citation `Putze:2010:CHS:1498698.1594230' on page 1 undefined on
+ input line 201.
 
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3]
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+LaTeX Warning: Citation `huang2012art' on page 4 undefined on input line 281.
+
+[4
+
+]
+Overfull \hbox (2.05519pt too wide) in paragraph at lines 315--315
+[]\OT1/cmr/bx/n/14.4 Supplementary Ta-ble 3: Sim-u-la-tion re-sults with \OT1/c
+mr/bx/it/14.4 C. el-e-gans \OT1/cmr/bx/n/14.4 genome. 
+ []
 
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+LaTeX Warning: Citation `holtgrewe2010mason' on page 5 undefined on input line 
+317.
+
+[5
+
+]
+
+LaTeX Warning: Citation `langmead2012fast' on page 6 undefined on input line 33
+2.
+
+[6
+
+]
+
+LaTeX Warning: Citation `li2013aligning' on page 7 undefined on input line 350.
 
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+[7
+
+]
+
+LaTeX Warning: Citation `li2013aligning' on page 8 undefined on input line 368.
 
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+[8
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
+]
 No file lighter_paper_supp.bbl.
-[3] [4] [5] (./lighter_paper_supp.aux)
+(./lighter_paper_supp.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 2608 strings out of 495061
- 30589 string characters out of 1182620
- 123685 words of memory out of 3000000
- 5774 multiletter control sequences out of 15000+50000
- 6257 words of font info for 23 fonts, out of 3000000 for 9000
+ 2615 strings out of 495061
+ 30687 string characters out of 1182620
+ 103685 words of memory out of 3000000
+ 5779 multiletter control sequences out of 15000+50000
+ 6784 words of font info for 25 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 27i,9n,35p,954b,223s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 27i,9n,35p,954b,213s stack positions out of 5000i,500n,10000p,200000b,50000s
 </usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/sha
 re/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-te
-xlive/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-texlive/fonts
-/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/type1/publ
-ic/amsfonts/cm/cmmi5.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/
-cm/cmmi7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb
-></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share
-/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-texli
-ve/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-texlive/fonts/type
-1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/public/am
-sfonts/cm/cmsy7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cm
-ti10.pfb>
-Output written on lighter_paper_supp.pdf (5 pages, 181938 bytes).
+xlive/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texmf-texlive/fon
+ts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-texlive/fonts/type1/pu
+blic/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfon
+ts/cm/cmmi5.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi7.
+pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/sh
+are/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-te
+xlive/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-texlive/fonts/
+type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-texlive/fonts/type1/public/
+amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm
+/cmsy7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on lighter_paper_supp.pdf (8 pages, 208806 bytes).
 PDF statistics:
- 70 PDF objects out of 1000 (max. 8388607)
+ 89 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

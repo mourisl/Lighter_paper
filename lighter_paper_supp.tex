@@ -258,22 +258,18 @@ Coverage &	&$35\times$  & $70\times$ & $140\times$ \\ \hline
 $\alpha$ for \tool & & $0.2$ & $0.1$ & $0.05$ \\ \hhline{|=|=|=|=|=|}
 		&soapec	&63.45	&63.36	&63.07  \\ \cline{2-5}
 Recall	&musket	&93.75	&93.73	&93.73   \\ \cline{2-5}
-		&bless	&49.69	&49.85	&49.85	 \\ \cline{2-5}
 		&lighter	&99.89	&99.84	&99.88	 \\ \hhline{|=|=|=|=|=|}
 		
 		&soapec	&99.99	&99.99	&99.99    \\ \cline{2-5}
 Prec	&musket	&99.99	&99.99	&99.99	 \\ \cline{2-5}
-		&bless	&95.36	&98.22	&98.14	 \\ \cline{2-5}
 		&lighter	&99.96	&99.95	&99.95	 \\  \hhline{|=|=|=|=|=|}
 		
 		&soapec	&77.63	&77.57	&77.35	 \\ \cline{2-5}
 F-score	&musket	&96.77	&96.76	&96.76	 \\ \cline{2-5}
-		&bless	&65.33	&66.14	&66.11	 \\ \cline{2-5}
 		&lighter	&99.92	&99.90	&99.91	 \\ \hhline{|=|=|=|=|=|}
 		
 		&soapec	&63.44	&63.36	&63.06	 \\ \cline{2-5}
 Gain	&musket	&93.74	&93.72	&93.72	 \\ \cline{2-5}
-		&bless	&47.27	&48.95	&48.90	 \\ \cline{2-5}
 		&lighter	&99.84	&99.79	&99.82 \\ \hhline{|=|=|=|=|=|}
 \end{tabular}
 \end{table}
@@ -338,13 +334,13 @@ Alignment statistics for the $75\times$ \ecoli data set using Bowtie 2 \cite{lan
 \begin{table}[h!] 
 \begin{tabular}{|c|c|c||c|c|} \hline
 	 & \multicolumn{2}{|c||}{Read Level} & \multicolumn{2}{|c|}{Base Level} \\ \hline
-     & Mapped Reads & Increase(\%) & Base Match/Read & Increase(\%) \\ \hline
-Original&	3,459,316&	-&	99.048&	-  \\ \hline 
-Quake&	3,373,491&	-2.48&	97.321&	-1.74  \\ \hline
-SOAPec&	3,464,456&	0.15&	99.135&	0.09  \\ \hline
-Musket&	3,467,805&	0.25&	99.601&	0.56  \\ \hline
-Bless&	3,468,604&	0.27&	99.558&	0.51	 \\ \hline
-Lighter&	3,478,210&	0.55&	99.641&	0.60  \\ \hline
+     & Mapped Reads & Increase(\%) & Base Match/Read & Portion Match/Read(\%) \\ \hline
+Original&	3,459,316&	-&	99.048&	99.048  \\ \hline 
+Quake&	3,373,491&	-2.48&	97.321&	99.659  \\ \hline
+SOAPec&	3,464,456&	0.15&	99.135&	99.135 \\ \hline
+Musket&	3,467,805&	0.25&	99.601&	99.601  \\ \hline
+Bless&	3,468,604&	0.27&	99.558&	99.667	 \\ \hline
+Lighter&	3,478,210&	0.55&	99.641&	99.641  \\ \hline
 \end{tabular}
 \end{table}
 \clearpage
@@ -356,13 +352,13 @@ Lighter&	3,478,210&	0.55&	99.641&	0.60  \\ \hline
 \begin{table}[h!] 
 \begin{tabular}{|c|c|c||c|c|} \hline
 	 & \multicolumn{2}{|c||}{Read Level} & \multicolumn{2}{|c|}{Base Level} \\ \hline
-     & Mapped Reads & Increase(\%) & Base Match/Read & Increase(\%) \\ \hline
-Original&	3,482,421&	-&	98.936&	- \\ \hline
-Quake&	3,373,877&	-3.12&	97.623&	-1.33 \\ \hline
-SOAPec&	3,482,422&	0.00&	99.039&	0.10 \\ \hline
-Musket&	3,482,735&	0.01&	99.599&	0.67 \\ \hline
-Bless&	3,481,849&	-0.02&	99.679&	0.75 \\ \hline
-Lighter&	3,484,166&	0.05&	99.821&	0.89  \\ \hline
+     & Mapped Reads & Increase(\%) & Base Match/Read & Portion Match/Read(\%) \\ \hline
+Original&	3,482,421&	-&	98.936&	98.936 \\ \hline
+Quake&	3,373,877&	-3.12&	97.623&	99.968 \\ \hline
+SOAPec&	3,482,422&	0.00&	99.039&	99.039 \\ \hline
+Musket&	3,482,735&	0.01&	99.599&	99.599 \\ \hline
+Bless&	3,481,889&	-0.02&	99.679&	99.788 \\ \hline
+Lighter&	3,484,166&	0.05&	99.821&	99.821  \\ \hline
 \end{tabular}
 \end{table}
 \clearpage
@@ -374,13 +370,13 @@ Lighter&	3,484,166&	0.05&	99.821&	0.89  \\ \hline
 \begin{table}[h!]
 \begin{tabular}{|c|c|c||c|c|} \hline
 	 & \multicolumn{2}{|c||}{Read Level} & \multicolumn{2}{|c|}{Base Level} \\ \hline
-     & Mapped Reads & Increase(\%) & Base Match/Read & Increase(\%) \\ \hline
-Original&	36,493,776& - 	&	98.064&	- \\ \hline
-Quake&	32,560,823&	-10.78&	93.391&	-4.76 \\ \hline
-SOAPec&	36,493,999&	0.00&	98.368&	0.31 \\ \hline
-Musket&	36,494,472&	0.00&	98.997&	0.95 \\ \hline
-Bless&	36,481,303&	-0.03&	98.909&	0.86 \\ \hline
-Lighter&	36,494,905&	0.00&	99.353&	1.31 \\ \hline
+     & Mapped Reads & Increase(\%) & Base Match/Read & Portion Match/Read(\%) \\ \hline
+Original&	36,493,776& - 	&	98.064&	97.093 \\ \hline
+Quake&	32,560,823&	-10.78&	93.391&	99.826 \\ \hline
+SOAPec&	36,493,999&	0.00&	98.368&	97.394 \\ \hline
+Musket&	36,494,472&	0.00&	98.997&	98.165 \\ \hline
+Bless&	36,481,303&	-0.03&	98.909&	98.661 \\ \hline
+Lighter&	36,494,905&	0.00&	99.353&	98.369 \\ \hline
 \end{tabular}
 \end{table}
 
