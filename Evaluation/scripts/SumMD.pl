@@ -3,14 +3,18 @@ use strict ;
 
 my $sumMD = 0 ;
 my $sum = 0 ;
+my $sumBase = 0 ;
 my @cols = 0 ;
 my $i ;
 
 while(<>)
 {
+	@cols = split ;
+	next if ( ( $cols[1] & 0x900 ) != 0 ) ;
 	if ( /MD:Z:(.+?)\s/ )
 	{
 		#print $1, "\n" ;
+		$sumBase += length( $cols[9] ) ;
 		my $sum1 = 0 ;
 		@cols = split /[A-Z\^]+/, $1 ;
 		#print @cols, "\n" ;
@@ -22,16 +26,7 @@ while(<>)
 		}
 		$sumMD += $sum1 ;
 		
-		#print "\n" ;
-		# then the penalty
-		#$sum1 = 0 ;
-		#for ( $i = 0 ; $i < length( $1 ) ; ++$i )
-		#{
-		#	++$sum1 if ( substr( $1, $i, 1 ) =~ /[A-Z]/ ) ;
-		#}
-		#print "$sum1\n" ;
-		#$sumAS -= $sum1 ;
+		++$sum ;
 	}
-	++$sum ;
 }
-print $sum, " ",$sumMD, "\n"
+print $sum, " ",$sumMD, " ", $sumMD / $sumBase * 100.0, "\n"
