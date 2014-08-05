@@ -1,73 +1,50 @@
-This is BibTeX, Version 0.99d (TeX Live 2013)
-Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+This is BibTeX, Version 0.99c (Web2C 7.5.6)
 The top-level auxiliary file: lighter_paper.aux
 The style file: bmc-mathphys.bst
-Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
-Reallocated global_strs (elt_size=20001) to 20 items from 10.
-Reallocated glb_str_end (elt_size=4) to 20 items from 10.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: lighter_paper.bib
 Warning--I didn't find a database entry for "li2013aligning"
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated glb_str_ptr (elt_size=4) to 30 items from 20.
-Reallocated global_strs (elt_size=20001) to 30 items from 20.
-Reallocated glb_str_end (elt_size=4) to 30 items from 20.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
+Sorry---you've exceeded BibTeX's number of string global-variables 20
 You've used 34 entries,
-            7128 wiz_defined-function locations,
-            1318 strings with 15201 characters,
-and the built_in function-call counts, 192617 in all, are:
-= -- 23324
+            6334 wiz_defined-function locations,
+            1224 strings with 14604 characters,
+and the built_in function-call counts, 147112 in all, are:
+= -- 19009
 > -- 1338
-< -- 808
-+ -- 5346
+< -- 646
++ -- 5022
 - -- 298
-* -- 15060
-:= -- 38565
+* -- 8929
+:= -- 29272
 add.period$ -- 35
 call.type$ -- 34
-change.case$ -- 324
+change.case$ -- 196
 chr.to.int$ -- 1768
 cite$ -- 34
-duplicate$ -- 3550
-empty$ -- 11086
-format.name$ -- 1292
-if$ -- 42998
+duplicate$ -- 1712
+empty$ -- 8375
+format.name$ -- 908
+if$ -- 34731
 int.to.chr$ -- 1
-int.to.str$ -- 91
-missing$ -- 1207
-newline$ -- 1081
-num.names$ -- 170
-pop$ -- 1369
+int.to.str$ -- 57
+missing$ -- 0
+newline$ -- 533
+num.names$ -- 136
+pop$ -- 738
 preamble$ -- 1
 purify$ -- 158
-quote$ -- 68
-skip$ -- 11472
+quote$ -- 0
+skip$ -- 11093
 stack$ -- 0
-substring$ -- 25170
-swap$ -- 1297
-text.length$ -- 510
+substring$ -- 17446
+swap$ -- 1056
+text.length$ -- 446
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 1418
 warning$ -- 0
-while$ -- 1247
+while$ -- 1119
 width$ -- 0
-write$ -- 1497
-(There was 1 warning)
+write$ -- 603
+(That was a fatal error)
