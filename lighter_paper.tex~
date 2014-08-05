@@ -740,15 +740,15 @@ $280\times$ & 0.025 & 53.088 &34.419\\ \hline
 
 \begin{table}[h!] %3
 \caption{Alignment statistics for the $75\times$ \ecoli dataset, before error correction (Original row) and after error correction (other rows).  The first ``Increase'' column shows percent increase in reads aligned.  The second ``Increase'' column shows percent increase in average number of matching positions per aligned read.}
-\begin{tabular}{|c|c|c||c|c|} \hline
-	 & \multicolumn{2}{|c||}{Read Level} & \multicolumn{2}{|c|}{Base Level} \\ \hline
-     & Mapped Reads & Increase(\%) & Portion Match/Read(\%) & Increase(\%) \\ \hline
-Original & 	3,464,137	 & - &  99.038 & - \\ \hline
-Quake	& 3,373,498	& -2.62	& 99.659  & 0.63 \\ \hline
-SOAPec  & 3,465,819 & 0.05 & 99.130 & 0.09 \\ \hline
-Musket	& 3,467,875	& 0.11	& 99.601 & 0.57 \\ \hline
-BLESS	& 3,468,677& 0.13	& 99.666  & 0.63 \\ \hline
-Lighter	&  3,478,658	& 0.42	& 99.639  & 0.61 \\ \hline
+\begin{tabular}{|c|c|c|c||c|c|} \hline
+	 & & \multicolumn{2}{|c||}{Read Level} & \multicolumn{2}{|c|}{Base Level} \\ \hline
+     & $k$ & Mapped Reads & Increase(\%) & Portion Match/Read(\%) & Increase(\%) \\ \hline
+Original & 19 & 	3,464,137	 & - &  99.038 & - \\ \hline
+Quake	& 19 & 3,373,498	& -2.62	& 99.659  & 0.63 \\ \hline
+SOAPec  & 17 & 3,465,819 & 0.05 & 99.130 & 0.09 \\ \hline
+Musket	& 17 & 3,467,875	& 0.11	& 99.601 & 0.57 \\ \hline
+BLESS	& 19 & 3,468,677& 0.13	& 99.666  & 0.63 \\ \hline
+Lighter	& 19 &  3,478,658	& 0.42	& 99.639  & 0.61 \\ \hline
 \end{tabular}
 \end{table}
 
@@ -768,15 +768,15 @@ Lighter	& 105,460 &	105,460	& 3.71	& 1	& 97.477  \\ \hline
 
 \begin{table}[h!]%5
 \caption{Alignment of chr14 dataset}
-\begin{tabular}{|c|c|c||c|c|}\hline
-  & \multicolumn{2}{|c||}{Read Level} & \multicolumn{2}{|c|}{Base Level} \\ \hline
-  & Mapped Reads  &Increase(\%) & Portion Match/Read(\%)  & Increase(\%) \\ \hline
-Original & 35,993,147	&- 		&	 98.507 & -\\ \hline
-Quake 	& 32,547,091	& -9.57 &	99.845 & 1.36 \\ \hline
-SOAPec  & 36,116,405  & 0.34 & 98.768 & 0.26 \\ \hline
-Musket 	&	36,316,699	& 0.90	& 99.109 & 0.61 \\ \hline
-BLESS 	&36,301,816	& 0.86	& 99.411 & 0.92 \\ \hline
-Lighter	& 36,320,688 & 0.91	& 99.235 & 0.74 \\ \hline
+\begin{tabular}{|c|c|c|c||c|c|}\hline
+  &  & \multicolumn{2}{|c||}{Read Level} & \multicolumn{2}{|c|}{Base Level} \\ \hline
+  & $k$ & Mapped Reads  &Increase(\%) & Portion Match/Read(\%)  & Increase(\%) \\ \hline
+Original & 19 & 35,993,147	&- 		&	 98.507 & -\\ \hline
+Quake 	& 19 & 32,547,091	& -9.57 &	99.845 & 1.36 \\ \hline
+SOAPec  & 19 & 36,116,405  & 0.34 & 98.768 & 0.26 \\ \hline
+Musket 	& 19 &	36,316,699	& 0.90	& 99.109 & 0.61 \\ \hline
+BLESS 	& 27 &36,301,816	& 0.86	& 99.411 & 0.92 \\ \hline
+Lighter	& 19 & 36,320,688 & 0.91	& 99.235 & 0.74 \\ \hline
 \end{tabular}
 \end{table}
 
@@ -797,11 +797,11 @@ Lighter	&	5827 & 4280	& 127.69	& 618 & 79.287 \\ \hline
 \caption{Alignment of C.Elegans dataset}
 \begin{tabular}{|c|c|c||c|c|}\hline
   & \multicolumn{2}{|c||}{Read Level} & \multicolumn{2}{|c|}{Base Level} \\ \hline
-  & Mapped Reads  &Increase(\%) & Portion Match/Read(\%) & Increase(\%) \\ \hline
+ 	 & Mapped Reads  &Increase(\%) & Portion Match/Read(\%) & Increase(\%) \\ \hline
 Original & 63,017,855	& - 	&	99.048 & - \\ \hline
 Quake 	& 60,469,150	& -4.04	&	99.834 & 0.79 \\ \hline
-SOAPec  & 63,032,768    & 0.02	& 	99.185 & 0.14\\ \hline
-Musket 	&	63,060,601	&	0.07 &	99.420 & 0.38\\ \hline
+SOAPec  & 63,032,768    & 0.02	& 	99.185 & 0.14 \\ \hline
+Musket 	&	63,060,601	&	0.07 &	99.420 & 0.38 \\ \hline
 BLESS 	& 64,150,807	& 1.80 &  99.744   & 0.70 \\ \hline
 Lighter	& 63,081,655	& 0.10	& 99.469   & 0.43 \\ \hline
 \end{tabular}

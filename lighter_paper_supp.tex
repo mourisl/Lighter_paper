@@ -414,15 +414,15 @@ k	    & 19	&	23 &	27 &	31 & 31 \\ \hline
 Alignment statistics for the $75\times$ \ecoli data set using Bowtie 2 \cite{langmead2012fast} v2.2.2 with \verb+--very-fast+.
 
 \begin{table}[h!] 
-\begin{tabular}{|c|c|c||c|c|} \hline
-	 & \multicolumn{2}{|c||}{Read Level} & \multicolumn{2}{|c|}{Base Level} \\ \hline
-     & Mapped Reads & Increase(\%) & Portion Match/Read(\%) & Increase(\%) \\ \hline
-Original&	3,459,316&	-&	99.048 & - \\ \hline 
-Quake&	3,373,491&	-2.48&	99.659 & 0.62 \\ \hline
-SOAPec&	3,464,456&	0.15&	99.135 & 0.09 \\ \hline
-Musket&	3,467,805&	0.25&	99.601 & 0.56 \\ \hline
-Bless&	3,468,604&	0.27&	99.667 & 0.62\\ \hline
-Lighter&	3,478,210&	0.55&	99.641 & 0.60 \\ \hline
+\begin{tabular}{|c|c|c|c||c|c|} \hline
+	 & & \multicolumn{2}{|c||}{Read Level} & \multicolumn{2}{|c|}{Base Level} \\ \hline
+     & $k$ & Mapped Reads & Increase(\%) & Portion Match/Read(\%) & Increase(\%) \\ \hline
+Original & - &	3,459,316&	-&	99.048 & - \\ \hline 
+Quake & 19 &	3,373,491&	-2.48&	99.659 & 0.62 \\ \hline
+SOAPec& 17 &	3,464,456&	0.15&	99.135 & 0.09 \\ \hline
+Musket& 17 &	3,467,805&	0.25&	99.601 & 0.56 \\ \hline
+Bless & 19 &	3,468,604&	0.27&	99.667 & 0.62\\ \hline
+Lighter& 19 &	3,478,210&	0.55&	99.641 & 0.60 \\ \hline
 \end{tabular}
 \end{table}
 \clearpage
@@ -432,15 +432,15 @@ Lighter&	3,478,210&	0.55&	99.641 & 0.60 \\ \hline
 \noindent Alignment statistics for the $75\times$ \ecoli data set using BWA-MEM \cite{li2013aligning} v0.7.9a-r786 with default parameters.
 
 \begin{table}[h!] 
-\begin{tabular}{|c|c|c||c|c|} \hline
-	 & \multicolumn{2}{|c||}{Read Level} & \multicolumn{2}{|c|}{Base Level} \\ \hline
-     & Mapped Reads & Increase(\%) & Portion Match/Read(\%)  & Increase(\%) \\ \hline
-Original&	3,482,421&	-&	98.936 & - \\ \hline
-Quake&	3,373,877&	-3.12&	99.968 & 1.04 \\ \hline
-SOAPec&	3,482,422&	0.00&	99.039 & 0.10 \\ \hline
-Musket&	3,482,735&	0.01&	99.599 & 0.67 \\ \hline
-Bless&	3,481,889&	-0.02&	99.788 & 0.86 \\ \hline
-Lighter&	3,484,166&	0.05&	99.821 & 0.89 \\ \hline
+\begin{tabular}{|c|c|c|c||c|c|} \hline
+	 & & \multicolumn{2}{|c||}{Read Level} & \multicolumn{2}{|c|}{Base Level} \\ \hline
+     & $k$ & Mapped Reads & Increase(\%) & Portion Match/Read(\%)  & Increase(\%) \\ \hline
+Original & - &	3,482,421&	-&	98.936 & - \\ \hline
+Quake & 19 &	3,373,877&	-3.12&	99.968 & 1.04 \\ \hline
+SOAPec & 17 &	3,482,422&	0.00&	99.039 & 0.10 \\ \hline
+Musket &17  &	3,482,735&	0.01&	99.599 & 0.67 \\ \hline
+Bless & 19 &	3,481,889&	-0.02&	99.788 & 0.86 \\ \hline
+Lighter & 19 &	3,484,166&	0.05&	99.821 & 0.89 \\ \hline
 \end{tabular}
 \end{table}
 \clearpage
@@ -450,15 +450,15 @@ Lighter&	3,484,166&	0.05&	99.821 & 0.89 \\ \hline
 \noindent Alignment statistics for the GAGE chr14 data set using BWA-MEM \cite{li2013aligning} v0.7.9a-r786 with default parameters.
 
 \begin{table}[h!]
-\begin{tabular}{|c|c|c||c|c|} \hline
-	 & \multicolumn{2}{|c||}{Read Level} & \multicolumn{2}{|c|}{Base Level} \\ \hline
-     & Mapped Reads & Increase(\%) &  Portion Match/Read(\%) & Increase(\%) \\ \hline
-Original&	36,493,776& - 	& 97.093 & - \\ \hline
-Quake&	32,560,823&	-10.78&	99.826 & 2.81 \\ \hline
-SOAPec&	36,493,999&	0.00&	97.394 & 0.31 \\ \hline
-Musket&	36,494,472&	0.00&	98.165 & 1.1 \\ \hline
-Bless&	36,481,303&	-0.03&	98.661 & 1.61 \\ \hline
-Lighter&	36,494,905&	0.00& 98.369 & 1.31 \\ \hline
+\begin{tabular}{|c|c|c|c||c|c|} \hline
+	 & & \multicolumn{2}{|c||}{Read Level} & \multicolumn{2}{|c|}{Base Level} \\ \hline
+     & $k$ & Mapped Reads & Increase(\%) &  Portion Match/Read(\%) & Increase(\%) \\ \hline
+Original & - &	36,493,776& - 	& 97.093 & - \\ \hline
+Quake & 19 &	32,560,823&	-10.78&	99.826 & 2.81 \\ \hline
+SOAPec& 19 &	36,493,999&	0.00&	97.394 & 0.31 \\ \hline
+Musket& 23 &	36,494,472&	0.00&	98.165 & 1.1 \\ \hline
+Bless& 31 &	36,481,303&	-0.03&	98.661 & 1.61 \\ \hline
+Lighter& 19 &	36,494,905&	0.00& 98.369 & 1.31 \\ \hline
 \end{tabular}
 \end{table}
 

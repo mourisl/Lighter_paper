@@ -1,7 +1,7 @@
-This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2012.5.18)  5 AUG 2014 18:13
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=latex 2012.5.18)  5 AUG 2014 18:39
 entering extended mode
  %&-line parsing enabled.
-**lighter_paper.tex
+**lighter_paper
 (./lighter_paper.tex
 LaTeX2e <2005/12/01>
 Babel <v3.8h> and hyphenation patterns for english, usenglishmax, dumylang, noh
@@ -42,14 +42,12 @@ Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
 (/usr/share/texmf/tex/latex/config/color.cfg
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
-Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Driver file: dvips.def on input line 225.
 
-(/usr/share/texmf/tex/latex/pdftex-def/pdftex.def
-File: pdftex.def 2007/01/08 v0.04d Graphics/color for pdfTeX
-\Gread@gobject=\count87
+(/usr/share/texmf/tex/latex/graphics/dvips.def
+File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
 )
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
-Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
 Package xcolor Info: Model `RGB' extended on input line 1353.
 Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
 Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
@@ -62,13 +60,13 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
 Package: lastpage 1994/06/25 v0.1b LaTeX2e package for refs to last page number
  (JPG)
 )
-\c@thanks=\count88
+\c@thanks=\count87
 \bmcfloat@box=\box26
-\c@author=\count89
-\c@address=\count90
+\c@author=\count88
+\c@address=\count89
 \sv@mathsurround=\dimen104
 \fm@box=\box27
-\c@addressref=\count91
+\c@addressref=\count90
 \thanks@box=\box28
 \abstract@box=\box29
 \authors@list=\toks15
@@ -313,7 +311,7 @@ Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 (/usr/share/texmf/tex/latex/config/graphics.cfg
 File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
 )
-Package graphics Info: Driver file: pdftex.def on input line 90.
+Package graphics Info: Driver file: dvips.def on input line 90.
 )
 \Gin@req@height=\dimen105
 \Gin@req@width=\dimen106
@@ -376,7 +374,7 @@ Overfull \hbox (1.0pt too wide) has occurred while \output is active
  [] 
  []
 
-[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+[1
 
 ]
 
@@ -441,51 +439,147 @@ LaTeX Font Warning: Font shape `OT1/cmss/m/it' in size <7> not available
 LaTeX Warning: Reference `LastPage' on page 12 undefined on input line 258.
 
 [12])
-
-! LaTeX Error: Unknown graphics extension: .eps.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.622 ...th=0.75\textwidth]{lighter_framework.eps}
-                                                  
-? 
-! Interruption.
-\GenericError  ...                                
-                                                  \endgroup 
-l.622 ...th=0.75\textwidth]{lighter_framework.eps}
-                                                  
-? 
+File: lighter_framework.eps Graphic file (type eps)
+ <lighter_framework.eps>
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 624.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 624.
 
-! LaTeX Error: Unknown graphics extension: .eps.
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.630 ...idth=0.75\textwidth]{ErrorCorrection.eps}
-                                                  
-? 
-! Emergency stop.
- ...                                              
-                                                  
-l.630 ...idth=0.75\textwidth]{ErrorCorrection.eps}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
- 
+File: ErrorCorrection.eps Graphic file (type eps)
+<ErrorCorrection.eps>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+File: alpha.eps Graphic file (type eps)
+<alpha.eps>
+Overfull \hbox (12.84999pt too wide) in paragraph at lines 639--641
+ [] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+File: bloom_occupancy_alpha.eps Graphic file (type eps)
+<bloom_occupancy_alpha.eps>
+Overfull \hbox (12.84999pt too wide) in paragraph at lines 648--650
+ [] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+File: kmerLength.eps Graphic file (type eps)
+<kmerLength.eps>
+Overfull \hbox (12.84999pt too wide) in paragraph at lines 657--659
+ [] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+File: per_base.eps Graphic file (type eps)
+<per_base.eps>
+Overfull \hbox (12.84999pt too wide) in paragraph at lines 666--668
+ [] 
+ []
+
+
+LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
+(Font)              using `OT1/cmss/bx/n' instead on input line 668.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+File: runtime.eps Graphic file (type eps)
+<runtime.eps>
+Overfull \hbox (12.84999pt too wide) in paragraph at lines 675--677
+ [] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+AED: lastpage setting LastPage
+
+LaTeX Warning: Reference `LastPage' on page 13 undefined on input line 836.
+
+[13]
+
+LaTeX Warning: Reference `LastPage' on page 14 undefined on input line 836.
+
+[14]
+
+LaTeX Warning: Reference `LastPage' on page 15 undefined on input line 836.
+
+[15]
+
+LaTeX Warning: Reference `LastPage' on page 16 undefined on input line 836.
+
+[16]
+
+LaTeX Warning: Reference `LastPage' on page 17 undefined on input line 836.
+
+[17]
+
+LaTeX Warning: Reference `LastPage' on page 18 undefined on input line 836.
+
+[18]
+
+LaTeX Warning: Reference `LastPage' on page 19 undefined on input line 836.
+
+[19] (./lighter_paper.aux)
+
+LaTeX Font Warning: Size substitutions with differences
+(Font)              up to 1.0pt have occurred.
+
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
- 2068 strings out of 256216
- 24634 string characters out of 1917072
- 81751 words of memory out of 1500000
- 5353 multiletter control sequences out of 10000+200000
- 11511 words of font info for 40 fonts, out of 1200000 for 2000
+ 2056 strings out of 256217
+ 24352 string characters out of 1917095
+ 120144 words of memory out of 1500000
+ 5331 multiletter control sequences out of 10000+200000
+ 13967 words of font info for 48 fonts, out of 1200000 for 2000
  645 hyphenation exceptions out of 8191
- 30i,10n,37p,1689b,399s stack positions out of 5000i,500n,6000p,200000b,15000s
-!  ==> Fatal error occurred, no output PDF file produced!
+ 30i,10n,37p,1685b,399s stack positions out of 5000i,500n,6000p,200000b,15000s
+
+Output written on lighter_paper.dvi (19 pages, 121568 bytes).
