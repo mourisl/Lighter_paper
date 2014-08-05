@@ -248,6 +248,87 @@ Given the analysis in the previous section, we expect that the collection of \km
 
 %Therefore, the number of \kmers coming from the consecutive trusted positions does not increase which means there is no need to increase the size of Bloom filter $B$ when increasing coverage. Also, the analysis showed that the ability of capturing solid kmers remains almost the same when we change $\alpha$ linearly. 
 
+\section*{Supplementary Note 4: Hardware Environment}
+
+This section describes the hardware we used in our experiments.
+
+\noindent /proc/meminfo:
+\begin{verbatim}
+MemTotal:     528650220 kB
+MemFree:       2230712 kB
+Buffers:        288652 kB
+Cached:       520412244 kB
+SwapCached:       3036 kB
+Active:        1647888 kB
+Inactive:     519194196 kB
+HighTotal:           0 kB
+HighFree:            0 kB
+LowTotal:     528650220 kB
+LowFree:       2230712 kB
+SwapTotal:     2096472 kB
+SwapFree:      2076884 kB
+Dirty:               0 kB
+Writeback:           0 kB
+AnonPages:      140232 kB
+Mapped:          30464 kB
+Slab:          5148768 kB
+PageTables:      13968 kB
+NFS_Unstable:        0 kB
+Bounce:              0 kB
+CommitLimit:  266421580 kB
+Committed_AS:   942108 kB
+VmallocTotal: 34359738367 kB
+VmallocUsed:    282824 kB
+VmallocChunk: 34359455519 kB
+HugePages_Total:     0
+HugePages_Free:      0
+HugePages_Rsvd:      0
+Hugepagesize:     2048 kB
+\end{verbatim}
+
+\noindent /proc/cpuinfo
+
+\begin{verbatim}
+processor       : 0
+vendor_id       : AuthenticAMD
+cpu family      : 16
+model           : 9
+model name      : AMD Opteron(tm) Processor 6172
+stepping        : 1
+cpu MHz         : 2100.025
+cache size      : 512 KB
+physical id     : 0
+siblings        : 12
+core id         : 0
+cpu cores       : 12
+apicid          : 0
+fpu             : yes
+fpu_exception   : yes
+cpuid level     : 5
+wp              : yes
+flags           : fpu vme de pse tsc msr pae mce cx8 apic sep 
+mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall 
+nx mmxext fxsr_opt pdpe1gb rdtscp lm 3dnowext 3dnow rep_good constant_tsc 
+nonstop_tsc amd_dcm pni cx16 popcnt lahf_lm cmp_legacy svm extapic 
+cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt nodeid_msr
+bogomips        : 4200.04
+TLB size        : 1024 4K pages
+clflush size    : 64
+cache_alignment : 64
+address sizes   : 48 bits physical, 48 bits virtual
+power management: ts ttp tm stc 100mhzsteps hwpstate [8]
+
+...
+\end{verbatim}
+The computer we used has 48 such cores.
+\clearpage
+
+\section*{Supplementary Note 5: Command lines}
+The commands that we used for all the experiments are available at:
+
+\noindent\verb+https://github.com/mourisl/Lighter_paper/blob/revision1/README.md+.
+\clearpage
+
 \section*{Supplementary Table 1: Quality-free simulation results}
 
 Here we give accuracy results from an evaluation similar to that shown in Table 1, except with quality values omitted.  Each of the tools was run on a FASTA file (with no qualities) instead of a FASTQ file.  Quake is omitted as it requires quality values.  The simulated error rate is 1\% in these experiments.
@@ -335,13 +416,13 @@ Alignment statistics for the $75\times$ \ecoli data set using Bowtie 2 \cite{lan
 \begin{table}[h!] 
 \begin{tabular}{|c|c|c||c|c|} \hline
 	 & \multicolumn{2}{|c||}{Read Level} & \multicolumn{2}{|c|}{Base Level} \\ \hline
-     & Mapped Reads & Increase(\%) & Base Match/Read & Portion Match/Read(\%) \\ \hline
-Original&	3,459,316&	-&	99.048&	99.048  \\ \hline 
-Quake&	3,373,491&	-2.48&	97.321&	99.659  \\ \hline
-SOAPec&	3,464,456&	0.15&	99.135&	99.135 \\ \hline
-Musket&	3,467,805&	0.25&	99.601&	99.601  \\ \hline
-Bless&	3,468,604&	0.27&	99.558&	99.667	 \\ \hline
-Lighter&	3,478,210&	0.55&	99.641&	99.641  \\ \hline
+     & Mapped Reads & Increase(\%) & Portion Match/Read(\%) & Increase(\%) \\ \hline
+Original&	3,459,316&	-&	99.048 & - \\ \hline 
+Quake&	3,373,491&	-2.48&	99.659 & 0.62 \\ \hline
+SOAPec&	3,464,456&	0.15&	99.135 & 0.09 \\ \hline
+Musket&	3,467,805&	0.25&	99.601 & 0.56 \\ \hline
+Bless&	3,468,604&	0.27&	99.667 & 0.62\\ \hline
+Lighter&	3,478,210&	0.55&	99.641 & 0.60 \\ \hline
 \end{tabular}
 \end{table}
 \clearpage
@@ -353,13 +434,13 @@ Lighter&	3,478,210&	0.55&	99.641&	99.641  \\ \hline
 \begin{table}[h!] 
 \begin{tabular}{|c|c|c||c|c|} \hline
 	 & \multicolumn{2}{|c||}{Read Level} & \multicolumn{2}{|c|}{Base Level} \\ \hline
-     & Mapped Reads & Increase(\%) & Base Match/Read & Portion Match/Read(\%) \\ \hline
-Original&	3,482,421&	-&	98.936&	98.936 \\ \hline
-Quake&	3,373,877&	-3.12&	97.623&	99.968 \\ \hline
-SOAPec&	3,482,422&	0.00&	99.039&	99.039 \\ \hline
-Musket&	3,482,735&	0.01&	99.599&	99.599 \\ \hline
-Bless&	3,481,889&	-0.02&	99.679&	99.788 \\ \hline
-Lighter&	3,484,166&	0.05&	99.821&	99.821  \\ \hline
+     & Mapped Reads & Increase(\%) & Portion Match/Read(\%) \\ \hline
+Original&	3,482,421&	-&	98.936 & - \\ \hline
+Quake&	3,373,877&	-3.12&	99.968 & 1.04 \\ \hline
+SOAPec&	3,482,422&	0.00&	99.039 & 0.10 \\ \hline
+Musket&	3,482,735&	0.01&	99.599 & 0.67 \\ \hline
+Bless&	3,481,889&	-0.02&	99.788 & 0.86 \\ \hline
+Lighter&	3,484,166&	0.05&	99.821 & 0.89 \\ \hline
 \end{tabular}
 \end{table}
 \clearpage
@@ -371,94 +452,17 @@ Lighter&	3,484,166&	0.05&	99.821&	99.821  \\ \hline
 \begin{table}[h!]
 \begin{tabular}{|c|c|c||c|c|} \hline
 	 & \multicolumn{2}{|c||}{Read Level} & \multicolumn{2}{|c|}{Base Level} \\ \hline
-     & Mapped Reads & Increase(\%) & Base Match/Read & Portion Match/Read(\%) \\ \hline
-Original&	36,493,776& - 	&	98.064&	97.093 \\ \hline
-Quake&	32,560,823&	-10.78&	93.391&	99.826 \\ \hline
-SOAPec&	36,493,999&	0.00&	98.368&	97.394 \\ \hline
-Musket&	36,494,472&	0.00&	98.997&	98.165 \\ \hline
-Bless&	36,481,303&	-0.03&	98.909&	98.661 \\ \hline
-Lighter&	36,494,905&	0.00&	99.353&	98.369 \\ \hline
+     & Mapped Reads & Increase(\%) &  Portion Match/Read(\%) & Increase(\%) \\ \hline
+Original&	36,493,776& - 	& 97.093 & - \\ \hline
+Quake&	32,560,823&	-10.78&	99.826 & 2.81 \\ \hline
+SOAPec&	36,493,999&	0.00&	97.394 & 0.31 \\ \hline
+Musket&	36,494,472&	0.00&	98.165 & 1.1 \\ \hline
+Bless&	36,481,303&	-0.03&	98.661 & 1.61 \\ \hline
+Lighter&	36,494,905&	0.00& 98.369 & 1.31 \\ \hline
 \end{tabular}
 \end{table}
 
 \clearpage
-
-\section*{Supplementary Note 4: Hardware Environment}
-
-This section describes the hardware we used in our experiments.
-
-\noindent /proc/meminfo:
-\begin{verbatim}
-MemTotal:     528650220 kB
-MemFree:       2230712 kB
-Buffers:        288652 kB
-Cached:       520412244 kB
-SwapCached:       3036 kB
-Active:        1647888 kB
-Inactive:     519194196 kB
-HighTotal:           0 kB
-HighFree:            0 kB
-LowTotal:     528650220 kB
-LowFree:       2230712 kB
-SwapTotal:     2096472 kB
-SwapFree:      2076884 kB
-Dirty:               0 kB
-Writeback:           0 kB
-AnonPages:      140232 kB
-Mapped:          30464 kB
-Slab:          5148768 kB
-PageTables:      13968 kB
-NFS_Unstable:        0 kB
-Bounce:              0 kB
-CommitLimit:  266421580 kB
-Committed_AS:   942108 kB
-VmallocTotal: 34359738367 kB
-VmallocUsed:    282824 kB
-VmallocChunk: 34359455519 kB
-HugePages_Total:     0
-HugePages_Free:      0
-HugePages_Rsvd:      0
-Hugepagesize:     2048 kB
-\end{verbatim}
-
-\noindent /proc/cpuinfo
-
-\begin{verbatim}
-processor       : 0
-vendor_id       : AuthenticAMD
-cpu family      : 16
-model           : 9
-model name      : AMD Opteron(tm) Processor 6172
-stepping        : 1
-cpu MHz         : 2100.025
-cache size      : 512 KB
-physical id     : 0
-siblings        : 12
-core id         : 0
-cpu cores       : 12
-apicid          : 0
-fpu             : yes
-fpu_exception   : yes
-cpuid level     : 5
-wp              : yes
-flags           : fpu vme de pse tsc msr pae mce cx8 apic sep 
-mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall 
-nx mmxext fxsr_opt pdpe1gb rdtscp lm 3dnowext 3dnow rep_good constant_tsc 
-nonstop_tsc amd_dcm pni cx16 popcnt lahf_lm cmp_legacy svm extapic 
-cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt nodeid_msr
-bogomips        : 4200.04
-TLB size        : 1024 4K pages
-clflush size    : 64
-cache_alignment : 64
-address sizes   : 48 bits physical, 48 bits virtual
-power management: ts ttp tm stc 100mhzsteps hwpstate [8]
-
-...
-\end{verbatim}
-And we have 48 such cores.
-
-\section*{Supplementary Note 5: Command lines}
-The command lines that we used in all the experiments are available in https://github.com/mourisl/Lighter_paper. See the README.md there.
 
 \bibliographystyle{abbrv}
 \bibliography{lighter_paper_supp}

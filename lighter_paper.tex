@@ -529,7 +529,7 @@ Using the same procedure as in the previous section, we measured the effect of e
 We compared \tool's peak memory usage, disk usage, and running time with Quake, Musket and BLESS.  These experiments were run on a computer running Red Hat Linux 4.1.2-52 with 48 2.1GHz AMD Opteron processors and 512G memory.
 The input datasets are the same simulated \ecoli datasets with $1\%$ error rate discussed previously, plus the GAGE human chromosome 14 dataset.
 
-The measure of space usage is shown in Table 7. BLESS and \tool achieve constant memory footprint across sequencing depths.  While Musket uses less memory than Quake, it uses more than either BLESS or \tool.  BLESS achieves constant memory footprint across sequencing depths, but consumes more disk space for datasets with deeper sequencing.  Note that BLESS can be configured to trade off between peak memory footprint and the number of temporary files it creates.  \tool's algorithm uses no disk space.  \tool's only sizable data structures are the two Bloom filters, which reside in memory.
+The measure of space usage is shown in Table 9. BLESS and \tool achieve constant memory footprint across sequencing depths.  While Musket uses less memory than Quake, it uses more than either BLESS or \tool.  BLESS achieves constant memory footprint across sequencing depths, but consumes more disk space for datasets with deeper sequencing.  Note that BLESS can be configured to trade off between peak memory footprint and the number of temporary files it creates.  \tool's algorithm uses no disk space.  \tool's only sizable data structures are the two Bloom filters, which reside in memory.
 
 To assess scalability, we also compared running time for Quake, Musket and \tool using different number of threads.  For these experiments we used the simulated \ecoli dataset with $70\times$ coverage and $1\%$ error.  Results are shown in Figure 6.  Note that Musket requires at least 2 threads due to its master-slave design.  BLESS can only be run with one thread and its running time is 1812s, which is slower than Quake.
 
@@ -747,13 +747,13 @@ $280\times$ & 0.025 & 53.088 &34.419\\ \hline
 \caption{Alignment statistics for the $75\times$ \ecoli dataset, before error correction (Original row) and after error correction (other rows).  The first ``Increase'' column shows percent increase in reads aligned.  The second ``Increase'' column shows percent increase in average number of matching positions per aligned read.}
 \begin{tabular}{|c|c|c||c|c|} \hline
 	 & \multicolumn{2}{|c||}{Read Level} & \multicolumn{2}{|c|}{Base Level} \\ \hline
-     & Mapped Reads & Increase(\%) & Base Match/Read & Portion Match/Read(\%) \\ \hline
-Original & 	3,464,137	 & - & 99.038	& 99.038 \\ \hline
-Quake	& 3,373,498	& -2.62	& 97.321	& 99.659  \\ \hline
-SOAPec  & 3,465,819 & 0.05 &  99.130 & 99.130 \\ \hline
-Musket	& 3,467,875	& 0.11	& 99.601	& 99.601 \\ \hline
-BLESS	& 3,468,677& 0.13	& 99.557	& 99.666  \\ \hline
-Lighter	&  3,478,658	& 0.42	& 99.639	& 99.639  \\ \hline
+     & Mapped Reads & Increase(\%) & Portion Match/Read(\%) & Increase(\%) \\ \hline
+Original & 	3,464,137	 & - &  99.038 & - \\ \hline
+Quake	& 3,373,498	& -2.62	& 99.659  & 0.63 \\ \hline
+SOAPec  & 3,465,819 & 0.05 & 99.130 & 0.09 \\ \hline
+Musket	& 3,467,875	& 0.11	& 99.601 & 0.57 \\ \hline
+BLESS	& 3,468,677& 0.13	& 99.666  & 0.63 \\ \hline
+Lighter	&  3,478,658	& 0.42	& 99.639  & 0.61 \\ \hline
 \end{tabular}
 \end{table}
 
@@ -775,13 +775,13 @@ Lighter	& 105,460 &	105,460	& 3.71	& 1	& 97.477  \\ \hline
 \caption{Alignment of chr14 dataset}
 \begin{tabular}{|c|c|c||c|c|}\hline
   & \multicolumn{2}{|c||}{Read Level} & \multicolumn{2}{|c|}{Base Level} \\ \hline
-  & Mapped Reads  &Increase(\%) & Base Match/Read	& Portion Match/Read(\%) \\ \hline
-Original & 35,993,147	&- 		&	99.492	& 98.507 \\ \hline
-Quake 	& 32,547,091	& -9.57 &	93.410	& 99.845 \\ \hline
-SOAPec  & 36,116,405  & 0.34 & 99.756 & 98.768 \\ \hline
-Musket 	&	36,316,699	& 0.90	& 100.100	& 99.109 \\ \hline
-BLESS 	&36,301,816	& 0.86	& 99.583	&	99.411 \\ \hline
-Lighter	& 36,320,688 & 0.91	& 100.227	&  99.235 \\ \hline
+  & Mapped Reads  &Increase(\%) & Portion Match/Read(\%)  & Increase(\%) \\ \hline
+Original & 35,993,147	&- 		&	 98.507 & -\\ \hline
+Quake 	& 32,547,091	& -9.57 &	99.845 & 1.36 \\ \hline
+SOAPec  & 36,116,405  & 0.34 & 98.768 & 0.26 \\ \hline
+Musket 	&	36,316,699	& 0.90	& 99.109 & 0.61 \\ \hline
+BLESS 	&36,301,816	& 0.86	& 99.411 & 0.92 \\ \hline
+Lighter	& 36,320,688 & 0.91	& 99.235 & 0.74 \\ \hline
 \end{tabular}
 \end{table}
 
@@ -802,13 +802,13 @@ Lighter	&	5827 & 4280	& 127.69	& 618 & 79.287 \\ \hline
 \caption{Alignment of C.Elegans dataset}
 \begin{tabular}{|c|c|c||c|c|}\hline
   & \multicolumn{2}{|c||}{Read Level} & \multicolumn{2}{|c|}{Base Level} \\ \hline
-  & Mapped Reads  &Increase(\%) & Base Match/Read	& Portion Match/Read(\%) \\ \hline
-Original & 63,017,855	& - 	&	99.048	& 99.048 \\ \hline
-Quake 	& 60,469,150	& -4.04	&	93.573	& 99.834 \\ \hline
-SOAPec  & 63,032,768    & 0.02	& 	99.185	&	99.185 \\ \hline
-Musket 	&	63,060,601	&	0.07 &	99.420 & 99.420 \\ \hline
-BLESS 	& 64,150,807	& 1.80 &98.652	& 99.744 \\ \hline
-Lighter	& 63,081,655	& 0.10	& 99.469 & 99.469 \\ \hline
+  & Mapped Reads  &Increase(\%) & Portion Match/Read(\%) & Increase(\%) \\ \hline
+Original & 63,017,855	& - 	&	99.048 & - \\ \hline
+Quake 	& 60,469,150	& -4.04	&	99.834 & 0.79 \\ \hline
+SOAPec  & 63,032,768    & 0.02	& 	99.185 & 0.14 \\ \hline
+Musket 	&	63,060,601	&	0.07 &	99.420 & 0.38 \\ \hline
+BLESS 	& 64,150,807	& 1.80 &  99.744   & 0.70 \\ \hline
+Lighter	& 63,081,655	& 0.10	& 99.469   & 0.43 \\ \hline
 \end{tabular}
 \end{table}
 
@@ -825,7 +825,7 @@ Lighter	&	19,222	& 19,333	& 26.9	& 434	& 95.332 \\ \hline
 \end{tabular}
 \end{table}
 
-\begin{table}[h!] %7
+\begin{table}[h!] %9
 \caption{Comparison of four error correction tools based on their memory usage (peak resident memory) and disk usage.\label{table:memory_usage}}
 \begin{tabular}{|c|c|c||c|c||c|c||c|c||c|c|} \hline
 		& \multicolumn{2}{|c||}{$35\times$} & \multicolumn{2}{|c||}{$70\times$}  & \multicolumn{2}{|c||}{$140\times$} & \multicolumn{2}{|c||}{chr14}  & \multicolumn{2}{|c|}{C.Elegans} \\ \hline
