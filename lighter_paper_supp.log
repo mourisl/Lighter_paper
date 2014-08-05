@@ -1,4 +1,4 @@
-This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2012.5.18)  4 AUG 2014 17:03
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2012.5.18)  5 AUG 2014 18:21
 entering extended mode
  %&-line parsing enabled.
 **lighter_paper_supp.tex
@@ -445,59 +445,56 @@ LaTeX Warning: Citation `Putze:2010:CHS:1498698.1594230' on page 1 undefined on
 
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3]
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] [4] [5
 
-LaTeX Warning: Citation `huang2012art' on page 4 undefined on input line 281.
-
-[4
+] [6
 
 ]
-Overfull \hbox (2.05519pt too wide) in paragraph at lines 315--315
+
+LaTeX Warning: Citation `huang2012art' on page 7 undefined on input line 362.
+
+[7
+
+]
+Overfull \hbox (2.05519pt too wide) in paragraph at lines 396--396
 []\OT1/cmr/bx/n/14.4 Supplementary Ta-ble 3: Sim-u-la-tion re-sults with \OT1/c
 mr/bx/it/14.4 C. el-e-gans \OT1/cmr/bx/n/14.4 genome. 
  []
 
 
-LaTeX Warning: Citation `holtgrewe2010mason' on page 5 undefined on input line 
-317.
+LaTeX Warning: Citation `holtgrewe2010mason' on page 8 undefined on input line 
+398.
 
-[5
-
-]
-
-LaTeX Warning: Citation `langmead2012fast' on page 6 undefined on input line 33
-3.
-
-[6
+[8
 
 ]
 
-LaTeX Warning: Citation `li2013aligning' on page 7 undefined on input line 351.
+LaTeX Warning: Citation `langmead2012fast' on page 9 undefined on input line 41
+4.
 
-
-[7
-
-] [8
-
-] [9
+[9
 
 ]
-Overfull \hbox (21.35269pt too wide) in paragraph at lines 461--462
-\OT1/cmr/m/n/10 The com-mand lines that we used in all the ex-per-i-ments are a
-vail-able in https://github.com/mourisl/Lighter[]paper.
- []
 
+LaTeX Warning: Citation `li2013aligning' on page 10 undefined on input line 432
+.
+
+[10
+
+] [11
+
+]
 No file lighter_paper_supp.bbl.
-[10] (./lighter_paper_supp.aux)
+(./lighter_paper_supp.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 2266 strings out of 256216
- 25683 string characters out of 1917072
+ 2265 strings out of 256216
+ 25665 string characters out of 1917072
  95118 words of memory out of 1500000
- 5542 multiletter control sequences out of 10000+200000
+ 5541 multiletter control sequences out of 10000+200000
  6784 words of font info for 25 fonts, out of 1200000 for 2000
  645 hyphenation exceptions out of 8191
  27i,9n,35p,954b,261s stack positions out of 5000i,500n,6000p,200000b,15000s
@@ -511,9 +508,9 @@ share/texmf/fonts/type1/bluesky/cm/cmr17.pfb></usr/share/texmf/fonts/type1/blue
 sky/cm/cmr7.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmsy10.pfb></usr/share
 /texmf/fonts/type1/bluesky/cm/cmsy7.pfb></usr/share/texmf/fonts/type1/bluesky/c
 m/cmti10.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmtt10.pfb>
-Output written on lighter_paper_supp.pdf (10 pages, 130099 bytes).
+Output written on lighter_paper_supp.pdf (11 pages, 130829 bytes).
 PDF statistics:
- 95 PDF objects out of 1000 (max. 8388607)
+ 98 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 131072)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
