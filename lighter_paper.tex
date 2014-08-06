@@ -432,7 +432,7 @@ We performed a similar accuracy test as in the previous section, but using data 
 \paragraph{Effect of ploidy on Bloom filter B.}  We conducted a experiment similar to that in the previous section but with Mason configured to simulate reads from a diploid version of the \ecoli genome.
 Specifically, we introduced heterozygous SNPs at $0.1\%$ of the positions in the reference genome.
 Mason then sampled equal numbers of reads from both genomes, making a dataset with $70$x average coverage in total.
-Of the 214,567 simulated \kmers that overlapped a position with a heterozygous SNP, table $B$ held 214,545 (99.990\%) of them at the end of the run. This
+Of the 214,567 simulated \kmers that overlapped a position with a heterozygous SNP, table $B$ held 214,545 (99.990\%) of them at the end of the run. 
 Thus, \tool retained in table B almost the same fraction of the \kmers overlapping heterozygous positions (99.990\%) as of the \kmers overall (99.999\%).
 
 Musket and BLESS both infer a threshold for the multiplicity of solid \kmers. In this experiment, Musket inferred a threshold of 10 and BLESS inferred a threshold of 9.
@@ -529,7 +529,7 @@ The alignment comparison shows BLESS achieving the greatest increase in fraction
 \subsection*{Speed, space usage, and scalability}
 
 We compared \tool's peak memory usage, disk usage, and running time with Quake, Musket and BLESS.  These experiments were run on a computer running Red Hat Linux 4.1.2-52 with 48 2.1GHz AMD Opteron processors and 512G memory.
-The input datasets are the same simulated \ecoli datasets with $1\%$ error rate discussed previously, plus the GAGE human chromosome 14 dataset.
+The input datasets are the same simulated \ecoli datasets with $1\%$ error rate discussed previously, plus the GAGE human chromosome 14 dataset and C. elegans dataset.
 
 The measure of space usage is shown in Table 9. BLESS and \tool achieve constant memory footprint across sequencing depths.  While Musket uses less memory than Quake, it uses more than either BLESS or \tool.  BLESS achieves constant memory footprint across sequencing depths, but consumes more disk space for datasets with deeper sequencing.  Note that BLESS can be configured to trade off between peak memory footprint and the number of temporary files it creates.  \tool's algorithm uses no disk space.  \tool's only sizable data structures are the two Bloom filters, which reside in memory.
 
