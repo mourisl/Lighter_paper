@@ -388,13 +388,13 @@ Supplementary Note 4 describes the computer all experiments were conducted on.  
 
 \subsection*{Simulated dataset}
 
-\paragraph{Accuracy on simulated data.} We compared \tool v1.0.2's performance with Quake v0.3\cite{kelley2010quake}, Musket v1.1\cite{liu2013musket}, BLESS v0p17 \cite{heo2014bless}, and SOAPec v2.0.1 \cite{luo2012soapdenovo2}.  We simulated a collection of reads from the reference genome for the K12 strain of \ecoli (NC\_000913.2) using Mason v0.1.2 \cite{holtgrewe2010mason}.  
+\paragraph{Accuracy on simulated data.} We compared \tool v1.0.2's performance with Quake v0.3 \cite{kelley2010quake}, Musket v1.1 \cite{liu2013musket}, BLESS v0p17 \cite{heo2014bless}, and SOAPec v2.0.1 \cite{luo2012soapdenovo2}.  We simulated a collection of reads from the reference genome for the K12 strain of \ecoli (NC\_000913.2) using Mason v0.1.2 \cite{holtgrewe2010mason}.  
 
 We simulated six distinct datasets with 101bp single-end reads, varying average coverage ($35$x, $75$x $140$x) and average error rate ($1\%$ and $3\%$).  For a given error rate $e$ we specify Mason parameters \verb+-qmb+ $e/2$ \verb+-qme+ $3e$, so that the average error rate is $e$ but errors are more common toward the 3' end, as in real datasets.
 
 We then ran all four tools on all six datasets, with results presented in Table 1.  BLESS was run with the \verb+-notrim+ option to make the results more comparable. In these comparisons, a true positive (TP) is an instance where an error is successfully corrected, \thatis with the correct base substituted.  A false positive (FP) is an instance where a spurious substitution is made at an error-free position.  A false negative (FN) is an instance where we either fail to detect an error or an incorrect base is substituted.  As done in previous studies \cite{liu2013musket}, we report the following summaries: recall = TP/(TP$+$NP), precision = TP/(TP$+$FP), F-score = 2$\times$recall$\times$precision/(recall$+$precision) and gain = (TP-FP)/(TP+FN). 
 
-Since these tools are sensitive to the choice of \kmer size, we tried several values for this parameter (17, 19, 23, 27, 31) and picked the value yielding the best gain in the accuracy evaluation.  The \kmer sizes chosen are shown in the bottom rows of Table 1.  Note that SOAPec's maximum \kmer size is 27.  We found that Quake crashed for \kmer sizes 23 and up.
+Since these tools are sensitive to the choice of \kmer size, we tried several values for this parameter (17, 19, 23, 27, 31) and picked the value yielding the greatest gain in the accuracy evaluation.  The \kmer sizes chosen are shown in the bottom rows of Table 1.  Note that SOAPec's maximum \kmer size is 27.  We found that Quake crashed for \kmer sizes 23 and up.
 
 % give different sizes to the tools, the result in Table 1 corresponding to the results with the best gain value. Quake crashed on larger \kmer size through out all the experiments we conducted in this paper.
 
@@ -417,7 +417,7 @@ There is less difference between tools than in the Mason experiment, likely beca
 For the Mason-simulated 1\% error dataset, we found that \tool's gain was maximized by setting the \kmer size to 23.  We therefore fix the \kmer size to 23 for subsequent experiments, except where otherwise noted.
 
 \paragraph{C. elegans simulation.}
-We performed a similar accuracy test as in the previous section, but using data simulated from the larger \elegans genome, WBcel235 (Supplementary Table 3).  We used Mason to simulate a dataset of 101bp single-end reads with a 1\% error rate totaling 35x coverage.  We again tried several values for the \kmer size parameter (19, 23, 27, 31) and picked the value yielding the best gain in the accuracy evaluation.  As for the \ecoli experiment, \tool had the greatest recall, F-score and gain.
+We performed a similar accuracy test as in the previous section, but using data simulated from the larger \elegans genome, WBcel235 (Supplementary Table 3).  We used Mason to simulate a dataset of 101bp single-end reads with a 1\% error rate totaling 35x coverage.  We again tried several values for the \kmer size parameter (19, 23, 27, 31) and picked the value yielding the greatest gain in the accuracy evaluation.  As for the \ecoli experiment, \tool had the greatest recall, F-score and gain.
 
 \paragraph{Scaling with depth of simulated sequencing.} We also used Mason to generate a series of datasets with 1\% error, similar to those used in Table 1, but for $20\times$, $35\times$, $70\times$, $140\times$ and $280\times$ average coverage.  We ran \tool on each and measured final occupancies (fraction of bits set) for Bloom filters $A$ and $B$.  If our assumptions and scaling arguments are accurate, we expect the final occupancies of the Bloom filters to remain approximately constant for relatively high levels of coverage.  As seen in Table 2, this is indeed the case.  
 %Note that when coverage is quite low ($10\times$), the occupancy of table $B$ is significantly lower, since distributions of multiplicities of correct and incorrect \kmers become too similar to distinguish clearly.
@@ -492,7 +492,7 @@ These data are not simulated, so we cannot measure accuracy directly.  But we ca
 For each error corrector, we tested different \kmer sizes (17, 19, 23, 27, 31) and chose the size that yielded the greatest total number of matching aligned nucleotides.
 For Quake and BLESS, we use only the reads (and partial reads) that remained after trimming and discarding for this evaluation.
 Results are shown in Table 3.
-\tool yields the greatest improvement in fraction of reads aligned, whereas Quake yields the greatest (and \tool the second-greatest) improvement in fraction of aligned bases that match the reference.
+\tool yields the greatest improvement in fraction of reads aligned, whereas Quake and BLESS yield the greatest improvement in fraction of aligned bases that match the reference, with \tool very close behind.
 As before, Quake is hard to compare to the other tools because it trims and discards many reads.
 
 We repeated this experiment using a less sensitive setting for Bowtie 2 (Supplementary Table 4) and using BWA-MEM \cite{li2013aligning} v0.7.9a-r786 to align the reads instead of Bowtie 2 (Supplementary Table 5) and found that the error correction tools performed similarly relative to each other.
@@ -505,24 +505,26 @@ We repeated this experiment using a less sensitive setting for Bowtie 2 (Supplem
 
 
 
-To further assess accuracy, we assembled the reads before and after error correction and measured relevant assembly statistics using Quast \cite{gurevich2013quast}.  The corrected reads are those reported in Table 3. We used Velvet 1.2.10\cite{zerbino2008velvet} to assemble.  Velvet is a De Bruijn graph-based assembler designed for second-generation sequencing reads.  A key parameter of Velvet is the De Bruijn graph's \kmer length.  For each tool we tested different \kmer sizes for Velvet (43, 47, 49, 51, 53, 55, 57, 63, 67) and chose the one that yielded the best NG50.  We set the error correctors' \kmer sizes to match those selected in the alignment experiment of Table 3.  As before, we used only the reads (and partial reads) that remained after trimming and discarding for Quake and BLESS.  For each assembly, we then evaluated the assembly's quality using Quast, which was configured to discard contigs shorter than 100 bp before calculating statistics. Results are shown in Table 4.
+To further assess accuracy, we assembled the reads before and after error correction and measured relevant assembly statistics using Quast \cite{gurevich2013quast}.  The corrected reads are those reported in Table 3. We used Velvet 1.2.10 \cite{zerbino2008velvet} to assemble.  Velvet is a De Bruijn graph-based assembler designed for second-generation sequencing reads.  A key parameter of Velvet is the De Bruijn graph's \kmer length.  For each tool we tested different \kmer sizes for Velvet (43, 47, 49, 51, 53, 55, 57, 63, 67) and chose the one that yielded the greatest NG50.  We set the error correctors' \kmer sizes to match those selected in the alignment experiment of Table 3.  As before, we used only the reads (and partial reads) that remained after trimming and discarding for Quake and BLESS.  For each assembly, we then evaluated the assembly's quality using Quast, which was configured to discard contigs shorter than 100 bp before calculating statistics. Results are shown in Table 4.
 
 
 N50 is the length such that the total length of the contigs no shorter than the N50 cover at least half the assembled genome.  NG50 is similar, but with the requirement that contigs cover half the reference genome rather than half the assembled genome. Edits per 100kbps is the number of mismatches or indels per 100kbps when aligning the contigs to the reference genome. A misassembly is an instance where two adjacent stretches of bases in the assembly align either to two very distant or to two highly overlapping stretches of the reference genome.  The Quast study defines these metrics in more detail \cite{gurevich2013quast}.
 
-Assemblies produced from reads corrected with the four programs are very similar according to these measures, with Quake and \tool yielding the longest contigs and the best genome coverage. Surprisingly, the post-correction assemblies have more differences at nucleotide level compared to the pre-correction assemblies, perhaps due to spurious corrections.
+Assemblies produced from reads corrected with the four programs are very similar according to these measures, with Quake and \tool yielding the longest contigs and the greatest genome coverage. Surprisingly, the post-correction assemblies have more differences at nucleotide level compared to the pre-correction assemblies, perhaps due to spurious corrections.
 
 \paragraph{GAGE human chromosome 14.}
-We also evaluated \tool's effect on alignment and assembly using a dataset from the GAGE project \cite{salzberg2012gage}.  The dataset consists of real 101 $\times$ 101 bp paired-end reads covering human chromosome 14 to $35\times$ average coverage ($\sim$36.5M reads).  For each error corrector, we tested different \kmer sizes (19, 23, 27, 31) and chose the size that yielded the greatest total number of matching aligned nucleotides.  For the assembly experiment, we set each error corrector's \kmer size to match that selected in the alignment experiment.  Also for each assembly experiment, we tested different \kmer sizes for Velvet (47, 53, 57 ,63, 67) and chose the one that yielded the best NG50.
+We also evaluated \tool's effect on alignment and assembly using a dataset from the GAGE project \cite{salzberg2012gage}.  The dataset consists of real 101 $\times$ 101 bp paired-end reads covering human chromosome 14 to $35\times$ average coverage ($\sim$36.5M reads).  For each error corrector, we tested different \kmer sizes (19, 23, 27, 31) and chose the size that yielded the greatest total number of matching aligned nucleotides.  For the assembly experiment, we set each error corrector's \kmer size to match that selected in the alignment experiment.  Also for each assembly experiment, we tested different \kmer sizes for Velvet (47, 53, 57 ,63, 67) and chose the one that yielded the greatest NG50.
 
-Error correction's effect on Bowtie 2 alignment statistics are shown in Table 5.  We used Bowtie 2 with default parameters to align the reads to an index of the human chromosome 14 sequence of the hg19 build of the human genome.  Programs had comparable performance, adding between 171,000 - 323,000 aligned reads and increasing the average number of matching bases per read by 0.61 - 0.70 bases.
+Error correction's effect on Bowtie 2 alignment statistics are shown in Table 5.  We used Bowtie 2 with default parameters to align the reads to an index of the human chromosome 14 sequence of the hg19 build of the human genome.  As before, \tool yields the greatest improvement in fraction of reads aligned, whereas Quake and BLESS yield the greatest improvement in fraction of aligned bases that match the reference, with \tool very close behind.
+%Programs had comparable performance, adding between 171,000 - 323,000 aligned reads and increasing the average number of matching bases per read by 0.61 - 0.70 bases.
 
 We repeated this experiment using BWA-MEM as the aligner instead of Bowtie 2 (Supplementary Table 6) and found that the tools performed similarly.
 
-We also tested error correction's effect on de novo assembly of this dataset using Velvet for assembly and Quast to evaluate the quality of the assembly.  For each tool we tested different \kmer sizes (19, 23, 27, 31) and chose the one that yielded the best NG50.  Results are shown in Table 6.  Overall, \tool's accuracy on real data is comparable to other error correction tools, with \tool and BLESS achieving the best N50, NG50 and coverage.
+We also tested error correction's effect on de novo assembly of this dataset using Velvet for assembly and Quast to evaluate the quality of the assembly.  For each tool we tested different \kmer sizes (19, 23, 27, 31) and chose the one that yielded the greatest NG50.  Results are shown in Table 6.  Overall, \tool's accuracy on real data is comparable to other error correction tools, with \tool and BLESS achieving the greatest N50, NG50 and coverage.
 
 \paragraph{C. elegans.}
-Using the same procedure as in the previous section, we measured the effect of error correction on another large real data using the reads from accession SRR065390. Results are shown in Tables 7 and 8.  This run contains real 100 $\times$ 100 bp paired-end reads covering the \elegans genome (WBcel235) to $66\times$ average coverage ($\sim$ 67.6M reads).  \kmer sizes for the error correctors and for Velvet were selected in the same was as for the chromosome 14 experiment.  The alignment results are similar to those for GAGE human chromosome 14, except that a substantially greater fraction of the BLESS-corrected reads align compared to the other tools, due to BLESS's trimming.  \tool and SOAPec achieve the best N50, NG50, and coverage in the assembly comparison.
+Using the same procedure as in the previous section, we measured the effect of error correction on another large real data using the reads from accession SRR065390. Results are shown in Tables 7 and 8.  This run contains real 100 $\times$ 100 bp paired-end reads covering the \elegans genome (WBcel235) to $66\times$ average coverage ($\sim$ 67.6M reads).  \kmer sizes for the error correctors and for Velvet were selected in the same was as for the chromosome 14 experiment.
+The alignment comparison shows BLESS achieving the greatest increase in fraction of reads aligned, and BLESS and Quake achieving the greatest fraction of aligned bases that match the reference, probably due to their trimming policy.  \tool does the best of the non-trimming tools in the alignment comparison.  In the assembly comparison, \tool and SOAPec achieve the greatest N50, NG50, and coverage.
 
 \subsection*{Speed, space usage, and scalability}
 
@@ -693,7 +695,7 @@ The authors thank Jeff Leek for helpful discussions.
 %%
 \section*{Tables} %1
 \begin{table}[h!]
-\caption{Accuracy measures for simulated datasets. Different error rate(\%) for each table for different coverages}
+\caption{Accuracy measures for datasets simulated with Mason with various sequencing depths and error rates.  Rows labeled $k$ show the \kmer sizes selected for each tool and dataset.}
 \begin{tabular}{|c|c|c|c|c|c|c|c|}\hline
 Coverage &	& \multicolumn{2}{|c|}{$35\times$}  & \multicolumn{2}{|c|}{$70\times$} & \multicolumn{2}{|c|}{$140\times$} \\ \hline
 Error rate & & $1\%$ & $3\%$ & $1\%$ & $3\%$ & $1\%$ & $3\%$ \\ \hline
@@ -732,9 +734,9 @@ $k$		&Musket	&23	&19	&23	&19	&23	&19 \\ \cline{2-8}
 
 
 \begin{table}[h!] %2
-\caption{Occupancy rate(\%) for each table for different coverages}
+\caption{Occupancy (fraction of bits set) for Bloom filters $A$ and $B$ for various coverages}
 \begin{tabular}{|c|c|c|c|}\hline
-Coverage & $\alpha$ & Bloom $A$ & Bloom $B$ \\ \hline
+Coverage & $\alpha$ & Bloom $A$ (\%) & Bloom $B$ (\%) \\ \hline
 $20\times$	& 0.35 & 53.082 & 34.037 \\ \hline
 $35\times$ & 0.2 & 53.085 &34.398\\ \hline
 $70\times$ & 0.1 &53.082 & 34.429 \\ \hline
@@ -744,10 +746,10 @@ $280\times$ & 0.025 & 53.088 &34.419\\ \hline
 \end{table}
 
 \begin{table}[h!] %3
-\caption{Alignment statistics for the $75\times$ \ecoli dataset, before error correction (Original row) and after error correction (other rows).  The first ``Increase'' column shows percent increase in reads aligned.  The second ``Increase'' column shows percent increase in average number of matching positions per aligned read.}
+\caption{Alignment statistics for the $75\times$ \ecoli dataset, before error correction (Original) and after error correction (other rows).  $k$ column shows \kmer size selected for each tool.  First ``Increase'' column shows percent increase in reads aligned.  Second ``Increase'' column shows percent increase in the fraction of aligned bases that match the reference genome.}
 \begin{tabular}{|c|c|c|c||c|c|} \hline
 	 & & \multicolumn{2}{|c||}{Read Level} & \multicolumn{2}{|c|}{Base Level} \\ \hline
-     & $k$ & Mapped Reads & Increase(\%) & Portion Match/Read(\%) & Increase(\%) \\ \hline
+     & $k$ & Mapped Reads & Increase (\%) & Matches/aligned base (\%) & Increase (\%) \\ \hline
 Original & - & 	3,464,137	 & - &  99.038 & - \\ \hline
 Quake	& 19 & 3,373,498	& -2.62	& 99.659  & 0.63 \\ \hline
 SOAPec  & 17 & 3,465,819 & 0.05 & 99.130 & 0.09 \\ \hline
@@ -758,9 +760,9 @@ Lighter	& 19 &  3,478,658	& 0.42	& 99.639  & 0.61 \\ \hline
 \end{table}
 
 \begin{table}[h!] %4
-\caption{De novo assembly of \ecoli dataset}
+\caption{De novo assembly statistics for the \ecoli dataset}
 \begin{tabular}{|c|c|c|c|c|c|} \hline
-	 	& N50 &	NG50	 & Edits / 100kbps&	Misassemblies	& Coverage(\%) \\ \hline
+	 	& N50 &	NG50	 & Edits / 100kbps&	Misassemblies	& Coverage (\%) \\ \hline
 Original &	94,879 &	94,879	& 3.41	& 0	& 97.496  \\ \hline
 Quake	& 89,470 &	88,209	& 11.62	& 4	 & 97.515  \\ \hline
 SOAPec	& 98,111 &	94,879	& 3.49	& 1	& 97.473	\\ \hline
@@ -772,10 +774,10 @@ Lighter	& 105,460 &	105,460	& 3.71	& 1	& 97.477  \\ \hline
 
 
 \begin{table}[h!]%5
-\caption{Alignment of chr14 dataset}
+\caption{Alignment statistics for the GAGE chromosome 14 dataset}
 \begin{tabular}{|c|c|c|c||c|c|}\hline
   &  & \multicolumn{2}{|c||}{Read Level} & \multicolumn{2}{|c|}{Base Level} \\ \hline
-  & $k$ & Mapped Reads  &Increase(\%) & Portion Match/Read(\%)  & Increase(\%) \\ \hline
+  & $k$ & Mapped Reads  &Increase (\%) & Matches/aligned base (\%)  & Increase (\%) \\ \hline
 Original & - & 35,993,147	&- 		&	 98.507 & -\\ \hline
 Quake 	& 19 & 32,547,091	& -9.57 &	99.845 & 1.36 \\ \hline
 SOAPec  & 19 & 36,116,405  & 0.34 & 98.768 & 0.26 \\ \hline
@@ -786,9 +788,9 @@ Lighter	& 19 & 36,320,688 & 0.91	& 99.235 & 0.74 \\ \hline
 \end{table}
 
 \begin{table}[h!] %6
-\caption{De novo assembly of chr14 dataset}
+\caption{De novo assembly statistics for the GAGE chromosome 14 dataset}
 \begin{tabular}{|c|c|c|c|c|c|} \hline
-	   & N50 &	NG50	& Edits / 100kbps &	Misassemblies	& Coverage(\%) \\ \hline
+	   & N50 &	NG50	& Edits / 100kbps &	Misassemblies	& Coverage (\%) \\ \hline
 Original &	5290 & 3861	& 139.46 &1263	& 78.778 \\ \hline
 Quake	&	4829 & 3520 & 141.59 & 1201 &	78.358 \\ \hline
 SOAPec & 5653	& 4143	& 127.8 &	623	 & 79.087 \\ \hline
@@ -799,10 +801,10 @@ Lighter	&	5827 & 4280	& 127.69	& 618 & 79.287 \\ \hline
 \end{table}
 
 \begin{table}[h!]%7???? Here or supplement
-\caption{Alignment of C.Elegans dataset}
+\caption{Alignment statistics for the \elegans dataset}
 \begin{tabular}{|c|c|c|c||c|c|}\hline
   & & \multicolumn{2}{|c||}{Read Level} & \multicolumn{2}{|c|}{Base Level} \\ \hline
-  &	$k$ & Mapped Reads  &Increase(\%) & Portion Match/Read(\%) & Increase(\%) \\ \hline
+  &	$k$ & Mapped Reads  &Increase (\%) & Matches/aligned base (\%) & Increase (\%) \\ \hline
 Original & - & 63,017,855	& - 	&	99.048 & - \\ \hline
 Quake 	& 19 & 60,469,150	& -4.04	&	99.834 & 0.79 \\ \hline
 SOAPec  & 19 & 63,032,768    & 0.02	& 	99.185 & 0.14 \\ \hline
@@ -813,9 +815,9 @@ Lighter	& 23 & 63,081,655	& 0.10	& 99.469   & 0.43 \\ \hline
 \end{table}
 
 \begin{table}[h!] %8????Here or supplement?
-\caption{De novo assembly of C.Elegans dataset}
+\caption{De novo assembly statistics for the \elegans dataset}
 \begin{tabular}{|c|c|c|c|c|c|} \hline
-	   & N50 &	NG50	& Edits / 100kbps &	Misassemblies	& Coverage(\%) \\ \hline
+	   & N50 &	NG50	& Edits / 100kbps &	Misassemblies	& Coverage (\%) \\ \hline
 Original &	17,330	& 17,317	& 27.66	& 441& 	94.873 \\ \hline
 Quake	&	13,887	& 13,668	& 27.19	& 559	& 94.320 \\ \hline
 SOAPec  & 19,369	& 19,457	& 25.71	& 449	& 95.308 \\ \hline

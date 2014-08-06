@@ -395,7 +395,7 @@ Gain	&musket	&99.93	&99.92	&99.93	 \\ \cline{2-5}
 
 \section*{Supplementary Table 3: Simulation results with \elegans genome.}
 
-The accuracy evaluation for the simulated data set from \elegans genome with $35\times$ coverage and $1\%$ error rate using Mason \cite{holtgrewe2010mason} v0.1.2.
+Accuracy evaluation for the simulated data set from \elegans genome with $35\times$ coverage and $1\%$ error rate using Mason \cite{holtgrewe2010mason} v0.1.2.  The row labeled $k$ gives the selected \kmer sizes.
 
 \begin{table}[h!]
 \begin{tabular}{|c|c|c|c|c|c|} \hline
@@ -404,19 +404,20 @@ Recall	&85.70	&53.40	&90.31	&98.99	&98.12 \\ \hline
 Precision	&99.82	&99.84	&99.59	&95.64	&99.66 \\ \hline
 F-score	&92.22	&69.58	&94.72	&97.29	&98.88 \\ \hline
 Gain	&85.55	&53.31	&89.94	&94.48	&97.78 \\ \hline
-k	    & 19	&	23 &	27 &	31 & 31 \\ \hline
+$k$	    & 19	&	23 &	27 &	31 & 31 \\ \hline
 \end{tabular}
 \end{table}
 \clearpage
 
 \section*{Supplementary Table 4: Alignment statistics for E. coli dataset using --very-fast.}
 
-Alignment statistics for the $75\times$ \ecoli data set using Bowtie 2 \cite{langmead2012fast} v2.2.2 with \verb+--very-fast+.
+Alignment statistics for the $75\times$ \ecoli data set using Bowtie 2 \cite{langmead2012fast} v2.2.2 with \verb+--very-fast+.  The column labeled $k$ gives the selected \kmer sizes.
+
 
 \begin{table}[h!] 
 \begin{tabular}{|c|c|c|c||c|c|} \hline
 	 & & \multicolumn{2}{|c||}{Read Level} & \multicolumn{2}{|c|}{Base Level} \\ \hline
-     & $k$ & Mapped Reads & Increase(\%) & Portion Match/Read(\%) & Increase(\%) \\ \hline
+     & $k$ & Mapped Reads & Increase (\%) & Matches/aligned base (\%) & Increase (\%) \\ \hline
 Original & - &	3,459,316&	-&	99.048 & - \\ \hline 
 Quake & 19 &	3,373,491&	-2.48&	99.659 & 0.62 \\ \hline
 SOAPec& 17 &	3,464,456&	0.15&	99.135 & 0.09 \\ \hline
@@ -434,7 +435,7 @@ Lighter& 19 &	3,478,210&	0.55&	99.641 & 0.60 \\ \hline
 \begin{table}[h!] 
 \begin{tabular}{|c|c|c|c||c|c|} \hline
 	 & & \multicolumn{2}{|c||}{Read Level} & \multicolumn{2}{|c|}{Base Level} \\ \hline
-     & $k$ & Mapped Reads & Increase(\%) & Portion Match/Read(\%)  & Increase(\%) \\ \hline
+     & $k$ & Mapped Reads & Increase (\%) & Matches/aligned base (\%)  & Increase (\%) \\ \hline
 Original & - &	3,482,421&	-&	98.936 & - \\ \hline
 Quake & 19 &	3,373,877&	-3.12&	99.968 & 1.04 \\ \hline
 SOAPec & 17 &	3,482,422&	0.00&	99.039 & 0.10 \\ \hline
@@ -452,7 +453,7 @@ Lighter & 19 &	3,484,166&	0.05&	99.821 & 0.89 \\ \hline
 \begin{table}[h!]
 \begin{tabular}{|c|c|c|c||c|c|} \hline
 	 & & \multicolumn{2}{|c||}{Read Level} & \multicolumn{2}{|c|}{Base Level} \\ \hline
-     & $k$ & Mapped Reads & Increase(\%) &  Portion Match/Read(\%) & Increase(\%) \\ \hline
+     & $k$ & Mapped Reads & Increase (\%) &  Matches/aligned base (\%) & Increase (\%) \\ \hline
 Original & - &	36,493,776& - 	& 97.093 & - \\ \hline
 Quake & 19 &	32,560,823&	-10.78&	99.826 & 2.81 \\ \hline
 SOAPec& 19 &	36,493,999&	0.00&	97.394 & 0.31 \\ \hline
