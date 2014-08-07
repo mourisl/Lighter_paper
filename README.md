@@ -2,9 +2,11 @@ First:
 
 1. Change to the `Evaluation` subdirectory of the repo
 2. Obtain [Quake]; we used version 0.3
-3. Obtain [Musket]; we used version 1.1
+3. Obtain [Musket]; we used version 1.1. 
 4. Obtain [BLESS]; we used v0p17
 5. Obtain [SOAPec]: we used version 2.01
+
+(For Musket, we changed the 156th line of kseq.cpp to "if (ks_getuntil(ks, '\n', &seq->name, &c) < 0)", so it can output Mason's id field )
 
 [Quake]: http://www.cbcb.umd.edu/software/quake/
 [Musket]: http://musket.sourceforge.net/homepage.htm#latest
